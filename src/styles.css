@@ -1,0 +1,173 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+                  /* #myVideo {
+                                                          position: fixed;
+                                                          right: 0;
+                                                          bottom: 0;
+                                                          min-width: 100%;
+                                                          min-height: 100%;
+                                                        } */
+html,body{
+background: url('/assets/partsupply-background.png') no-repeat center center fixed;
+background-size: cover;
+background-color: #AAAAAA;
+background-repeat: no-repeat;
+font-family: 'Numans', sans-serif;
+width: 100%;
+height: 100%;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+.headline{
+background-color: #444444;
+text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+font-family: 'Dancing Script', cursive;
+text-align: center;
+margin-top: 2%;
+color: #FFF;
+opacity: 0.8;
+font-size: 3rem;
+border-radius: 20px;
+
+}
+.h3-headline{
+  background-color: #444444;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  border-radius: 20px;
+  color: #FFF;
+  opacity: 0.5;
+}
+
+.card{
+height: 370px;
+margin-top: 5%;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+.card-header h3{
+color: white;
+}
+
+.username-field, .login-field, .remember{
+ margin-bottom: 7px;
+}
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+.remember{
+color: white;
+}
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+.login_btn{
+color: black;
+background-color: #FFC312;
+}
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+.links{
+color: white;
+}
+.links a{
+margin-left: 4px;
+}
+a:hover{
+    text-decoration:none;
+    color: white;
+}
+.card-footer{
+  padding: 0;
+}
+
+/* *******************Signup************* */
+
+.btn-round{
+  background-color: red;
+  border-radius: 30%;
+  margin-top: 10px;
+}
+.btn-round:hover{
+  background-color: #d1caca;
+}
+.signup-form{
+  background-color: #F88F01;
+  border-radius: 30px;
+  width: 40%;
+  margin: 1%;
+  font-size: 1rem;
+
+}
+.homefooter{
+  margin-top: 50%;
+}
+
+.labels{
+    display: inline-block;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    float: left;
+    clear: left;
+    width: 400px;
+    text-align: left;
+    color: #FFF;
+}
+input {
+  display: inline-block;
+  float: right;
+}
+
+
+@media (max-width:992px){
+  .headline{
+    font-size: 1.3rem;
+  }
+  .card{
+    margin-top: 15%;
+  }
+  /* html,body{
+   width: 100%;
+   height: 100%;
+ } */
+  /* #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 50%;
+    min-height: 50%;
+  } */
+  .h3-headline{
+    font-size: 1rem;
+  }
+  .signup-form{
+    width: 95%;
+    margin-top: 10px;
+  }
+
+}
+@media only screen and (max-width: 480px) {
+   html,body{
+    width: 100%;
+    height: 100%;
+  }
+  .card{
+    margin-top: 15%;
+  }
+
+}

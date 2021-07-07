@@ -9,6 +9,15 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { AboutComponent } from './common/about/about.component';
+import { ServicesComponent } from './common/services/services.component';
+import { MakeRequestComponent } from './buyer/make-request/make-request.component';
+import { RequestInfoComponent } from './buyer/request-info/request-info.component';
+import { ContactUsComponent } from './common/contact-us/contact-us.component';
+import { SecondRequestComponent } from './buyer/second-request/second-request.component';
+import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+import { SupplierMenuComponent } from './seller/supplier-menu/supplier-menu.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +25,16 @@ import { FooterComponent } from './common/footer/footer.component';
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent,
+    ServicesComponent,
+    MakeRequestComponent,
+    RequestInfoComponent,
+    ContactUsComponent,
+    SecondRequestComponent,
+    AdminLoginComponent,
+    SupplierMenuComponent,
+
   ],
   imports: [
     SparkAngularModule,
