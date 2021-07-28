@@ -38,7 +38,7 @@ h5{
  	margin: 0 auto;
  	max-width: 400px;
     padding: 10px 40px;
-	background:#F88F01;
+	background:#BBBFCA;
 	    color: #FFF;
       border-radius: 20px;
 
@@ -54,6 +54,14 @@ label{
 }
 button{
   margin-top: 5%;
+  background-color: #394867;
+  color: white;
+}
+button:hover{
+  background-color: blue;
+}
+.clear-btn:hover{
+  background-color: red;
 }
 p {
   color: #e5e5e5;
@@ -153,12 +161,12 @@ p {
 }
 
 .sidebar a.active {
-  background-color: #F88F01;
+  background-color: #394867;
   color: white;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: #BBBFCA;
   color: white;
 }
 
