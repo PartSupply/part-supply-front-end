@@ -4,25 +4,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SparkAngularModule } from '@sparkdesignsystem/spark-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
-import { AboutComponent } from './common/about/about.component';
-import { ServicesComponent } from './common/services/services.component';
-import { MakeRequestComponent } from './buyer/make-request/make-request.component';
-import { RequestInfoComponent } from './buyer/request-info/request-info.component';
-import { ContactUsComponent } from './common/contact-us/contact-us.component';
-import { SecondRequestComponent } from './buyer/second-request/second-request.component';
-import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
-import { SupplierMenuComponent } from './seller/supplier-menu/supplier-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { HeaderComponent } from './components/common/header/header.component';
+import { FooterComponent } from './components/common/footer/footer.component';
+import { AboutComponent } from './components/common/about/about.component';
+import { ServicesComponent } from './components/common/services/services.component';
+import { MakeRequestComponent } from './components/buyer/make-request/make-request.component';
+import { RequestInfoComponent } from './components/buyer/request-info/request-info.component';
+import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
+import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
+import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
+import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
     SignupComponent,
     HeaderComponent,
     FooterComponent,
@@ -34,13 +34,15 @@ import { SupplierMenuComponent } from './seller/supplier-menu/supplier-menu.comp
     SecondRequestComponent,
     AdminLoginComponent,
     SupplierMenuComponent,
-
   ],
   imports: [
     SparkAngularModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

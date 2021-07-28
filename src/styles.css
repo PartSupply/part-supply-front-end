@@ -99,18 +99,31 @@ a:hover{
 /* *******************Signup************* */
 
 .btn-round{
-  background-color: red;
+  background-color: #394867;
   border-radius: 30%;
   margin-top: 10px;
+  color: white;
 }
 .btn-round:hover{
   background-color: #d1caca;
 }
+.alert{
+  border: 1px solid;
+	margin: 0;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	max-width: 460px;
+  color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('https://i.imgur.com/Z8q7ww7.png');
+}
 .signup-form{
-  background-color: #F88F01;
+  background-color: #BBBFCA;
   border-radius: 30px;
   width: 40%;
-  margin: 1%;
+  margin-top: 2%;
+  margin-left: 30%;
   font-size: 1rem;
 
 }
@@ -157,7 +170,7 @@ input {
   }
   .signup-form{
     width: 95%;
-    margin-top: 10px;
+    margin: 4% auto auto;
   }
 
 }
@@ -169,5 +182,8 @@ input {
   .card{
     margin-top: 15%;
   }
-
+  .signup-form{
+    width: 95%;
+    margin: 4% auto auto;
+  }
 }
