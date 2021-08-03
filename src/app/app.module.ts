@@ -18,6 +18,7 @@ import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.
 import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { BuyerHeaderComponent } from './components/buyer/buyer-header/buyer-header.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SecondRequestComponent,
     AdminLoginComponent,
     SupplierMenuComponent,
+    BuyerHeaderComponent,
   ],
   imports: [
     SparkAngularModule,

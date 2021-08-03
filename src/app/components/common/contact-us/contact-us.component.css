@@ -1,7 +1,7 @@
 
 .contact-us-body {
   /* background: url('/assets/makerequest-background.png') no-repeat center center fixed; */
-  background-color: #476072;
+  background-color: #B2B1B9;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -12,7 +12,19 @@
 
 label{
   color: #FFF;
-  margin: 2%;
+}
+form{
+  margin-top: 2%;
+}
+input{
+  float: none;
+  margin-bottom: 1%;
+}
+.submit{
+  text-align: right;
+}
+textarea{
+  align-items: flex-end;
 }
 .jumbotron {
 background-color: Grey;

@@ -95,6 +95,9 @@ a:hover{
 .card-footer{
   padding: 0;
 }
+.homefooter{
+  margin-top: 100%;
+}
 
 /* *******************Signup************* */
 
@@ -107,17 +110,7 @@ a:hover{
 .btn-round:hover{
   background-color: #d1caca;
 }
-.alert{
-  border: 1px solid;
-	margin: 0;
-	padding: 15px 10px 15px 50px;
-	background-repeat: no-repeat;
-	background-position: 10px center;
-	max-width: 460px;
-  color: #9F6000;
-	background-color: #FEEFB3;
-	background-image: url('https://i.imgur.com/Z8q7ww7.png');
-}
+
 .signup-form{
   background-color: #BBBFCA;
   border-radius: 30px;
@@ -127,9 +120,7 @@ a:hover{
   font-size: 1rem;
 
 }
-.homefooter{
-  margin-top: 50%;
-}
+
 
 .labels{
     display: inline-block;
@@ -145,7 +136,10 @@ input {
   display: inline-block;
   float: right;
 }
-
+.input-group>.form-control, .input-group>.form-select {
+  width: 50%;
+}
+/* *********************************Media Queries************************************** */
 
 @media (max-width:992px){
   .headline{
@@ -172,7 +166,7 @@ input {
     width: 95%;
     margin: 4% auto auto;
   }
-
+  
 }
 @media only screen and (max-width: 480px) {
    html,body{
@@ -186,4 +180,7 @@ input {
     width: 95%;
     margin: 4% auto auto;
   }
+ 
 }
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 
@@ -17,22 +18,36 @@ export class HomeComponent implements OnInit {
     password: new FormControl('', Validators.required),
 });
 
-  constructor(private httpService: HttpService) { 
+
+  constructor(private httpService: HttpService, private router: Router) { 
 
   }
 
   ngOnInit() {
   }
 
-  public post(): void {
+  public async post(): Promise<void> {
     console.log(this.userLoginForm.value);
-    this.httpService.post('login', this.userLoginForm.value).subscribe((success) => {
-      console.log('success', success);
-      console.log(this.userLoginForm.controls['role'].value.roleName);
-    
-    }, (error) => {
-      console.log('error', error);
-    });
+    let loginResponse = null;
+    let userProfile = null;
+    try {
+      loginResponse = await this.httpService.post('login', this.userLoginForm.value);
+      localStorage.setItem('user', JSON.stringify(loginResponse));
+      userProfile = await this.httpService.get('userProfile');
+      let getUserRole = userProfile.data.role.roleName;
+      if(getUserRole === 'BUYER'){
+        this.router.navigate(['/MakeRequest']);
+        // alert(userProfile.data.firstName + " Successfully log in");
+      }else{
+        this.router.navigate(['/supplierMenu']);
+       
+
+      }
+
+      
+    } catch (error) {
+      alert("Wrong Username or Password");
+    }
   }
 
 }

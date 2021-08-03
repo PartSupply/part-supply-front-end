@@ -7,6 +7,11 @@
   font-family: 'Numans', sans-serif;
   font-weight: bold;
 }
+#welcomeNote{
+  color: white;
+  padding-top: 2%;
+  margin-left: 85%;
+}
 
 h4 {
   color: #DBE6FD;
