@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
             addressLineOne: new FormControl('', Validators.required),
             city: new FormControl('', Validators.required),
             state: new FormControl(null, Validators.required),
-            zipCode: new FormControl('', [Validators.maxLength(5), Validators.minLength(5)]),
+            zipCode: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern('^[0-9]{1,6}$')]),
             country: new FormControl(null, Validators.required),
           }),
     isMailDeliveryAcceptable: new FormControl(null, Validators.required),
@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
               roleName:new FormControl(null, Validators.required),
             }),
     phoneNumber: new FormControl('',[Validators.required, Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]),
-    faxNumber: new FormControl('', Validators.required),
+    faxNumber: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^[0-9]{1,10}$')]),
     deliveryRadius: new FormControl(null, Validators.required),
   });
   
@@ -39,29 +39,35 @@ export class SignupComponent implements OnInit {
   state: string[] = ['Michigan'];
   roleName: string[] = ['BUYER', 'SELLER'];
   country: string[] = ['usa'];
+  isEnabled: boolean = false;
+
 
   constructor(
-    private httpService: HttpService
+    private httpService: HttpService, private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  public post(): void {
+  public async post(): Promise<void> {
     console.log('test');
     const payload = this.transformPayLoad(this.userProfileForm.value);
-    this.httpService.post('signup', this.userProfileForm.value).subscribe((success) => {
-      console.log('success', success);
-      console.log(this.userProfileForm.controls['role'].value.roleName);
-
-    }, (error) => {
-      console.log('error', error);
-    });
+    const response = await this.httpService.post('signup', this.userProfileForm.value);
+    console.log(response);
+    this.router.navigate(['/home']);
   }
 
   private transformPayLoad(payload: any) {
     payload.isMailDeliveryAcceptable = payload.isMailDeliveryAcceptable === 'No' ? false : true;
     return payload;
   }
+
+  checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
+    let pass = this.userProfileForm.get('password').value;
+    let confirmPass = this.userProfileForm.get('varifyPassword').value
+    return pass === confirmPass ? null : { notSame: true }
+  }
+    
+  }
   
-}
+
