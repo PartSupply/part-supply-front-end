@@ -37,17 +37,12 @@ export class HomeComponent implements OnInit {
       let getUserRole = userProfile.data.role.roleName;
       if(getUserRole === 'BUYER'){
         this.router.navigate(['/MakeRequest']);
-        // alert(userProfile.data.firstName + " Successfully log in");
+        alert(userProfile.data.firstName + "  " +"Successfully log in");
       }else{
         this.router.navigate(['/supplierMenu']);
-       
-
-      }
-
-      
+      }    
     } catch (error) {
       alert("Wrong Username or Password");
     }
   }
-
 }

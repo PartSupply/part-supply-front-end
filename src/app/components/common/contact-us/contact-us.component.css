@@ -10,22 +10,7 @@
   font-weight: bold;
 }
 
-label{
-  color: #FFF;
-}
-form{
-  margin-top: 2%;
-}
-input{
-  float: none;
-  margin-bottom: 1%;
-}
-.submit{
-  text-align: right;
-}
-textarea{
-  align-items: flex-end;
-}
+
 .jumbotron {
 background-color: Grey;
 color: white;
@@ -45,17 +30,61 @@ font-size: 24px;
 p {
   color: #e5e5e5;
   font-weight: 600;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   text-align: center;
   padding-bottom: 0;
+  /* margin-top: 25%; */
+  background-color: #B2B1B9;
+  
 }
-@media only screen and (max-width:992px) {
+
+
+.hidden {
+	display: none
+}
+.visible {
+	display: block
+}
+.center-text {
+	text-align: center
+}
+form.contact {
+	display: flex;
+	flex-direction: column;
+	max-width: 200px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+input,
+button {
+	margin-bottom: 10px;
+}
+button {
+	margin-top: 10px;
+	background-color: transparent;
+	color: black;
+	border: 1px solid black;
+	padding: 4px 16px;
+	transition: 0.4s;
+	width: 100%;
+	margin-top: 10px;
+}
+button:hover:enabled{
+	color: white;
+	background-color: black;
+}
+
+/* half of my laptop size 992 px */
+@media only screen and (min-width:768px) {
 
   p {
-    margin-top: 0;
+    margin-top: 10%;
   }
 }
-@media only screen and (max-width:480px) {
+/* mobile view 480px */
+@media only screen and (max-width:480px) { 
   .contact-us-body {
     height: 100%;
     width: 100%;
@@ -66,13 +95,13 @@ p {
   .h1{
     font-size: 24px;
   }
-  p {
-    font-size: 0.8rem;
-  }
 }
-@media only screen and (max-width:1030px) {
+@media (max-width:1400px) {
   .contact-us-body {
     height: 100%;
     width: 100%;
   }
 }
+/* my laptop size 1400px */
+
+
