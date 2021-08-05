@@ -3,8 +3,11 @@
 
 
 
-<div class="contact-us-body">
-  <div class="jumbotron jumbotron-sm">
+
+  
+  <!-- <div class="container"> -->
+      <div class="contact-us-body">
+      <div class="jumbotron jumbotron-sm">
       <div class="container">
           <div class="row">
               <div class="col-sm-12 col-lg-12">
@@ -14,18 +17,23 @@
           </div>
       </div>
   </div>
-  <div class="container">
-    <form>
-        <label for="">Your Name</label><br>
-          <input type="text" name="Name"value=""><br>
-            <label for="">Your Email</label><br>
-            <input type="email" name="Email" value=""><br>
-            <label for="">Your Message</label><br>
-            <textarea name="Message" rows="10" cols="30"></textarea><br>
-            <input type="submit" value="Send">
+    <form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+        Name
+        <input [formControl]="name" required>
+        Email
+        <input [formControl]="email" placeholder="email@example.com" required>
+        Message
+        <textarea [formControl]="message" maxlength="800" rows="5" cols="30" placeholder="I'm interested in..." required></textarea>
+        <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+        <input [formControl]="honeypot" class="hidden" type="text" />
+        <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+          <span>{{responseMessage}}</span>
+        </div>
       </form>
-     
+    
+  
   </div>
-    <p>© <span>2021</span> <a href="#" class="transition">Part Supply App</a> All rights reserved.</p>
+  
+    
 
-</div>
+<!-- </div> -->

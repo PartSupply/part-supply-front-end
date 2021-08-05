@@ -4,7 +4,7 @@
   <div class="section section-signup">
     <div class="container">
       <div class="row">
-          <form [formGroup]= "userProfileForm" class="form signup-form" method="post" action="/signup" novalidate>
+          <form [formGroup]= "userProfileForm" class="form signup-form" method="post" action="" novalidate>
             <div class="card-header text-center">
               <h3 class="card-title"><i class="large material-icons">account_circle</i> Sign Up</h3>
             </div>
@@ -107,7 +107,7 @@
                   <small *ngIf="(userProfileForm.get('address.zipCode').errors?.required)" class="text-danger"> Zipcode is required</small>
                   <!--question mark(?) is a safe navigation operator-->
                   <small *ngIf="(userProfileForm.get('address.zipCode').errors?.minlength)" class="text-danger">minimum length must be 5 numbers</small>
-                  <small *ngIf="(userProfileForm.get('phoneNumber').errors?.pattern)" class="text-danger">Please provide a valid zipcode</small>  
+                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.pattern)" class="text-danger">Please provide a valid zipcode</small>  
                 </div>
 
 
