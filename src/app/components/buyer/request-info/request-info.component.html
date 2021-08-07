@@ -21,15 +21,32 @@
         <div class="form-group">
           <label for="VIN">VIN</label>
           <input formControlName = "vinNumber" type="text" maxlength="17" class="form-control" name="VIN" (blur)="onBlurMethod($event)" placeholder="Type here..." />
-          <h6 class="text-success">{{val}}</h6>
         </div>
         
 
         <div *ngIf="(vehicleInfoForm.get('vinNumber').invalid) && (vehicleInfoForm.get('vinNumber').touched) || (vehicleInfoForm.get('vinNumber').dirty)">
-          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.required)" class="text-danger"> VIN Number is Required</small>
-          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.minlength)" class="text-danger">VIN number must be 17 characters long </small>
-          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.pattern)" class="text-danger">Please provide a valid VIN number</small>
-         </div>
+          <div *ngIf="(vehicleInfoForm.get('vinNumber').errors?.required)" class="text-danger"> VIN Number is Required</div>
+          <div *ngIf="(vehicleInfoForm.get('vinNumber').errors?.minlength)" class="text-danger">VIN number must be 17 characters long </div>
+          <div *ngIf="(vehicleInfoForm.get('vinNumber').errors?.pattern)" class="text-danger">Please provide a valid VIN number</div>
+          <div class="text-danger" *ngIf="vinError !== ''">{{vinError}}</div>
+        </div>
+
+        <div *ngIf="shouldDisplayVehicleInfo" >
+          <div class="form-group">
+            <label for="VIN">Make</label>
+            <div class="label">{{vehicleInfoForm.get('make').value}}</div>
+          </div>
+  
+          <div class="form-group">
+            <label for="VIN">Model</label>
+            <div class="label">{{vehicleInfoForm.get('model').value}}</div>
+          </div>
+  
+          <div class="form-group">
+            <label for="VIN">Year</label>
+            <div class="label">{{vehicleInfoForm.get('year').value}}</div>
+          </div>
+        </div>
 
         
         <div class="form-group">
@@ -38,8 +55,7 @@
         </div>
         <div *ngIf="(vehicleInfoForm.get('partName').invalid) && (vehicleInfoForm.get('partName').touched) || (vehicleInfoForm.get('partName').dirty)">
           <small *ngIf="(vehicleInfoForm.get('partName').errors?.required)" class="text-danger"> Feild is required</small>
-          
-          </div>
+        </div>
 
         <div class="form-group">
           <label for="type">Type of Part</label><br>
@@ -53,11 +69,10 @@
 
         <div *ngIf="(vehicleInfoForm.get('partType').invalid) && (vehicleInfoForm.get('partType').touched) || (vehicleInfoForm.get('partType').dirty)">
           <small *ngIf="(vehicleInfoForm.get('partType').errors?.required)" class="text-danger"> Feild is required</small>
-          
-          </div>
+        </div>
 
         <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" type="submit">SUBMIT</button>
-        <button class="btn btn-danger clear-btn" onclick="location.reload()" type="submit">Clear</button>
+        <button class="btn btn-danger clear-btn" (click)="formReset()" type="submit">Clear</button>
       </form>
     </div>
   </div>

@@ -13,9 +13,17 @@ export class HttpService {
     ) {}
 
     public async post<T>(url: string, payload: any): Promise<T> {
+        const user: any = JSON.parse(localStorage.getItem('user'));
+        const headerDict = {
+            'Authorization': `Bearer ${user.access_token}`,
+        };
+        const requestOptions = {
+            headers: new HttpHeaders(headerDict),
+        };
         return await this.httpClient.post<T>(
             `${environment.baseUrl}/${url}`,
-            payload
+            payload,
+            requestOptions
         ).toPromise();
     }
 

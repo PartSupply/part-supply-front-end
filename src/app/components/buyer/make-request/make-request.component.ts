@@ -17,6 +17,9 @@ export class MakeRequestComponent implements OnInit {
   }
   public async post(): Promise<void> {
     const response = await this.httpService.post('logout',null);
+    // Remove localstorage session info 
+    localStorage.removeItem('user');
+    this.router.navigate(['/home']);
   }
   
 }
