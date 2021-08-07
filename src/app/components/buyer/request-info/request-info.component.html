@@ -1,5 +1,4 @@
 
-
 <div class="sidebar">
 <img src="/assets/company_log.jpeg" class="companylogo" alt="company logo" width="200px" height="50px">
   <a class="active" href="home">Home</a>
@@ -11,8 +10,6 @@
 
 </div>
 
-
-
 <div class="container">
 
   <div class="main">
@@ -23,15 +20,15 @@
         
         <div class="form-group">
           <label for="VIN">VIN</label>
-          <input formControlName = "VINnumber" type="text" maxlength="17" class="form-control" name="VIN" placeholder="Type here..." />
-          
+          <input formControlName = "vinNumber" type="text" maxlength="17" class="form-control" name="VIN" (blur)="onBlurMethod($event)" placeholder="Type here..." />
+          <h6 class="text-success">{{val}}</h6>
         </div>
-        <button ng-click="getVin()">OK</button>
+        
 
-        <div *ngIf="(vehicleInfoForm.get('VINnumber').invalid) && (vehicleInfoForm.get('VINnumber').touched) || (vehicleInfoForm.get('VINnumber').dirty)">
-          <small *ngIf="(vehicleInfoForm.get('VINnumber').errors?.required)" class="text-danger"> VIN Number is Required</small>
-          <small *ngIf="(vehicleInfoForm.get('VINnumber').errors?.minlength)" class="text-danger">VIN number must be 17 characters long </small>
-          <small *ngIf="(vehicleInfoForm.get('VINnumber').errors?.pattern)" class="text-danger">Please provide a valid VIN number</small>
+        <div *ngIf="(vehicleInfoForm.get('vinNumber').invalid) && (vehicleInfoForm.get('vinNumber').touched) || (vehicleInfoForm.get('vinNumber').dirty)">
+          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.required)" class="text-danger"> VIN Number is Required</small>
+          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.minlength)" class="text-danger">VIN number must be 17 characters long </small>
+          <small *ngIf="(vehicleInfoForm.get('vinNumber').errors?.pattern)" class="text-danger">Please provide a valid VIN number</small>
          </div>
 
         
@@ -59,20 +56,11 @@
           
           </div>
 
-        <button [disabled]= "!vehicleInfoForm.valid" class="btn btn-primary" type="submit">SUBMIT</button>
+        <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" type="submit">SUBMIT</button>
         <button class="btn btn-danger clear-btn" onclick="location.reload()" type="submit">Clear</button>
-
-
       </form>
-
-
-
     </div>
-
-  
   </div>
-
-  
 </div>
 <p>© <span>2021</span> <a href="#" class="transition">Part Supply App</a> All rights reserved.</p>
 
