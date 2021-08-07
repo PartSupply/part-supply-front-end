@@ -11,6 +11,9 @@ h5{
   color: Yellow;
 
 }
+.container{
+  font-size: 0.7rem;
+}
 .companylogo{
   filter: drop-shadow(7px 7px 7px #666666);
        -webkit-filter: drop-shadow(7px 7px 7px #666666);
@@ -36,7 +39,7 @@ h5{
 .main-center{
  	margin-top: 30px;
  	margin: 0 auto;
- 	max-width: 400px;
+ 	max-width: 350px;
     padding: 10px 40px;
 	background:#BBBFCA;
 	    color: #FFF;
@@ -139,8 +142,7 @@ p {
 
   } */
   body {
-  margin: 0;
-
+  font-size: 0.5rem;
 }
 
 .sidebar {
@@ -151,6 +153,7 @@ p {
   position: fixed;
   height: 100%;
   overflow: auto;
+  font-size: 0.7rem;
 }
 
 .sidebar a {
@@ -170,21 +173,22 @@ p {
   color: white;
 }
 
-
-
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
-
+  .sidebar a {
+    float: left;
+  }
 }
-
-@media screen and (max-width: 400px) {
+/* mobile view */
+@media screen and (max-width: 480px) {
   .sidebar a {
     text-align: center;
     float: none;
+    
   }
 }
+
