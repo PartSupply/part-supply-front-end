@@ -12,11 +12,16 @@ export class HttpService {
         private httpClient: HttpClient,
     ) {}
 
-    public async post<T>(url: string, payload: any): Promise<T> {
+    public async post<T>(url: string, payload: any, shouldCheckToken: boolean = true): Promise<T> {
         const user: any = JSON.parse(localStorage.getItem('user'));
-        const headerDict = {
-            'Authorization': `Bearer ${user.access_token}`,
-        };
+
+        let headerDict = null;
+        if (shouldCheckToken) {
+            headerDict = {
+                'Authorization': `Bearer ${user.access_token}`,
+            };
+        }
+        
         const requestOptions = {
             headers: new HttpHeaders(headerDict),
         };

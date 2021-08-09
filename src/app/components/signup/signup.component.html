@@ -42,7 +42,7 @@
 
               <div class="input-group no-border">
                 <label class="labels"for="Password">Password </label>
-                <input [class.is-invalid] = "userProfileForm.get('password').invalid && userProfileForm.get('password').touched" formControlName = "password" type="password" class="form-control" placeholder="Type Here..." ngModel minlength="8" required>
+                <input [class.is-invalid] = "userProfileForm.get('password').invalid && userProfileForm.get('password').touched" formControlName = "password" type="password" class="form-control" placeholder="Type Here..." minlength="8" required>
               </div>
 
               <div *ngIf="(userProfileForm.get('password').invalid) && (userProfileForm.get('password').touched) || (userProfileForm.get('password').dirty)">
@@ -53,7 +53,7 @@
               
               <div class="input-group no-border">
                 <label class="labels"for="Re-enter password">Re-enter Password </label>
-                <input [class.is-invalid] = "userProfileForm.get('verifyPassword').invalid && userProfileForm.get('verifyPassword').touched"  formControlName = "verifyPassword" type="password" class="form-control form1" placeholder="Type Here..." ngModel minlength="8" required>
+                <input [class.is-invalid] = "userProfileForm.get('verifyPassword').invalid && userProfileForm.get('verifyPassword').touched"  formControlName = "verifyPassword" type="password" class="form-control form1" placeholder="Type Here..." minlength="8" required>
               </div>
               <div *ngIf="(userProfileForm.get('verifyPassword').invalid) && (userProfileForm.get('verifyPassword').touched) || (userProfileForm.get('verifyPassword').dirty)">
                 <small *ngIf="(userProfileForm.get('verifyPassword').errors?.required)" class="text-danger"> Field is required</small>
@@ -100,7 +100,7 @@
 
                 <div class="input-group no-border">
                   <label class="labels"for="zipcode">Zipcode </label>
-                  <input [class.is-invalid] = "userProfileForm.get('address.zipCode').invalid && userProfileForm.get('address.zipCode').touched" formControlName = "zipCode" type="text" class="form-control" placeholder="Type Here..." ngModel maxlength="5" required>
+                  <input [class.is-invalid] = "userProfileForm.get('address.zipCode').invalid && userProfileForm.get('address.zipCode').touched" formControlName = "zipCode" type="text" class="form-control" placeholder="Type Here..."  maxlength="5" required>
                 </div>
 
                 <div *ngIf="(userProfileForm.get('address.zipCode').invalid) && (userProfileForm.get('address.zipCode').touched) || (userProfileForm.get('address.zipCode').dirty)">
@@ -150,7 +150,7 @@
               
               <div class="input-group no-border">
                 <label class="labels"for="phoneNo.">Phone No. </label>
-                <input [class.is-invalid] = "userProfileForm.get('phoneNumber').invalid && userProfileForm.get('phoneNumber').touched" formControlName = "phoneNumber" type="text" class="form-control" placeholder="Type Here..." ngModel maxlength= "10" minlength="10" required>
+                <input [class.is-invalid] = "userProfileForm.get('phoneNumber').invalid && userProfileForm.get('phoneNumber').touched" formControlName = "phoneNumber" type="text" class="form-control" placeholder="Type Here..."  maxlength= "10" minlength="10" required>
               </div>
 
               <div *ngIf="(userProfileForm.get('phoneNumber').invalid) && (userProfileForm.get('phoneNumber').touched) || (userProfileForm.get('phoneNumber').dirty)">
@@ -161,7 +161,7 @@
 
               <div class="input-group no-border">
                 <label class="labels"for="fax no.">Fax No.</label>
-                <input [class.is-invalid] = "userProfileForm.get('faxNumber').invalid && userProfileForm.get('faxNumber').touched" formControlName= "faxNumber" type="text" class="form-control" ngModel maxlength="10" placeholder="Type Here..." required>
+                <input [class.is-invalid] = "userProfileForm.get('faxNumber').invalid && userProfileForm.get('faxNumber').touched" formControlName= "faxNumber" type="text" class="form-control" maxlength="10" placeholder="Type Here..." required>
 
               </div>
               <div *ngIf="(userProfileForm.get('faxNumber').invalid) && (userProfileForm.get('faxNumber').touched) || (userProfileForm.get('faxNumber').dirty)">
@@ -173,7 +173,7 @@
               <div class="input-group no-border">
                 <label class="labels" for="delivery radius">Delivery Radius</label>
                 
-                <select [class.is-invalid] = "userProfileForm.get('deliveryRadius').invalid && userProfileForm.get('deliveryRadius').touched" formControlName = "deliveryRadius" [disabled]="isEnabled" class="form-control" name="" required>
+                <select [class.is-invalid] = "userProfileForm.get('deliveryRadius').invalid && userProfileForm.get('deliveryRadius').touched" formControlName = "deliveryRadius" class="form-control" name="" required>
                   <option *ngFor="let d of deliveryRadius" [ngValue]="d">{{ d }}</option>
                 </select>
               </div>
