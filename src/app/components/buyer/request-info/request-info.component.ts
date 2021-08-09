@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
+// import {requireCheckboxesToBeCheckedValidator} from './require-checkboxes-to-be-checked.validator';
+
 
 @Component({
   selector: 'app-request-info',
   templateUrl: './request-info.component.html',
   styleUrls: ['./request-info.component.css']
 })
+
 export class RequestInfoComponent implements OnInit {
 
   vehicleInfoForm = new FormGroup({
@@ -15,12 +19,18 @@ export class RequestInfoComponent implements OnInit {
     make: new FormControl(''),
     model: new FormControl(''),
     partName: new FormControl('', Validators.required),
-    partType: new FormControl('', Validators.required),
+    partType: new FormControl(''),
+    // myCheckboxGroup: new FormGroup({
+    //   myCheckbox1: new FormControl(false),
+    //   myCheckbox2: new FormControl(false),
+    //   myCheckbox3: new FormControl(false),
+    // }, requireCheckboxesToBeCheckedValidator()),
+    
   });
   public shouldDisplayVehicleInfo: boolean = false;
   public vinError: string = '';
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private router: Router) { }
 
   public ngOnInit() {
   }
@@ -54,8 +64,17 @@ export class RequestInfoComponent implements OnInit {
   public formReset() {
     this.shouldDisplayVehicleInfo = false;
     this.vehicleInfoForm.reset();
+
   }
+  public async post(): Promise<void> {
+    const response = await this.httpService.post('logout',null);
+    // Remove localstorage session info 
+    localStorage.removeItem('user');
+    this.router.navigate(['/home']);
+  }
+
 }
+
  
 
 

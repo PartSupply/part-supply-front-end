@@ -6,12 +6,12 @@
   <a href="services">Services</a>
   <a href="contactUs">Contact-us</a>
   <a href="">View all requests</a>
-  <a href="home">Logout</a>
+  <a (click)="post()" >Logout</a>
 
 </div>
 
 <div class="container">
-
+  <h4>Part Purchasing Menu</h4>
   <div class="main">
     <div class="main-center">
       <h5>Enter Part Request</h5>
@@ -56,20 +56,23 @@
         <div *ngIf="(vehicleInfoForm.get('partName').invalid) && (vehicleInfoForm.get('partName').touched) || (vehicleInfoForm.get('partName').dirty)">
           <small *ngIf="(vehicleInfoForm.get('partName').errors?.required)" class="text-danger"> Feild is required</small>
         </div>
+    
+   <div class="form-group">
+        <label for="type">Type of Part</label><br>
+        ​<input  formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="">
+        <label class="check-labels" for="used">Used</label><br>
+        <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="" >
+        <label class="check-labels" for="new">New</label><br>
+        <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="">
+        <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
+        <!-- <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="" checked>
+        <label class="check-labels" for="Remanufactured">All</label><br> -->
+  </div>
+        
 
-        <div class="form-group">
-          <label for="type">Type of Part</label><br>
-          ​<input [class.is-invalid] = "vehicleInfoForm.get('partType').invalid && vehicleInfoForm.get('partType').touched" formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="">
-          <label class="check-labels" for="used">Used</label><br>
-          <input class="checkbox" type="checkbox" id="" name="" value="">
-          <label class="check-labels" for="new">New</label><br>
-          <input class="checkbox" type="checkbox" id="" name="" value="">
-          <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
-        </div>
-
-        <div *ngIf="(vehicleInfoForm.get('partType').invalid) && (vehicleInfoForm.get('partType').touched) || (vehicleInfoForm.get('partType').dirty)">
+        <!-- <div *ngIf="(vehicleInfoForm.get('partType').invalid) && (vehicleInfoForm.get('partType').touched) || (vehicleInfoForm.get('partType').dirty)">
           <small *ngIf="(vehicleInfoForm.get('partType').errors?.required)" class="text-danger"> Feild is required</small>
-        </div>
+        </div> -->
 
         <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" type="submit">SUBMIT</button>
         <button class="btn btn-danger clear-btn" (click)="formReset()" type="submit">Clear</button>

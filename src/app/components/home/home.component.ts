@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       userProfile = await this.httpService.get('userProfile');
       let getUserRole = userProfile.data.role.roleName;
       if(getUserRole === 'BUYER'){
-        this.router.navigate(['/MakeRequest']);
+        this.router.navigate(['/requestInfo']);
         alert(userProfile.data.firstName + "  " +"Successfully log in");
       }else{
         this.router.navigate(['/supplierMenu']);
