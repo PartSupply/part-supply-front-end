@@ -67,7 +67,15 @@ export class SignupComponent implements OnInit {
     let confirmPass = this.userProfileForm.get('varifyPassword').value
     return pass === confirmPass ? null : { notSame: true }
   }
-    
+  public async onBlur(event: any) {
+    let inputVal = event.target.value;
+    console.log(inputVal);
+    if (inputVal === '1: SELLER') {
+      console.log("write here");
+      
+    }
+
   }
+}
   
 

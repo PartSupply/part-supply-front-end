@@ -10,6 +10,12 @@ h5{
   margin-left: 10%;
   color: #FFF;
 }
+h4 {
+  color: #DBE6FD;
+  text-align: center;
+  padding-top: 90px;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
 .view-request:hover{
   color: Yellow;
 
@@ -65,9 +71,11 @@ button{
 }
 button:hover{
   background-color: blue;
+  box-shadow: 5px 10px 18px yellow;
 }
 .clear-btn:hover{
   background-color: red;
+  box-shadow: 5px 10px 18px yellow;
 }
 p {
   color: #e5e5e5;
@@ -78,6 +86,7 @@ p {
 }
 .clear-btn{
   margin-left: 10%;
+  
 }
 @media only screen and (max-width:992px) {
   p {
@@ -89,6 +98,11 @@ p {
   .view-request{
     margin-left: 10%;
     color: #FFF;
+  }
+  h4 {
+    font-size: 1rem;
+    padding-top: 50px;
+    margin-right: 5%;
   }
 }
 @media only screen and (max-width:480px) {
@@ -146,6 +160,7 @@ p {
   } */
   body {
   font-size: 0.5rem;
+  
 }
 
 .sidebar {
