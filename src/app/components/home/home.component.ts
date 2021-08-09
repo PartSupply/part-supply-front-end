@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     let loginResponse = null;
     let userProfile = null;
     try {
-      loginResponse = await this.httpService.post('login', this.userLoginForm.value);
+      loginResponse = await this.httpService.post('login', this.userLoginForm.value, false);
       localStorage.setItem('user', JSON.stringify(loginResponse));
       userProfile = await this.httpService.get('userProfile');
       let getUserRole = userProfile.data.role.roleName;
@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/supplierMenu']);
       }    
     } catch (error) {
+      console.log(error);
       alert("Wrong Username or Password");
     }
   }

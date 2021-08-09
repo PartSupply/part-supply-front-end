@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
   public async post(): Promise<void> {
     console.log('test');
     const payload = this.transformPayLoad(this.userProfileForm.value);
-    const response = await this.httpService.post('signup', this.userProfileForm.value);
+    const response = await this.httpService.post('signup', this.userProfileForm.value, false);
     console.log(response);
     this.router.navigate(['/home']);
   }
