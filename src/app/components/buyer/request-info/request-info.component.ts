@@ -66,13 +66,28 @@ export class RequestInfoComponent implements OnInit {
     this.vehicleInfoForm.reset();
 
   }
-  public async post(): Promise<void> {
+  public async logout(): Promise<void> {
     const response = await this.httpService.post('logout',null);
     // Remove localstorage session info 
     localStorage.removeItem('user');
     this.router.navigate(['/home']);
   }
-
+  public async post(): Promise<void> {
+    console.log('test');
+    const payload = {
+      year: this.vehicleInfoForm.get('year').value,
+      make: this.vehicleInfoForm.get('make').value,
+      model: this.vehicleInfoForm.get('model').value,
+      vinNumber: this.vehicleInfoForm.get('vinNumber').value,
+      partName: this.vehicleInfoForm.get('partName').value,
+      partType: 'NEW',
+      numberOfOffers: 0,
+      offerStatus: 'OPEN',
+    }
+    const response = await this.httpService.post('buyer/submitPartRequest',payload);
+    console.log(response);
+    
+  }
 }
 
  

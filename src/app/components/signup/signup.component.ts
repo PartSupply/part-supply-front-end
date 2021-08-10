@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
             }),
     phoneNumber: new FormControl('',[Validators.required, Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]),
     faxNumber: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^[0-9]{1,10}$')]),
-    deliveryRadius: new FormControl(null, Validators.required),
+    deliveryRadius: new FormControl(''),
   });
   
   deliveryRadius: string[] = ['5miles', '10miles', '20miles', '25miles', 'all'];
@@ -52,13 +52,14 @@ export class SignupComponent implements OnInit {
   public async post(): Promise<void> {
     console.log('test');
     const payload = this.transformPayLoad(this.userProfileForm.value);
-    const response = await this.httpService.post('signup', this.userProfileForm.value, false);
+    const response = await this.httpService.post('signup', payload, false);
     console.log(response);
     this.router.navigate(['/home']);
   }
 
   private transformPayLoad(payload: any) {
     payload.isMailDeliveryAcceptable = payload.isMailDeliveryAcceptable === 'No' ? false : true;
+    payload.deliveryRadius = payload.role.roleName === 'BUYER' ? null : payload.deliveryRadius;
     return payload;
   }
 
@@ -71,8 +72,11 @@ export class SignupComponent implements OnInit {
     let inputVal = event.target.value;
     console.log(inputVal);
     if (inputVal === '1: SELLER') {
-      console.log("write here");
+      document.getElementById('deliveryRadius').style.display = "block";
+  
       
+    }else{
+      document.getElementById('deliveryRadius').style.display = "none";
     }
 
   }
