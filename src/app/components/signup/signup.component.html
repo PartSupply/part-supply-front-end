@@ -170,7 +170,7 @@
                 <small *ngIf="(userProfileForm.get('faxNumber').errors?.minlength)" class="text-danger">minimum length must be 10 numbers</small>
                 <small *ngIf="(userProfileForm.get('faxNumber').errors?.pattern)" class="text-danger">Please provide a valid Fax number</small>
                 </div>
-              <div  class="input-group no-border">
+              <div id="deliveryRadius" class="input-group no-border">
                 <label class="labels" for="delivery radius">Delivery Radius</label>
                 <select [class.is-invalid] = "userProfileForm.get('deliveryRadius').invalid && userProfileForm.get('deliveryRadius').touched" formControlName = "deliveryRadius" class="form-control" name="" required>
                   <option *ngFor="let d of deliveryRadius" [ngValue]="d">{{ d }}</option>

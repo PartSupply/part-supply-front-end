@@ -6,7 +6,7 @@
   <a href="services">Services</a>
   <a href="contactUs">Contact-us</a>
   <a href="">View all requests</a>
-  <a (click)="post()" >Logout</a>
+  <a (click)='logout()'>Logout</a>
 
 </div>
 
@@ -59,11 +59,11 @@
     
    <div class="form-group">
         <label for="type">Type of Part</label><br>
-        ​<input  formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="">
+        ​<input  formControlName = "partType" class="checkbox" type="checkbox" >
         <label class="check-labels" for="used">Used</label><br>
-        <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="" >
+        <input formControlName = "partType" class="checkbox" type="checkbox" >
         <label class="check-labels" for="new">New</label><br>
-        <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="">
+        <input formControlName = "partType" class="checkbox" type="checkbox" >
         <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
         <!-- <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="" checked>
         <label class="check-labels" for="Remanufactured">All</label><br> -->
@@ -74,8 +74,8 @@
           <small *ngIf="(vehicleInfoForm.get('partType').errors?.required)" class="text-danger"> Feild is required</small>
         </div> -->
 
-        <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" type="submit">SUBMIT</button>
-        <button class="btn btn-danger clear-btn" (click)="formReset()" type="submit">Clear</button>
+        <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" (click) ="post()" type="submit">SUBMIT</button>
+        <button class="btn btn-danger clear-btn"  (click)="formReset()" type="submit">Clear</button>
       </form>
     </div>
   </div>

@@ -21,7 +21,7 @@ h4 {
 
 }
 .container{
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 .companylogo{
   filter: drop-shadow(7px 7px 7px #666666);
@@ -171,7 +171,7 @@ p {
   position: fixed;
   height: 100%;
   overflow: auto;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .sidebar a {
