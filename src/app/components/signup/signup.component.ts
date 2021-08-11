@@ -70,15 +70,24 @@ export class SignupComponent implements OnInit {
   }
   public async onBlur(event: any) {
     let inputVal = event.target.value;
+    const control = this.userProfileForm.get('deliveryRadius');
     console.log(inputVal);
     if (inputVal === '1: SELLER') {
       document.getElementById('deliveryRadius').style.display = "block";
-  
-      
-    }else{
+      if (control) {
+        control.setValidators([Validators.required]);
+        control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+      }
+    } else {
       document.getElementById('deliveryRadius').style.display = "none";
+      this.userProfileForm.get('deliveryRadius').clearValidators();
+      if (control) {
+        control.reset();
+        control.clearValidators();
+        control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+      }
     }
-
+    console.log(this.userProfileForm.get('deliveryRadius'));
   }
 }
   

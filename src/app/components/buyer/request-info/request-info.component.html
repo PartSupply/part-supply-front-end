@@ -57,13 +57,13 @@
           <small *ngIf="(vehicleInfoForm.get('partName').errors?.required)" class="text-danger"> Feild is required</small>
         </div>
     
-   <div class="form-group">
+   <div class="form-group" formGroupName="partType">
         <label for="type">Type of Part</label><br>
-        ​<input  formControlName = "partType" class="checkbox" type="checkbox" >
+        ​<input  formControlName = "used" class="checkbox" type="checkbox" >
         <label class="check-labels" for="used">Used</label><br>
-        <input formControlName = "partType" class="checkbox" type="checkbox" >
+        <input formControlName = "new" class="checkbox" type="checkbox" >
         <label class="check-labels" for="new">New</label><br>
-        <input formControlName = "partType" class="checkbox" type="checkbox" >
+        <input formControlName = "reManufactured" class="checkbox" type="checkbox" >
         <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
         <!-- <input formControlName = "partType" class="checkbox" type="checkbox" id="" name="" value="" checked>
         <label class="check-labels" for="Remanufactured">All</label><br> -->

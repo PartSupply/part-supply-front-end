@@ -19,12 +19,11 @@ export class RequestInfoComponent implements OnInit {
     make: new FormControl(''),
     model: new FormControl(''),
     partName: new FormControl('', Validators.required),
-    partType: new FormControl(''),
-    // myCheckboxGroup: new FormGroup({
-    //   myCheckbox1: new FormControl(false),
-    //   myCheckbox2: new FormControl(false),
-    //   myCheckbox3: new FormControl(false),
-    // }, requireCheckboxesToBeCheckedValidator()),
+    partType: new FormGroup({
+      used: new FormControl(false),
+      new: new FormControl(false),
+      reManufactured: new FormControl(false),
+    }, requireCheckboxesToBeCheckedValidator()),
     
   });
   public shouldDisplayVehicleInfo: boolean = false;
@@ -80,7 +79,11 @@ export class RequestInfoComponent implements OnInit {
       model: this.vehicleInfoForm.get('model').value,
       vinNumber: this.vehicleInfoForm.get('vinNumber').value,
       partName: this.vehicleInfoForm.get('partName').value,
-      partType: 'NEW',
+      partType: {
+        new: this.vehicleInfoForm.get('partType.new').value,
+        used: this.vehicleInfoForm.get('partType.used').value,
+        reManufactured: this.vehicleInfoForm.get('partType.reManufactured').value,
+      },
       numberOfOffers: 0,
       offerStatus: 'OPEN',
     }
@@ -88,6 +91,28 @@ export class RequestInfoComponent implements OnInit {
     console.log(response);
     
   }
+}
+
+export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {
+  return function validate (formGroup: FormGroup) {
+    let checked = 0;
+
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.controls[key];
+
+      if (control.value === true) {
+        checked ++;
+      }
+    });
+
+    if (checked < minRequired) {
+      return {
+        requireOneCheckboxToBeChecked: true,
+      };
+    }
+
+    return null;
+  };
 }
 
  

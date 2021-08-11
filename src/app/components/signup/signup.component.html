@@ -138,7 +138,7 @@
               <div formGroupName = "role">
                 <div class="input-group no-border">
                   <label class="labels" for="signup as">Signup As</label>
-                  <select [class.is-invalid] = "userProfileForm.get('role.roleName').invalid && userProfileForm.get('role.roleName').touched" formControlName = "roleName" (blur)="onBlur($event)" class="form-control" name="" required>
+                  <select [class.is-invalid] = "userProfileForm.get('role.roleName').invalid && userProfileForm.get('role.roleName').touched" formControlName = "roleName" (change)="onBlur($event)" class="form-control" name="" required>
                     <option *ngFor="let d of roleName" [ngValue]="d">{{ d }}</option>
                   </select>
                 </div>
