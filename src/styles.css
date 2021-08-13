@@ -47,7 +47,7 @@ border-radius: 20px;
 }
 
 .card{
-height: 370px;
+height: 400px;
 margin-top: 5%;
 margin-bottom: auto;
 width: 400px;
@@ -120,7 +120,9 @@ a:hover{
   font-size: 1rem;
 
 }
-
+.deliveryRadius{
+  width: 100% !important;
+}
 
 .labels{
     display: inline-block;
