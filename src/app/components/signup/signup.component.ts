@@ -88,23 +88,6 @@ export class SignupComponent implements OnInit {
       this.userProfileForm.get('verifyPassword').setValidators([Validators.required]);
       this.userProfileForm.get('verifyPassword').reset();  
     }
-
-    // if (inputPassword === '1: SELLER') {
-    //   document.getElementById('deliveryRadius').style.display = "block";
-    //   if (control) {
-    //     control.setValidators([Validators.required]);
-    //     control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
-    //   }
-    // } else {
-    //   document.getElementById('deliveryRadius').style.display = "none";
-    //   this.userProfileForm.get('deliveryRadius').clearValidators();
-    //   if (control) {
-    //     control.reset();
-    //     control.clearValidators();
-    //     control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
-    //   }
-    // }
-    // console.log(this.userProfileForm.get('deliveryRadius'));
   }
 }
   
