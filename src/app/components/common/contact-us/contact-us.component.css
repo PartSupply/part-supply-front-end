@@ -1,27 +1,25 @@
 
 .contact-us-body {
   /* background: url('/assets/makerequest-background.png') no-repeat center center fixed; */
-  background-color: #B2B1B9;
+  background-color:black;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   font-family: 'Numans', sans-serif;
   font-weight: bold;
+  color: white;
 }
 
 
 .jumbotron {
-background-color: Grey;
+background-color: black;
 color: white;
-border-radius: 0px;
-}
-.jumbotron-sm {
 padding-top: 24px;
 padding-bottom: 24px;
 }
 .jumbotron small {
-color: black;
+color: white;
 opacity: 0.5;
 }
 .h1 small {
@@ -64,16 +62,16 @@ button {
 button {
 	margin-top: 10px;
 	background-color: transparent;
-	color: black;
-	border: 1px solid black;
+	color: white;
+	border: 1px solid white;
 	padding: 4px 16px;
 	transition: 0.4s;
 	width: 100%;
 	margin-top: 10px;
 }
 button:hover:enabled{
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: white;
 }
 
 /* half of my laptop size 992 px */

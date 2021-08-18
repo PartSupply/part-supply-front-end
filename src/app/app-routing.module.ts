@@ -11,6 +11,9 @@ import { ContactUsComponent } from './components/common/contact-us/contact-us.co
 import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
 import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
 import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
+import { AuthGuardService as AuthGuard } from './auth-guard.service';
+import { RoleGuardService as RoleGuard } from './role-guard.service';
+import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
 
 const routes: Routes = [];
 
@@ -18,18 +21,30 @@ const routes: Routes = [];
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '',redirectTo: 'home', pathMatch: 'full'},
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
       { path: 'signup', component: SignupComponent},
       { path: 'about', component: AboutComponent},
       { path: 'services', component: ServicesComponent},
       { path: 'MakeRequest', component: MakeRequestComponent},
-      { path: 'requestInfo', component: RequestInfoComponent},
+      { path: 'requestInfo', component: RequestInfoComponent, canActivate: [RoleGuard, AuthGuard], 
+      data: { 
+        expectedRole: 'BUYER'
+      }}, // only for buyer
       { path: 'contactUs', component: ContactUsComponent},
       { path: 'secondRequest', component: SecondRequestComponent},
       { path: 'adminLogin', component: AdminLoginComponent},
-      { path: 'supplierMenu', component: SupplierMenuComponent},
-      
+      { path: 'supplierMenu', component: SupplierMenuComponent, canActivate: [RoleGuard, AuthGuard], 
+      data: { 
+        expectedRole: 'SELLER'
+      } 
+      },
+      { path: 'buyerRequestList', component: BuyerRequestsComponent, canActivate: [RoleGuard, AuthGuard],
+      data: {
+        expectedRole: 'BUYER'
+      }
+    },
+      //canActivate: [AuthGuard]
 
 
     ])

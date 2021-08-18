@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
+import { disableDebugTools } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
@@ -14,9 +15,9 @@ export class SignupComponent implements OnInit {
 
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+    email: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    verifyPassword: new FormControl('', Validators.minLength(8)),
+    verifyPassword: new FormControl(''),
     companyName: new FormControl('',Validators.required),
     address: new FormGroup({
             addressLineOne: new FormControl('', Validators.required),
@@ -39,16 +40,12 @@ export class SignupComponent implements OnInit {
   state: string[] = ['Michigan'];
   roleName: string[] = ['BUYER', 'SELLER'];
   country: string[] = ['usa'];
-  isEnabled: boolean = false;
-
-
   constructor(
     private httpService: HttpService, private router: Router
   ) { }
 
   ngOnInit() {
   }
-
   public async post(): Promise<void> {
     console.log('test');
     const payload = this.transformPayLoad(this.userProfileForm.value);
@@ -56,24 +53,17 @@ export class SignupComponent implements OnInit {
     console.log(response);
     this.router.navigate(['/home']);
   }
-
   private transformPayLoad(payload: any) {
     payload.isMailDeliveryAcceptable = payload.isMailDeliveryAcceptable === 'No' ? false : true;
     payload.deliveryRadius = payload.role.roleName === 'BUYER' ? null : payload.deliveryRadius;
     return payload;
   }
-
-  checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
-    let pass = this.userProfileForm.get('password').value;
-    let confirmPass = this.userProfileForm.get('varifyPassword').value
-    return pass === confirmPass ? null : { notSame: true }
-  }
-  public async onBlur(event: any) {
-    let inputVal = event.target.value;
+  public async SelectRole(inputVal: string) {
     const control = this.userProfileForm.get('deliveryRadius');
     console.log(inputVal);
     if (inputVal === '1: SELLER') {
       document.getElementById('deliveryRadius').style.display = "block";
+
       if (control) {
         control.setValidators([Validators.required]);
         control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
@@ -88,6 +78,16 @@ export class SignupComponent implements OnInit {
       }
     }
     console.log(this.userProfileForm.get('deliveryRadius'));
+  }
+  public async onBlurMethod(event: any) {  
+    const varifyPasswordField = event.target.value; 
+    console.log(varifyPasswordField); 
+    const passwordField = this.userProfileForm.get('password').value;
+    console.log(passwordField);
+    if (varifyPasswordField != passwordField) {
+      this.userProfileForm.get('verifyPassword').setValidators([Validators.required]);
+      this.userProfileForm.get('verifyPassword').reset();  
+    }
   }
 }
   

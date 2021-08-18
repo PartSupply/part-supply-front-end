@@ -45,4 +45,8 @@ export class HttpService {
             requestOptions,
         ).toPromise();
     }
+    // to checck user is logged in or not
+    loggedIn(){
+        return !!localStorage.getItem('user');
+    }
 }

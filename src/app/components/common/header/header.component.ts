@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  navbarOpen = false;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
   homeRoute(){
   this.router.navigate(['/home']);

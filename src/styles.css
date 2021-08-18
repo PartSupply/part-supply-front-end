@@ -11,9 +11,9 @@
                                                           min-height: 100%;
                                                         } */
 html,body{
-background: url('/assets/partsupply-background.png') no-repeat center center fixed;
+background: url('/assets/partsupply-background.png') no-repeat center center fixed; 
 background-size: cover;
-background-color: #AAAAAA;
+/* background-color:black; */
 background-repeat: no-repeat;
 font-family: 'Numans', sans-serif;
 width: 100%;
@@ -47,11 +47,12 @@ border-radius: 20px;
 }
 
 .card{
-height: 370px;
+height: 400px;
 margin-top: 5%;
 margin-bottom: auto;
 width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+background-color: #BBBFCA !important;
+border-radius: 20px;
 }
 .card-header h3{
 color: white;
@@ -120,7 +121,9 @@ a:hover{
   font-size: 1rem;
 
 }
-
+.deliveryRadius{
+  width: 100% !important;
+}
 
 .labels{
     display: inline-block;
