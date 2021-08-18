@@ -19,6 +19,9 @@ import { SupplierMenuComponent } from './components/seller/supplier-menu/supplie
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BuyerHeaderComponent } from './components/buyer/buyer-header/buyer-header.component';
+import { AuthGuardService} from './auth-guard.service';
+import { RoleGuardService } from './role-guard.service';
+import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { BuyerHeaderComponent } from './components/buyer/buyer-header/buyer-head
     AdminLoginComponent,
     SupplierMenuComponent,
     BuyerHeaderComponent,
+    BuyerRequestsComponent,
   ],
   imports: [
     SparkAngularModule,
@@ -46,7 +50,7 @@ import { BuyerHeaderComponent } from './components/buyer/buyer-header/buyer-head
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [RoleGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -37,8 +37,9 @@ export class HomeComponent implements OnInit {
       let getUserRole = userProfile.data.role.roleName;
       if(getUserRole === 'BUYER'){
         this.router.navigate(['/requestInfo']);
-        alert(userProfile.data.firstName + "  " +"Successfully log in");
+        alert((userProfile.data.firstName).toUpperCase() + " " + "logged in Successfully.");
       }else{
+        alert((userProfile.data.firstName).toUpperCase() + " " + "logged in Successfully.");
         this.router.navigate(['/supplierMenu']);
       }    
     } catch (error) {

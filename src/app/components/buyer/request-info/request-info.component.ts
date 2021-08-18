@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { promise } from 'protractor';
 import { HttpService } from 'src/app/services/http.service';
 // import {requireCheckboxesToBeCheckedValidator} from './require-checkboxes-to-be-checked.validator';
 
@@ -33,7 +34,7 @@ export class RequestInfoComponent implements OnInit {
 
   public ngOnInit() {
   }
-  val: string = "";
+  //val: string = "";
   
   public async onBlurMethod(event: any) {
     let inputValue = event.target.value;
@@ -89,8 +90,12 @@ export class RequestInfoComponent implements OnInit {
     }
     const response = await this.httpService.post('buyer/submitPartRequest',payload);
     console.log(response);
+    this.shouldDisplayVehicleInfo = false;
+    this.vehicleInfoForm.reset();
+
     
   }
+
 }
 
 export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {
