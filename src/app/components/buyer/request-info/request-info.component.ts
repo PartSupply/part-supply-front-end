@@ -92,12 +92,8 @@ export class RequestInfoComponent implements OnInit {
     console.log(response);
     this.shouldDisplayVehicleInfo = false;
     this.vehicleInfoForm.reset();
-
-    
   }
-
 }
-
 export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {
   return function validate (formGroup: FormGroup) {
     let checked = 0;

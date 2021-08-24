@@ -1,1 +1,58 @@
-<p>buyer-requests works!</p>
+<div class="">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <img src="/assets/company_log.jpeg" class="companylogo" alt="company logo" width="200px" height="50px">
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-div" [ngClass]="{ 'show': navbarOpen }">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signup">Update Application</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="requestInfo">Part Request Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactUs">Contact Us</a>
+              </li>
+            <li class="">
+              <button (click)="logout()" class="btn-danger logout" type="" name="button">logout</button>
+            </li>
+          </ul>
+  
+        </div>
+      </div>
+    </nav>
+  
+  </div>
+     <div class="table-responsive"> 
+        <table>
+            <tr>
+                <th>Vin</th>
+                <th>Make</th>
+                <th>Year</th>
+                <th>Model</th>
+                <th>Part-Name</th>
+                <th>Part-Type</th>
+                <th># of Offers</th>
+                <th>Offer Status</th>
+            </tr>
+            
+            <tr *ngFor="let partRequest of partRequestList">
+                <td>{{partRequest.vinNumber}}</td>
+                <td>{{partRequest.make}}</td>
+                <td>{{partRequest.year}}</td>
+                <td>{{partRequest.model}}</td>
+                <td>{{partRequest.partName}}</td>
+                <td>{{partRequest.partType}}</td>
+                <td>{{partRequest.numberOfOffers}}</td>
+                <td>{{partRequest.offerStatus}}</td>
+            </tr>
+          </table>
+     </div>
+    
+      

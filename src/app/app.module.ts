@@ -15,13 +15,14 @@ import { RequestInfoComponent } from './components/buyer/request-info/request-in
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
 import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
 import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
-import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BuyerHeaderComponent } from './components/buyer/buyer-header/buyer-header.component';
 import { AuthGuardService} from './auth-guard.service';
 import { RoleGuardService } from './role-guard.service';
 import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
+import { SellerHeaderComponent } from './components/seller/seller-header/seller-header.component';
+import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,10 @@ import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-
     ContactUsComponent,
     SecondRequestComponent,
     AdminLoginComponent,
-    SupplierMenuComponent,
     BuyerHeaderComponent,
     BuyerRequestsComponent,
+    SellerHeaderComponent,
+    SupplierMenuComponent,
   ],
   imports: [
     SparkAngularModule,
