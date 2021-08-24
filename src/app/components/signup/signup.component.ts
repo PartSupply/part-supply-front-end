@@ -47,10 +47,10 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
   public async post(): Promise<void> {
-    console.log('test');
+    // console.log('test');
     const payload = this.transformPayLoad(this.userProfileForm.value);
     const response = await this.httpService.post('signup', payload, false);
-    console.log(response);
+    // console.log(response);
     this.router.navigate(['/home']);
   }
   private transformPayLoad(payload: any) {
@@ -81,9 +81,9 @@ export class SignupComponent implements OnInit {
   }
   public async onBlurMethod(event: any) {  
     const varifyPasswordField = event.target.value; 
-    console.log(varifyPasswordField); 
+    // console.log(varifyPasswordField); 
     const passwordField = this.userProfileForm.get('password').value;
-    console.log(passwordField);
+    // console.log(passwordField);
     if (varifyPasswordField != passwordField) {
       this.userProfileForm.get('verifyPassword').setValidators([Validators.required]);
       this.userProfileForm.get('verifyPassword').reset();  

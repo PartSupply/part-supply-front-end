@@ -1,6 +1,9 @@
 .navbar-div{
   margin-left: 50%;
 } 
+img{
+  cursor: pointer;
+}
 .nav-item{
   margin: 0 2px;
   font-weight: bold;

@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
-  selector: 'app-buyer-header',
-  templateUrl: './buyer-header.component.html',
-  styleUrls: ['./buyer-header.component.css']
+  selector: 'app-seller-header',
+  templateUrl: './seller-header.component.html',
+  styleUrls: ['./seller-header.component.css']
 })
-export class BuyerHeaderComponent implements OnInit {
+export class SellerHeaderComponent implements OnInit {
+
   navbarOpen = false;
   constructor(private httpService: HttpService, private router: Router) { }
 
@@ -28,7 +29,6 @@ export class BuyerHeaderComponent implements OnInit {
     // JUST do redirect from here...
     this.router.navigate(['/buyerRequestList']);
 }
-homeRoute(){
-  this.router.navigate(['/home']);
-  }
 }
+
+

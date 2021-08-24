@@ -36,6 +36,7 @@ font-size: 3rem;
 border-radius: 20px;
 
 }
+
 .h3-headline{
   background-color: #444444;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
@@ -51,7 +52,8 @@ height: 400px;
 margin-top: 5%;
 margin-bottom: auto;
 width: 400px;
-background-color: #BBBFCA !important;
+/* background-color: #BBBFCA !important; */
+background-color: rgba(0,0,0,0.5) !important;
 border-radius: 20px;
 }
 .card-header h3{
@@ -126,7 +128,7 @@ a:hover{
 }
 
 .labels{
-    display: inline-block;
+    /* display: inline-block; */
     padding-top: 2%;
     padding-bottom: 1%;
     float: left;
@@ -136,7 +138,7 @@ a:hover{
     color: #FFF;
 }
 input {
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
 }
 .input-group>.form-control, .input-group>.form-select {

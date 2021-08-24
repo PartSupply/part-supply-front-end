@@ -1,5 +1,5 @@
 .navbar-div{
-    margin-left: 30%;
+    margin-left: 45%;
   }
   .nav-item{
     margin: 0 2px;
@@ -8,9 +8,10 @@
      font-size: 1rem;
     
   }
-  a, img{
+  img, a{
     cursor: pointer;
   }
+  
   .navbar{
     background-color: #BBBFCA;
     

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-supplier-menu',
@@ -9,15 +7,9 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class SupplierMenuComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-  public async post(): Promise<void> {
-    const response = await this.httpService.post('logout',null);
-    // Remove localstorage session info 
-    localStorage.removeItem('user');
-    this.router.navigate(['/home']);
   }
 
 }

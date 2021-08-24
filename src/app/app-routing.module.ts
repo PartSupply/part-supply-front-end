@@ -10,10 +10,10 @@ import { RequestInfoComponent } from './components/buyer/request-info/request-in
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
 import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
 import { AdminLoginComponent } from './components/Admin/admin-login/admin-login.component';
-import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { RoleGuardService as RoleGuard } from './role-guard.service';
 import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
+import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 
 const routes: Routes = [];
 
