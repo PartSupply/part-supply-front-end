@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { all } from 'q';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -12,10 +13,22 @@ export class BuyerRequestsComponent implements OnInit {
 
   partRequestList;
   constructor(private httpService: HttpService, private router: Router) { }
+  filterPartType(partType: any) {
+    Object.keys(partType).forEach(key => {
+      if (!partType[key]) delete partType[key];
+    });
+    return Object.keys(partType).join(", ");
+  }
 
+  filterPartRequestData(data: any) {
+     for(let i=0; i<data.length; i++) {
+       data[i].partType = this.filterPartType(data[i].partType);
+     }
+     return data;
+  }
   async ngOnInit() {
     const partRequestData: any = await this.httpService.get('buyer/partsRequest');
-    this.partRequestList = partRequestData.data;
+    this.partRequestList = this.filterPartRequestData(partRequestData.data);
     console.log(this.partRequestList);
    
   } 
@@ -29,5 +42,7 @@ export class BuyerRequestsComponent implements OnInit {
     localStorage.removeItem('user');
     this.router.navigate(['/home']);
   }
-  
+  homeRoute(){
+    this.router.navigate(['/home']);
+    }
 }
