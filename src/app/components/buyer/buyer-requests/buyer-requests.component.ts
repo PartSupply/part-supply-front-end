@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { all } from 'q';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -10,8 +9,8 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BuyerRequestsComponent implements OnInit {
   navbarOpen = false;
-
   partRequestList;
+  
   constructor(private httpService: HttpService, private router: Router) { }
   filterPartType(partType: any) {
     Object.keys(partType).forEach(key => {

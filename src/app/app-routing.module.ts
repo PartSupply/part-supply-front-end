@@ -14,6 +14,8 @@ import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { RoleGuardService as RoleGuard } from './role-guard.service';
 import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
 import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
+import { SeeRequestsComponent } from './components/seller/see-requests/see-requests.component';
+import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
 
 const routes: Routes = [];
 
@@ -42,6 +44,16 @@ const routes: Routes = [];
       { path: 'buyerRequestList', component: BuyerRequestsComponent, canActivate: [RoleGuard, AuthGuard],
       data: {
         expectedRole: 'BUYER'
+      }
+    },
+    { path: 'seeAllRequests', component: SeeRequestsComponent, canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'SELLER'
+      }
+    },
+    { path: 'seeOfferStatus', component: SeeOfferStatusComponent, canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'SELLER'
       }
     },
       //canActivate: [AuthGuard]
