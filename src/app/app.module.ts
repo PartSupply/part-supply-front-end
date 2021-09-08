@@ -23,6 +23,9 @@ import { RoleGuardService } from './role-guard.service';
 import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-requests.component';
 import { SellerHeaderComponent } from './components/seller/seller-header/seller-header.component';
 import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
+import { SeeRequestsComponent } from './components/seller/see-requests/see-requests.component';
+import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
+import { AdminHeaderComponent } from './components/Admin/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { SupplierMenuComponent } from './components/seller/supplier-menu/supplie
     BuyerRequestsComponent,
     SellerHeaderComponent,
     SupplierMenuComponent,
+    SeeRequestsComponent,
+    SeeOfferStatusComponent,
+    AdminHeaderComponent,
   ],
   imports: [
     SparkAngularModule,

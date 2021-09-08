@@ -32,9 +32,12 @@ export class HomeComponent implements OnInit {
     let userProfile = null;
     try {
       loginResponse = await this.httpService.post('login', this.userLoginForm.value, false);
+      console.log(loginResponse);
       localStorage.setItem('user', JSON.stringify(loginResponse));
       userProfile = await this.httpService.get('userProfile');
+      console.log(userProfile);
       let getUserRole = userProfile.data.role.roleName;
+      console.log(getUserRole);
       if(getUserRole === 'BUYER'){
         this.router.navigate(['/requestInfo']);
         alert((userProfile.data.firstName).toUpperCase() + " " + "logged in Successfully.");

@@ -1,3 +1,4 @@
+
 .main-div{
     background-color: black;
     background-size: cover;
@@ -6,8 +7,43 @@
   height: 100%;
   font-family: 'Numans', sans-serif;
   font-weight: bold;
+  
+}
+h1{
+  padding: 3% 35% 2%;
+  color: white;
+  opacity: 0.6;
 }
 button{
     margin: 3% 40% 2%;
 
+}
+p{ 
+  color: #e5e5e5;
+  font-weight: 600;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 25%;
+}
+@media only screen and (max-width:992px) {
+  p {
+    margin-top: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  
+}
+@media screen and (max-width: 480px) {
+  p{
+    margin-top: 140%;
+  }
+  button{
+    margin: 3% 15% 3%;
+    font-size: 1.5rem;
+  }
+  h1{
+    font-size: 1.5rem;
+    padding: 3% 25% 2%;
+    opacity: 0.9;
+  }
 }

@@ -1,9 +1,7 @@
 #LoginForm{
-  background: url('/assets/makerequest-background.png') no-repeat center center fixed;
   background-position:center;
   padding:10px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: black;
   width: 100%;
   height: 100%;
   font-family: 'Numans', sans-serif;
@@ -65,10 +63,9 @@ color: white;
   background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
   margin: 10px auto 30px;
-  max-width: 38%;
-  padding: 50px 70px 70px 71px;
+  max-width: 350px;
+  padding: 50px 20px 70px 20px;
 }
-
 .login-form .form-group {
   margin-bottom:10px;
 }
@@ -130,9 +127,12 @@ color: white;
 
 }
 
-@media screen and (max-width: 400px) {
+@media(max-width: 480px) {
 .sidebar a {
   text-align: center;
   float: none;
+}
+.main-div{
+  margin: 50px auto 30px;
 }
 }

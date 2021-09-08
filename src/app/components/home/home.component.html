@@ -30,9 +30,12 @@ Your browser does not support HTML5 video.
 
 					<div class="input-group form-group login-field">
 						  <label class="labels"for="">Password </label>
-						<input formControlName = "password" type="password" class="form-control" placeholder="Type Here..." required>
+						<input [class.is-invalid] = "userLoginForm.get('password').invalid && userLoginForm.get('password').touched" formControlName = "password" type="password" class="form-control" placeholder="Type Here..." required>
 					</div>
-					
+					<div *ngIf="(userLoginForm.get('password').invalid) && (userLoginForm.get('password').touched) || (userLoginForm.get('password').dirty)">
+						<small *ngIf="(userLoginForm.get('password').errors?.required)" class="text-danger"> password is required</small>
+						<!--question mark(?) is a safe navigation operator-->
+						</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
