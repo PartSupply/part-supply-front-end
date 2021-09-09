@@ -5,16 +5,8 @@ import { promise } from 'protractor';
 import { HttpService } from 'src/app/services/http.service';
 // import {requireCheckboxesToBeCheckedValidator} from './require-checkboxes-to-be-checked.validator';
 
-
-@Component({
-  selector: 'app-request-info',
-  templateUrl: './request-info.component.html',
-  styleUrls: ['./request-info.component.css']
-})
-
-export class RequestInfoComponent implements OnInit {
-
-  vehicleInfoForm = new FormGroup({
+const createNewFormControl = () => {
+  return new FormGroup({
     vinNumber: new FormControl('', [Validators.required, Validators.maxLength(17), Validators.minLength(17), Validators.pattern('^[A-Z0-9]{1,17}$')]),
     year: new FormControl(''),
     make: new FormControl(''),
@@ -25,8 +17,16 @@ export class RequestInfoComponent implements OnInit {
       new: new FormControl(false),
       reManufactured: new FormControl(false),
     }, requireCheckboxesToBeCheckedValidator()),
-    
   });
+}
+@Component({
+  selector: 'app-request-info',
+  templateUrl: './request-info.component.html',
+  styleUrls: ['./request-info.component.css']
+})
+export class RequestInfoComponent implements OnInit {
+
+  vehicleInfoForm = createNewFormControl();
   public shouldDisplayVehicleInfo: boolean = false;
   public vinError: string = '';
 
@@ -63,8 +63,7 @@ export class RequestInfoComponent implements OnInit {
 
   public formReset() {
     this.shouldDisplayVehicleInfo = false;
-    this.vehicleInfoForm.reset();
-
+    this.vehicleInfoForm = createNewFormControl();
   }
   public async logout(): Promise<void> {
     const response = await this.httpService.post('logout',null);
@@ -89,9 +88,7 @@ export class RequestInfoComponent implements OnInit {
       offerStatus: 'OPEN',
     }
     const response = await this.httpService.post('buyer/submitPartRequest',payload);
-    console.log(response);
-    this.shouldDisplayVehicleInfo = false;
-    this.vehicleInfoForm.reset();
+    this.formReset();
   }
 }
 export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {
