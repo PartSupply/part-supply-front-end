@@ -1,36 +1,31 @@
 h5 {
-  text-align: center;
   margin-bottom: 5%;
+  font-size: 1rem;
+  text-align: center;
+  color: blue;
 }
-.view-request{
-  margin-left: 80%;
-  margin-top: 5px;
-  color: #FFF;
-}
-.view-request:hover{
-  color: Yellow;
 
-}
 .main {
   padding: 40px 0;
-}
-.companylogo{
-  filter: drop-shadow(7px 7px 7px #666666);
-       -webkit-filter: drop-shadow(7px 7px 7px #666666);
-       margin-bottom: 5%;
 }
 
 .main input::-webkit-input-placeholder {
   font-size: 11px;
   padding-top: 3px;
 }
-
+.span-class{
+  margin-left: 8%;
+}
+.top5-label{
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
 .checkbox {
   float: left;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: 0;
 }
-
 .check-labels {
   margin-left: 2%;
   margin-top: 0;
@@ -41,13 +36,13 @@ h5 {
   margin: 0 auto;
   max-width: 400px;
   padding: 10px 40px;
-  background: #BBBFCA;
+  background: -webkit-linear-gradient(left, #49494b, #b9b1b1);
   border-radius: 20px;
   color: #FFF;
   text-shadow: none;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+  box-shadow: 3px 3px 5px 5px rgb(247, 223, 223);
 }
 
 label {
@@ -56,7 +51,7 @@ label {
 }
 
 button {
-  margin-top: 5%;
+  margin: 5% 5% 0% 0%;
   background-color: #394867;
   color: white;
 }
@@ -64,7 +59,7 @@ button {
 button:hover{
 background-color: blue;
 }
-.clear-btn:hover{
+.btn-no-thanks:hover{
 background-color: red;
 }
 p {

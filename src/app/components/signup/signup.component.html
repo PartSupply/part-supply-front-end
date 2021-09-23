@@ -71,7 +71,7 @@
               <div formGroupName = "address">
                 <div class="input-group no-border">
                   <label class="labels"for="address">Address#1 </label>
-                  <input [class.is-invalid] = "userProfileForm.get('address.addressLineOne').invalid && userProfileForm.get('address.addressLineOne').touched"  formControlName = "addressLineOne" type="text" class="form-control" placeholder="Type Here..." required>
+                  <input formControlName = "addressLineOne" [class.is-invalid] = "userProfileForm.get('address.addressLineOne').invalid && userProfileForm.get('address.addressLineOne').touched"   type="text" class="form-control" placeholder="Type Here..." required>
                 </div>
                 <div *ngIf="(userProfileForm.get('address.addressLineOne').invalid) && (userProfileForm.get('address.addressLineOne').touched) || (userProfileForm.get('address.addressLineOne').dirty)">
                   <small *ngIf="(userProfileForm.get('address.addressLineOne').errors?.required)" class="text-danger"> Field is required</small>

@@ -14,7 +14,7 @@
   
   .navbar{
     background-color: #BBBFCA;
-    
+    /* background: -webkit-linear-gradient(left, #3931af, #00c6ff);     */
   }
   .nav-item:hover{
    font-size: 1.1rem;
@@ -36,9 +36,10 @@
     .navbar-div{
       margin-left: 40%;
     }
+    
   }
                     
-  @media (max-width: 480px){
+  @media only screen and(min-width: 480px) and (max-width: 767px) {
     .logout {
       margin-left: 0px;
       margin-top: 2%;
@@ -46,5 +47,5 @@
   .navbar-div{
     margin-right: 10%;
   }
-}
+  } 
   

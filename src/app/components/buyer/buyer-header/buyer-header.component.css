@@ -13,6 +13,7 @@
   }
   .navbar{
     background-color: #BBBFCA;
+    /* background: -webkit-linear-gradient(right, #3931af, #00c6ff); */
     
   }
   .nav-item:hover{

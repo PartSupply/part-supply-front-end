@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SparkAngularModule } from '@sparkdesignsystem/spark-angular';
@@ -26,6 +27,7 @@ import { SupplierMenuComponent } from './components/seller/supplier-menu/supplie
 import { SeeRequestsComponent } from './components/seller/see-requests/see-requests.component';
 import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
 import { AdminHeaderComponent } from './components/Admin/admin-header/admin-header.component';
+import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { AdminHeaderComponent } from './components/Admin/admin-header/admin-head
     SeeRequestsComponent,
     SeeOfferStatusComponent,
     AdminHeaderComponent,
+    SellerPlaceOfferComponent,
   ],
   imports: [
     SparkAngularModule,
@@ -57,6 +60,8 @@ import { AdminHeaderComponent } from './components/Admin/admin-header/admin-head
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    
   ],
   providers: [RoleGuardService],
   bootstrap: [AppComponent]

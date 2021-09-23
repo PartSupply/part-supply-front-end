@@ -1,0 +1,75 @@
+
+  ::ng-deep.mat-dialog-container {
+    background-color: lightblue !important; 
+      border-radius: 20px !important;
+}
+
+table{
+    /* width: 100%; */
+    margin: 5% 2% 10%;
+}
+.headline{
+  background-color: #444444;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  margin-top: 2%;
+  color: #FFF;
+  opacity: 0.8;
+  font-size: 3rem;
+  border-radius: 20px;
+  
+  }
+  td{
+    /* background-color: burlywood; */
+  border: 1px solid #131212;
+  text-align: center;
+  padding: 8px;
+}
+.td-button{
+  width: 15%;
+}
+button{
+  box-shadow: 2px 2px 2px 2px grey;
+}
+button:hover{
+  background-color: greenyellow;
+  color: black;
+}
+th{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  background-color: rgb(68, 64, 60);
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFFF;
+}
+table.odd tr td, th{
+	border:1px solid #ccc;
+  	padding:5px;
+}
+tr:nth-child(even) {
+   background: #f1f1f1;
+  }
+  tr:nth-child(odd){
+  background: #b1b0ae;
+  }
+  a:hover{
+    color: black;
+  }
+
+  @media (max-width: 480px){
+  table{
+    margin-top: 2%;
+    width: 50%;
+    font-size: 10px;
+}
+button{
+  font-size: 5px;
+}
+.td-button{
+  width: 10%
+}
+
+}
