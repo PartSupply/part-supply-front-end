@@ -16,6 +16,7 @@ import { BuyerRequestsComponent } from './components/buyer/buyer-requests/buyer-
 import { SupplierMenuComponent } from './components/seller/supplier-menu/supplier-menu.component';
 import { SeeRequestsComponent } from './components/seller/see-requests/see-requests.component';
 import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
+import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
 
 const routes: Routes = [];
 
@@ -33,6 +34,10 @@ const routes: Routes = [];
       data: { 
         expectedRole: 'BUYER'
       }}, // only for buyer
+      { path: 'secondPartRequest', component: SecondRequestComponent, canActivate: [RoleGuard, AuthGuard],
+     data:{
+       expectedRole: 'BUYER'
+     }},
       { path: 'contactUs', component: ContactUsComponent},
       { path: 'secondRequest', component: SecondRequestComponent},
       { path: 'adminLogin', component: AdminLoginComponent},
@@ -52,6 +57,11 @@ const routes: Routes = [];
       }
     },
     { path: 'seeOfferStatus', component: SeeOfferStatusComponent, canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'SELLER'
+      }
+    },
+    { path: 'placeOffer', component: SellerPlaceOfferComponent, canActivate: [RoleGuard, AuthGuard],
       data:{
         expectedRole: 'SELLER'
       }

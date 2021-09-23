@@ -1,1 +1,32 @@
 <app-seller-header></app-seller-header>
+
+<h3 class="headline">Requests List</h3>
+<div class="table-responsive">
+<table>   
+        <tr>
+            <th>No.</th>
+            <th>Vin</th>
+            <th>Make</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Part-Name</th>
+            <th>Part-Type</th>
+            <th># of Offers</th>
+            <th>Offer Status</th>
+            <th>Place Offer</th>
+        </tr>    
+        <tr *ngFor="let partRequest of partRequestList">
+            <td>{{partRequest.id}}</td>
+            <td>{{partRequest.vinNumber}}</td>
+            <td>{{partRequest.make}}</td>
+            <td>{{partRequest.year}}</td>
+            <td>{{partRequest.model}}</td>
+            <td>{{partRequest.partName}}</td>
+            <td>{{partRequest.partType}}</td>
+            <td>{{partRequest.numberOfOffers}}</td>
+            <td>{{partRequest.offerStatus}}</td> 
+            <td class="td-button"><button class="btn btn-success" (click)="openDialog(partRequest)">Place an Offer</button></td>
+
+        </tr>
+    
+</table>

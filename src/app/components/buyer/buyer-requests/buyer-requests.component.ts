@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BuyerRequestsComponent implements OnInit {
   navbarOpen = false;
-  partRequestList;
+  partRequestList: any;
   
   constructor(private httpService: HttpService, private router: Router) { }
   filterPartType(partType: any) {

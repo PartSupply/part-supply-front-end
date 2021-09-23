@@ -1,0 +1,82 @@
+<!-- <app-seller-header></app-seller-header> -->
+
+<div class="container">
+    <div class="main">
+      <div class="main-center">
+        <h5>Enter Part Request</h5>
+        
+        <form action="post" [formGroup]= "PlaceOfferForm" novalidate>
+          <div>
+          <div>
+            <label class="top5-label" for="year">Year:</label>
+           <span class="span-class">{{partData.year}}</span>
+           </div>
+          <div>
+            <label class="top5-label" for="make">Make:</label>
+            <span class="span-class" >{{partData.make}}</span>
+          </div>
+          <div>
+            <label class="top5-label" for="model">Model:</label>
+            <span class="span-class" >{{partData.model}}</span>
+          </div>
+          <div>
+            <label class="top5-label" for="vin">VIN:</label>
+            <span class="span-class" >{{partData.vinNumber}}</span>
+          </div>
+          <div>
+            <label class="top5-label" for="part-name">Part:</label>
+            <span class="span-class" >{{partData.partName}}</span>
+          </div>
+        </div>
+          <br>
+          <div class="bottom-div">
+            <div>
+              <label class="bottom-labels" for="offer-amount">Offer amount</label>
+              <input class="form-input" formControlName = "bidAmount" type="number" placeholder="Enter amount">
+            </div>
+  
+            <div>
+              <label class="bottom-labels" for="offer-warranty">Offer warranty</label>
+              <!-- <input class="form-input" formControlName = "bidWarranty" type="" placeholder="In Days"> -->
+              <select formControlName = "bidWarranty" name="" id="" class='form-control'>
+                <option *ngFor="let d of bidWarranty" [ngValue]="d" >{{d}}</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="bottom-labels" for="part-brand">Part brand</label>
+              <div>
+                <input class="form-input" formControlName = "partBrand" type="" placeholder="Type Here...">
+              </div>
+            </div>
+  
+            <div>
+              <label class="bottom-labels" for="Delivery-time">Estimated delivery time</label>
+              <div>
+  
+                <select formControlName = "estDeliveryTime" name="" id="" class='form-control'>
+                  <option *ngFor="let d of estimatedDeliveryTime" [ngValue]="d" >{{d}}</option>
+                </select>
+              </div>
+            </div>
+
+              <div formGroupName = "typeOfPart">
+                <label class="part-type-label" for="type-of-part">Part type</label>
+              <div>
+              <input formControlName="NEW" type="radio" name="NEW">
+              <label class="radio-label" for="new">NEW</label><br>
+              <input formControlName="USED"type="radio" name="USED">
+              <label class="radio-label"for="used">USED</label><br>
+              <input formControlName="RE_MANUFACTURED" type="radio" name="RE_MANUFACTURED">
+              <label class="radio-label" for="Re-manufactured">RE_MANUFACTURED</label>
+            </div>
+          </div>
+          <button [disabled]= "!PlaceOfferForm.valid"  class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
+        <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
+        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancle</button>
+        </div>
+      </form>
+        
+    </div>
+  </div>
+</div>

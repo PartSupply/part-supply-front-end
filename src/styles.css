@@ -11,10 +11,10 @@
                                                           min-height: 100%;
                                                         } */
 html,body{
-background: url('/assets/partsupply-background.png') no-repeat center center fixed; 
-background-size: cover;
-/* background-color:black; */
-background-repeat: no-repeat;
+ background: url('/assets/partsupply-background.png') no-repeat center center fixed;  
+ background-size: cover; 
+/* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
+ background-repeat: no-repeat; 
 font-family: 'Numans', sans-serif;
 width: 100%;
 height: 100%;
@@ -26,12 +26,13 @@ align-content: center;
 }
 .headline{
 background-color: #444444;
+/* background: -webkit-linear-gradient(right, #050507, #1a667e); */
 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 font-family: 'Dancing Script', cursive;
 text-align: center;
 margin-top: 2%;
 color: #FFF;
-opacity: 0.8;
+ opacity: 0.8; 
 font-size: 3rem;
 border-radius: 20px;
 
@@ -39,6 +40,7 @@ border-radius: 20px;
 
 .h3-headline{
   background-color: #444444;
+  /* background: -webkit-linear-gradient(right, #3931af, #00c6ff); */
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   font-family: 'Dancing Script', cursive;
   text-align: center;
@@ -54,7 +56,9 @@ margin-bottom: auto;
 width: 400px;
 /* background-color: #BBBFCA !important; */
 background-color: rgba(0,0,0,0.5) !important;
+/* background: -webkit-linear-gradient(right, #3931af, #00c6ff); */
 border-radius: 20px;
+box-shadow: 3px 3px 5px 5px rgb(247, 223, 223);
 }
 .card-header h3{
 color: white;
@@ -105,7 +109,7 @@ a:hover{
 /* *******************Signup************* */
 
 .btn-round{
-  background-color: #394867;
+  background-color: #427cf0;
   border-radius: 30%;
   margin-top: 10px;
   color: white;
@@ -115,12 +119,13 @@ a:hover{
 }
 
 .signup-form{
-  background-color: #BBBFCA;
+  background: -webkit-linear-gradient(right, #22203b, #7a7a7a);
   border-radius: 30px;
   width: 40%;
   margin-top: 2%;
   margin-left: 30%;
   font-size: 1rem;
+  box-shadow: -2px -2px 5px 5px rgb(247, 223, 223);
 
 }
 .deliveryRadius{
@@ -128,17 +133,15 @@ a:hover{
 }
 
 .labels{
-    /* display: inline-block; */
+    display: inline-block;
     padding-top: 2%;
     padding-bottom: 1%;
-    float: left;
-    clear: left;
+    
     width: 400px;
     text-align: left;
     color: #FFF;
 }
 input {
-  /* display: inline-block; */
   float: right;
 }
 .input-group>.form-control, .input-group>.form-select {
@@ -203,3 +206,7 @@ input {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {...} */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
