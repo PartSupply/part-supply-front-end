@@ -1,7 +1,7 @@
-table{
+table {
     margin: 5% 15% 10%;
 }
-.headline{
+.headline {
   background-color: #444444;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   text-align: center;
@@ -9,25 +9,28 @@ table{
   color: #FFF;
   opacity: 0.8;
   font-size: 3rem;
-  border-radius: 20px;
-  
-  }
-  td{
+  border-radius: 20px; 
+}
+td {
   border: 1px solid #131212;
   text-align: center;
   padding: 8px;
 }
+
 .td-button{
   width: 15%;
 }
-button{
+
+button {
   box-shadow: 2px 2px 2px 2px grey;
 }
-button:hover{
+
+button:hover {
   background-color: greenyellow;
   color: black;
 }
-th{
+
+th {
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
@@ -36,19 +39,35 @@ th{
   font-size: 1rem;
   color: #FFFF;
 }
-table.odd tr td, th{
+table.odd tr td, th {
 	border:1px solid #ccc;
   	padding:5px;
 }
+
 tr:nth-child(even) {
-   background: #f1f1f1;
-  }
-  tr:nth-child(odd){
+  background: #f1f1f1;
+}
+tr:nth-child(odd){
   background: #b1b0ae;
-  }
-  a:hover{
+}
+a:hover{
     color: black;
-  }
+}
+
+.thumbs_img {
+  width: 40px;
+  height: 40px;
+  padding-top: 5px;
+}
+
+.thumbs_down_text { 
+  padding-left: 5px;
+}
+
+.thumbs_up_text {
+  vertical-align: bottom;
+  padding-left: 5px;
+}
 
   @media (max-width: 480px){
   table{

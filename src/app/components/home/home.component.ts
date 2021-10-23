@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
       console.log(loginResponse);
       localStorage.setItem('user', JSON.stringify(loginResponse));
       userProfile = await this.httpService.get('userProfile');
+      localStorage.setItem('userProfile', JSON.stringify(userProfile));
       console.log(userProfile);
       let getUserRole = userProfile.data.role.roleName;
       console.log(getUserRole);

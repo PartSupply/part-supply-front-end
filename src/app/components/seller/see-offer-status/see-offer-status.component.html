@@ -24,9 +24,17 @@
             <td>${{offers.bid}}</td>
             <td>{{offers.warranty}}</td>
             <td>{{offers.brand}}</td>
-            <td>{{offers.bidStandingStatus}}</td> 
-            <td class="td-button1"><button class="ask-btn btn btn-danger">Edit Offer</button></td>
-        
+            <td style="width: 167px;">
+                <span *ngIf="offers.sellerId === userProfile.data.id && offers.bidStandingStatus==='OUTBID'" >
+                    <img src="./../../../../assets/thumbs_down.png" class="thumbs_img"/>
+                    <span class="thumbs_down_text">{{bidMap.get(offers.bidStandingStatus)}}</span>
+                </span>
+                <span *ngIf="offers.sellerId === userProfile.data.id && offers.bidStandingStatus==='BEST_BID'">
+                    <img src="./../../../../assets/thumbs_up.png" class="thumbs_img"/>
+                    <span class="thumbs_up_text">{{bidMap.get(offers.bidStandingStatus)}}</span>
+                </span>
+            </td> 
+            <td class="td-button1"><button *ngIf="offers.sellerId === userProfile.data.id" class="ask-btn btn btn-danger">Edit Offer</button></td>
         </tr>
     
 </table>
