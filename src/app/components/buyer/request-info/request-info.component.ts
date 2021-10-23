@@ -33,13 +33,13 @@ export class RequestInfoComponent implements OnInit {
   vehicleInfoForm = createNewFormControl();
   public shouldDisplayVehicleInfo: boolean = false;
   public vinError: string = '';
-  // userSelctedPartRequest: any;
-
+  userSelctedPartRequest: any;
+  
   constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
 
   public ngOnInit() {
   }
-  //val: string = "";
+ 
   
   public async onBlurMethod(event: any) {
     let inputValue = event.target.value;
@@ -93,21 +93,18 @@ export class RequestInfoComponent implements OnInit {
     }
     
     const response = await this.httpService.post('buyer/submitPartRequest',payload);
+    console.log(payload.make);
     this.formReset();
+    this.openDialog(payload);
+  }
+  openDialog(partRequest){
+    this.userSelctedPartRequest = partRequest;
     const dialogRef = this.dialog.open(SecondRequestComponent, {
       width: '400px',
-      height: '600px'
+      height: '600px',
+      data: partRequest,
     });
-    
   }
-  // openDialog(partRequest){
-  //   this.userSelctedPartRequest = partRequest;
-  //   const dialogRef = this.dialog.open(SecondRequestComponent, {
-  //     width: '400px',
-  //     height: '600px',
-  //     data: partRequest,
-  //   });
-  // }
   
 }
 export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {

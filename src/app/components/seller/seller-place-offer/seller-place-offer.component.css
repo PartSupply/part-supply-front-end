@@ -82,7 +82,10 @@ button:hover{
   }
   .top5-label{
     display: inline-block;
-    width: 100px;
+    width: 80px;
     text-align: right;
+}
+.span-class{
+  margin-left: 4%;
 }
 }

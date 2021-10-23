@@ -24,10 +24,9 @@ const createNewFormControl = () => {
 export class SellerPlaceOfferComponent implements OnInit {
   
   PlaceOfferForm = createNewFormControl();
-  bidWarranty: string[] = ['1 to 5hrs.','24hrs','7 days','30 days','45 days','Life time'];
-  estimatedDeliveryTime: string[] = ['Same day','Next day','In 4 days','In a week','In 15 days'];
+  bidWarranty: string[] = ['None','30 days','45 days','90 days','6 months','1 year','2 years','3 years','5 years','Limited Life Time'];
+  estimatedDeliveryTime: string[] = ['Within an hour','Within 6 hours','Next day','In a week'];
   partData: any;
-  names = "jinal";
 
   constructor(public httpService: HttpService,public dialog: MatDialog, @Optional() @Inject(MAT_DIALOG_DATA) public data: any) { 
     console.log('Inside', data);

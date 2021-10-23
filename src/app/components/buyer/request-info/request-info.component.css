@@ -1,5 +1,5 @@
 ::ng-deep.mat-dialog-container {
-  background-color:lightblue !important; 
+  background-color: red !important; 
     border-radius: 20px !important;
 }
 
@@ -11,16 +11,19 @@ h5{
   text-align: center;
   margin-bottom: 5%;
 }
+a{
+  color: red;
+  text-decoration: none;
+}
+a:hover{
+  color: #FFF;
+}
+
 .view-request{
   margin-left: 10%;
   color: #FFF;
 }
-/* h4 {
-  color: #DBE6FD;
-  text-align: center;
-  padding-top: 90px;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-} */
+
 .view-request:hover{
   color: Yellow;
 }
@@ -50,7 +53,7 @@ h5{
  	max-width: 350px;
     padding: 10px 40px;
 	/* background:#BBBFCA; */
-  background: -webkit-linear-gradient(left, #49494b, #b9b1b1);
+  background: -webkit-linear-gradient(left, #b9b1b1, #49494b);
 	    color: #FFF;
       border-radius: 20px;
     text-shadow: none;
@@ -76,8 +79,8 @@ button:hover{
 }
 p {
   color: #e5e5e5;
-  font-weight: 600;
-  opacity: 0.5;
+  font-weight: 400;
+  font-size: 15px;
   text-align: center;
   margin-top: 10%;
 }

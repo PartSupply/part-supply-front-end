@@ -42,9 +42,9 @@ export class ContactUsComponent implements OnInit {
         (response) => {
           // choose the response message
           if (response["result"] == "success") {
-            this.responseMessage = "Thanks for the message! I'll get back to you soon!";
+            this.responseMessage = "Thanks for the message. We will get back to you soon.";
           } else {
-            this.responseMessage = "Oops! Something went wrong... Reload the page and try again.";
+            this.responseMessage = "Oops! We backfired. Please reload the page and try again.";
           }
           this.form.enable(); // re enable the form after a success
           this.submitted = true; // show the response message
@@ -52,7 +52,7 @@ export class ContactUsComponent implements OnInit {
           console.log(response);
         },
         (error) => {
-          this.responseMessage = "Oops! An error occurred... Reload the page and try again.";
+          this.responseMessage = "Oops! We backfired. Please reload the page and try again.";
           this.form.enable(); // re enable the form after a success
           this.submitted = true; // show the response message
           this.isLoading = false; // re enable the submit button

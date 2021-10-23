@@ -31,12 +31,12 @@
           <br>
           <div class="bottom-div">
             <div>
-              <label class="bottom-labels" for="offer-amount">Offer amount</label>
-              <input class="form-input" formControlName = "bidAmount" type="number" placeholder="Enter amount">
+              <label class="bottom-labels" for="offer-amount">Offer Amount(USD)</label>
+              <input style="padding-left: 4%; font-size: 1rem;" class="form-input" formControlName = "bidAmount" type="number" placeholder="Example: 200">
             </div>
   
             <div>
-              <label class="bottom-labels" for="offer-warranty">Offer warranty</label>
+              <label class="bottom-labels" for="offer-warranty">Offer Warranty</label>
               <!-- <input class="form-input" formControlName = "bidWarranty" type="" placeholder="In Days"> -->
               <select formControlName = "bidWarranty" name="" id="" class='form-control'>
                 <option *ngFor="let d of bidWarranty" [ngValue]="d" >{{d}}</option>
@@ -44,14 +44,14 @@
             </div>
             
             <div>
-              <label class="bottom-labels" for="part-brand">Part brand</label>
+              <label class="bottom-labels" for="part-brand">Part Brand</label>
               <div>
-                <input class="form-input" formControlName = "partBrand" type="" placeholder="Type Here...">
+                <input style="padding-left: 4%; font-size: 1rem;"  class="form-input" formControlName = "partBrand" type="" placeholder="Example: Ford">
               </div>
             </div>
   
             <div>
-              <label class="bottom-labels" for="Delivery-time">Estimated delivery time</label>
+              <label class="bottom-labels" for="Delivery-time">Estimated Delivery Time</label>
               <div>
   
                 <select formControlName = "estDeliveryTime" name="" id="" class='form-control'>
@@ -61,19 +61,19 @@
             </div>
 
               <div formGroupName = "typeOfPart">
-                <label class="part-type-label" for="type-of-part">Part type</label>
+                <label class="part-type-label" for="type-of-part">Part Type</label>
               <div>
               <input formControlName="NEW" type="radio" name="NEW">
-              <label class="radio-label" for="new">NEW</label><br>
+              <label class="radio-label" for="new">new</label><br>
               <input formControlName="USED"type="radio" name="USED">
-              <label class="radio-label"for="used">USED</label><br>
+              <label class="radio-label"for="used">used</label><br>
               <input formControlName="RE_MANUFACTURED" type="radio" name="RE_MANUFACTURED">
-              <label class="radio-label" for="Re-manufactured">RE_MANUFACTURED</label>
+              <label class="radio-label" for="Re-manufactured">remanufactured</label>
             </div>
           </div>
           <button [disabled]= "!PlaceOfferForm.valid"  class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
         <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
-        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancle</button>
+        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancel</button>
         </div>
       </form>
         

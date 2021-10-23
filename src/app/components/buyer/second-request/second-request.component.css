@@ -2,7 +2,7 @@ h5 {
   margin-bottom: 5%;
   font-size: 1rem;
   text-align: center;
-  color: blue;
+  color: #FFFF;
 }
 
 .main {
@@ -14,11 +14,11 @@ h5 {
   padding-top: 3px;
 }
 .span-class{
-  margin-left: 8%;
+  margin-left: 4%;
 }
 .top5-label{
   display: inline-block;
-  width: 120px;
+  width: 110px;
   text-align: right;
 }
 .checkbox {
@@ -32,10 +32,10 @@ h5 {
 }
 
 .main-center {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin: 0 auto;
-  max-width: 400px;
-  padding: 10px 40px;
+  max-width: 350px;
+  padding: 3%;
   background: -webkit-linear-gradient(left, #49494b, #b9b1b1);
   border-radius: 20px;
   color: #FFF;
@@ -47,7 +47,6 @@ h5 {
 
 label {
   padding-top: 2%;
-  padding-bottom: 2%;
 }
 
 button {

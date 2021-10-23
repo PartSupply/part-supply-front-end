@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -8,11 +9,14 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./seller-header.component.css']
 })
 export class SellerHeaderComponent implements OnInit {
-
+  _router: string;
   navbarOpen = false;
-  constructor(private httpService: HttpService, private router: Router) { }
+  constructor(private httpService: HttpService, private router: Router) {
+    this._router = router.url; 
+  }
 
-  ngOnInit() {
+   ngOnInit() {
+    
   }
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
@@ -29,6 +33,7 @@ export class SellerHeaderComponent implements OnInit {
     // JUST do redirect from here...
     this.router.navigate(['/buyerRequestList']);
 }
+
 }
 
 

@@ -9,8 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
-import { AboutComponent } from './components/common/about/about.component';
-import { ServicesComponent } from './components/common/services/services.component';
+import { DetailsComponent } from './components/common/details/details.component';
 import { MakeRequestComponent } from './components/buyer/make-request/make-request.component';
 import { RequestInfoComponent } from './components/buyer/request-info/request-info.component';
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
@@ -36,8 +35,7 @@ import { SellerPlaceOfferComponent } from './components/seller/seller-place-offe
     SignupComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent,
-    ServicesComponent,
+    DetailsComponent,
     MakeRequestComponent,
     RequestInfoComponent,
     ContactUsComponent,
@@ -61,9 +59,9 @@ import { SellerPlaceOfferComponent } from './components/seller/seller-place-offe
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    
   ],
   providers: [RoleGuardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

@@ -6,84 +6,83 @@
       <div class="row">
           <form [formGroup]= "userProfileForm" class="form signup-form" method="post" action="" novalidate>
             <div class="card-header text-center">
-              <h3 class="card-title"><i class="large material-icons">account_circle</i> Sign Up</h3>
+              <h3 class="card-title"><i class="large material-icons">account_circle &nbsp; </i>Sign Up</h3>
             </div>
             <div class="card-body">
               <div class="input-group no-border ">
                 <label class="labels"for="First Name">First Name </label>
-                <input [class.is-invalid] = "userProfileForm.get('firstName').invalid && userProfileForm.get('firstName').touched" formControlName = "firstName" type="text" class="form-control" placeholder="Type Here..." required >
+                <input [class.is-invalid] = "userProfileForm.get('firstName').invalid && userProfileForm.get('firstName').touched" formControlName = "firstName" type="text" class="form-control" placeholder="Example: John" required >
               </div>
               <div *ngIf="(userProfileForm.get('firstName').invalid) && (userProfileForm.get('firstName').touched) || (userProfileForm.get('firstName').dirty)">
-                <small *ngIf="(userProfileForm.get('firstName').errors?.required)" class="text-danger"> First name is required</small>
+                <small *ngIf="(userProfileForm.get('firstName').errors?.required)" class="text-danger">* First name Required</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
 
               <div class="input-group no-border">
                 <label class="labels"for="Last Name">Last Name </label>
-                <input [class.is-invalid] = "userProfileForm.get('lastName').invalid && userProfileForm.get('lastName').touched" formControlName = "lastName" type="text" class="form-control" placeholder="Type Here..." required >
+                <input [class.is-invalid] = "userProfileForm.get('lastName').invalid && userProfileForm.get('lastName').touched" formControlName = "lastName" type="text" class="form-control" placeholder="Example: Smith" required >
               </div>
               <div *ngIf="(userProfileForm.get('lastName').invalid) && (userProfileForm.get('lastName').touched) || (userProfileForm.get('lastName').dirty)">
-                <small *ngIf="(userProfileForm.get('lastName').errors?.required)" class="text-danger"> Last name is required</small>
+                <small *ngIf="(userProfileForm.get('lastName').errors?.required)" class="text-danger">* Last name is required</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
 
 
               <div class="input-group no-border">
                 <label class="labels"for="Email">Email </label>
-                <input [class.is-invalid] = "userProfileForm.get('email').invalid && userProfileForm.get('email').touched" formControlName = "email" type="email" placeholder="Type Here..." class="form-control" required>
+                <input [class.is-invalid] = "userProfileForm.get('email').invalid && userProfileForm.get('email').touched" formControlName = "email" type="email" placeholder="Example: John@yahoo.com" class="form-control" required>
               </div>
 
               <div *ngIf="(userProfileForm.get('email').invalid) && (userProfileForm.get('email').touched) || (userProfileForm.get('email').dirty)">
-                <small *ngIf="(userProfileForm.get('email').errors?.required)" class="text-danger"> Email is required</small>
+                <small *ngIf="(userProfileForm.get('email').errors?.required)" class="text-danger">* Email Required</small>
                 <!--question mark(?) is a safe navigation operator-->
-                <small *ngIf="(userProfileForm.get('email').errors?.pattern)" class="text-danger">Please provide a valid email address</small>
+                <small *ngIf="(userProfileForm.get('email').errors?.pattern)" class="text-danger">* Please provide a valid email address</small>
                 </div>
 
 
               <div class="input-group no-border">
                 <label class="labels"for="Password">Password </label>
-                <input [class.is-invalid] = "userProfileForm.get('password').invalid && userProfileForm.get('password').touched" id="password" formControlName = "password" type="password" class="form-control" placeholder="Type Here..." minlength="8" required>
+                <input [class.is-invalid] = "userProfileForm.get('password').invalid && userProfileForm.get('password').touched" id="password" formControlName = "password" type="password" class="form-control" placeholder="Must be 8 characters long.." minlength="8" required>
               </div>
 
               <div *ngIf="(userProfileForm.get('password').invalid) && (userProfileForm.get('password').touched) || (userProfileForm.get('password').dirty)">
-                <small *ngIf="(userProfileForm.get('password').errors?.required)" class="text-danger"> Password feild is required</small>
+                <small *ngIf="(userProfileForm.get('password').errors?.required)" class="text-danger">* Password Required</small>
                 <!--question mark(?) is a safe navigation operator-->
-                <small *ngIf="(userProfileForm.get('password').errors?.minlength)" class="text-danger">Password must contains 8 characters </small>
+                <small *ngIf="(userProfileForm.get('password').errors?.minlength)" class="text-danger">* Password must contains 8 characters </small>
                 </div>
               
               <div class="input-group no-border">
                 <label class="labels"for="Re-enter password">Re-enter Password </label>
-                <input [class.is-invalid] = "userProfileForm.get('verifyPassword').invalid && userProfileForm.get('verifyPassword').touched"  formControlName = "verifyPassword" (change) = "onBlurMethod($event)" type="password" class="form-control form1" placeholder="Type Here..." minlength="8" required>
+                <input [class.is-invalid] = "userProfileForm.get('verifyPassword').invalid && userProfileForm.get('verifyPassword').touched"  formControlName = "verifyPassword" (change) = "onBlurMethod($event)" type="password" class="form-control form1" placeholder="Must be 8 characters long.." minlength="8" required>
               </div>
               <div *ngIf="(userProfileForm.get('verifyPassword').invalid) && (userProfileForm.get('verifyPassword').touched) || (userProfileForm.get('verifyPassword').dirty)">
-                <small *ngIf="(userProfileForm.get('verifyPassword').errors?.required)" class="text-danger">password does not match</small>
+                <small *ngIf="(userProfileForm.get('verifyPassword').errors?.required)" class="text-danger">* Password does not match</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
-
               <div class="input-group no-border">
-                <label class="labels"for="company">Company </label>
-                <input [class.is-invalid] = "userProfileForm.get('companyName').invalid && userProfileForm.get('companyName').touched"  formControlName = "companyName" type="text" class="form-control" placeholder="Type Here..." required>
+                <label class="labels"for="company">Company</label>
+                <input [class.is-invalid] = "userProfileForm.get('companyName').invalid && userProfileForm.get('companyName').touched"  formControlName = "companyName" type="text" class="form-control" placeholder="Exaample: Abc" required>
               </div>
               <div *ngIf="(userProfileForm.get('companyName').invalid) && (userProfileForm.get('companyName').touched) || (userProfileForm.get('companyName').dirty)">
-                <small *ngIf="(userProfileForm.get('companyName').errors?.required)" class="text-danger"> Field is required</small>
+                <small *ngIf="(userProfileForm.get('companyName').errors?.required)" class="text-danger">* Field Required</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
               <div formGroupName = "address">
                 <div class="input-group no-border">
                   <label class="labels"for="address">Address#1 </label>
-                  <input formControlName = "addressLineOne" [class.is-invalid] = "userProfileForm.get('address.addressLineOne').invalid && userProfileForm.get('address.addressLineOne').touched"   type="text" class="form-control" placeholder="Type Here..." required>
+                  <input formControlName = "addressLineOne" [class.is-invalid] = "userProfileForm.get('address.addressLineOne').invalid && userProfileForm.get('address.addressLineOne').touched"   type="text" class="form-control" placeholder="Address#1" required>
                 </div>
                 <div *ngIf="(userProfileForm.get('address.addressLineOne').invalid) && (userProfileForm.get('address.addressLineOne').touched) || (userProfileForm.get('address.addressLineOne').dirty)">
-                  <small *ngIf="(userProfileForm.get('address.addressLineOne').errors?.required)" class="text-danger"> Field is required</small>
+                  <small *ngIf="(userProfileForm.get('address.addressLineOne').errors?.required)" class="text-danger"> Field Required</small>
                   <!-- question mark(?) is a safe navigation operator -->
                   </div>
 
                 <div class="input-group no-border">
                   <label class="labels"for="">City </label>
-                  <input [class.is-invalid] = "userProfileForm.get('address.city').invalid && userProfileForm.get('address.city').touched"  formControlName = "city" type="text" class="form-control" placeholder="Type Here..." required>
+                  <input [class.is-invalid] = "userProfileForm.get('address.city').invalid && userProfileForm.get('address.city').touched"  formControlName = "city" type="text" class="form-control" placeholder="City" required>
                 </div>
                 <div *ngIf="(userProfileForm.get('address.city').invalid) && (userProfileForm.get('address.city').touched) || (userProfileForm.get('address.city').dirty)">
-                  <small *ngIf="(userProfileForm.get('address.city').errors?.required)" class="text-danger"> Field is required</small>
+                  <small *ngIf="(userProfileForm.get('address.city').errors?.required)" class="text-danger">* Field Required</small>
                   <!-- question mark(?) is a safe navigation operator -->
                   </div>
 
@@ -94,23 +93,21 @@
                     </select>
                 </div>
                 <div *ngIf="(userProfileForm.get('address.state').invalid) && (userProfileForm.get('address.state').touched) || (userProfileForm.get('address.state').dirty)">
-                  <small *ngIf="(userProfileForm.get('address.state').errors?.required)" class="text-danger"> Field is required</small>
+                  <small *ngIf="(userProfileForm.get('address.state').errors?.required)" class="text-danger">* Field Required</small>
                   <!-- question mark(?) is a safe navigation operator -->
                   </div>
 
                 <div class="input-group no-border">
-                  <label class="labels"for="zipcode">Zipcode </label>
-                  <input [class.is-invalid] = "userProfileForm.get('address.zipCode').invalid && userProfileForm.get('address.zipCode').touched" formControlName = "zipCode" type="text" class="form-control" placeholder="Type Here..."  maxlength="5" required>
+                  <label class="labels"for="zipcode">Zip Code </label>
+                  <input [class.is-invalid] = "userProfileForm.get('address.zipCode').invalid && userProfileForm.get('address.zipCode').touched" formControlName = "zipCode" type="text" class="form-control" placeholder="Must be 5 digits"  maxlength="5" required>
                 </div>
 
                 <div *ngIf="(userProfileForm.get('address.zipCode').invalid) && (userProfileForm.get('address.zipCode').touched) || (userProfileForm.get('address.zipCode').dirty)">
-                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.required)" class="text-danger"> Zipcode is required</small>
+                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.required)" class="text-danger">* Zip code Required</small>
                   <!--question mark(?) is a safe navigation operator-->
-                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.minlength)" class="text-danger">minimum length must be 5 numbers</small>
-                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.pattern)" class="text-danger">Please provide a valid zipcode</small>  
+                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.minlength)" class="text-danger">* Must be 5 digits long</small>
+                  <small *ngIf="(userProfileForm.get('address.zipCode').errors?.pattern)" class="text-danger">* Please provide a valid Zip code</small>  
                 </div>
-
-
                 <div class="input-group no-border">
                   <label class="labels" for="country">Country</label>
                   <select [class.is-invalid] = "userProfileForm.get('address.country').invalid && userProfileForm.get('address.country').touched"  formControlName = "country" class="form-control" name="">
@@ -118,58 +115,63 @@
                   </select>
                 </div>
                 <div *ngIf="(userProfileForm.get('address.country').invalid) && (userProfileForm.get('address.country').touched) || (userProfileForm.get('address.country').dirty)">
-                  <small *ngIf="(userProfileForm.get('address.country').errors?.required)" class="text-danger"> Field is required</small>
+                  <small *ngIf="(userProfileForm.get('address.country').errors?.required)" class="text-danger">* Field Required</small>
                   <!-- question mark(?) is a safe navigation operator -->
                   </div>
 
               </div>
+
+              <div class="input-group no-border">
+                <label class="labels"for="phoneNo.">Phone No. </label>
+                <input [class.is-invalid] = "userProfileForm.get('phoneNumber').invalid && userProfileForm.get('phoneNumber').touched" formControlName = "phoneNumber" type="text" class="form-control" placeholder="Example: 9296765678"  maxlength= "10" minlength="10" required>
+              </div>
+
+              <div *ngIf="(userProfileForm.get('phoneNumber').invalid) && (userProfileForm.get('phoneNumber').touched) || (userProfileForm.get('phoneNumber').dirty)">
+                <small *ngIf="(userProfileForm.get('phoneNumber').errors?.required)" class="text-danger">* Phone number is required</small>
+                <!--question mark(?) is a safe navigation operator-->
+                <small *ngIf="(userProfileForm.get('phoneNumber').errors?.pattern)" class="text-danger">* Please provide a valid Phone number</small>
+                </div>
+
+              <div class="input-group no-border">
+                <label class="labels"for="fax no.">Fax No.</label>
+                <input [class.is-invalid] = "userProfileForm.get('faxNumber').invalid && userProfileForm.get('faxNumber').touched" formControlName= "faxNumber" type="text" class="form-control" maxlength="10" placeholder="Example: 3235551234" required>
+
+              </div>
+              <div *ngIf="(userProfileForm.get('faxNumber').invalid) && (userProfileForm.get('faxNumber').touched) || (userProfileForm.get('faxNumber').dirty)">
+                <small *ngIf="(userProfileForm.get('faxNumber').errors?.required)" class="text-danger"> Field Required</small>
+                <!-- question mark(?) is a safe navigation operator -->
+                <small *ngIf="(userProfileForm.get('faxNumber').errors?.minlength)" class="text-danger">* Must be 10 digits long</small>
+                <small *ngIf="(userProfileForm.get('faxNumber').errors?.pattern)" class="text-danger">* Please provide a valid Fax number</small>
+                </div>
+
+
+                <div formGroupName = "role">
+                  <div class="input-group no-border">
+                    <label class="labels" for="signup as">I Am Signing Up As A ...</label>
+                    <select [class.is-invalid] = "userProfileForm.get('role.roleName').invalid && userProfileForm.get('role.roleName').touched" formControlName = "roleName" #mySelect (change)='SelectRole(mySelect.value)' class="form-control" required>
+                      <option *ngFor="let d of roleName" [ngValue]="d">{{ d }}</option>
+                    </select>
+                  </div>
+                  <div *ngIf="(userProfileForm.get('role.roleName').invalid) && (userProfileForm.get('role.roleName').touched) || (userProfileForm.get('role.roleName').dirty)">
+                    <small *ngIf="(userProfileForm.get('role.roleName').errors?.required)" class="text-danger">* Field Required</small>
+                    
+                    </div>
+                </div>
              
               <div class="input-group no-border">
-                <label class="labels" for="mail delivery Acceptable">Mail Delivery Acceptable</label>
+                <label class="labels" for="mail delivery Acceptable">Local Delivery / Shipment - Preference</label>
                 <select [class.is-invalid] = "userProfileForm.get('isMailDeliveryAcceptable').invalid && userProfileForm.get('isMailDeliveryAcceptable').touched" formControlName = "isMailDeliveryAcceptable" class="form-control" name="" required>
                   <option *ngFor="let d of isMailDeliveryAcceptable" [ngValue]="d">{{ d }}</option>
                 </select>
               </div>
               <div *ngIf="(userProfileForm.get('isMailDeliveryAcceptable').invalid) && (userProfileForm.get('isMailDeliveryAcceptable').touched) || (userProfileForm.get('isMailDeliveryAcceptable').dirty)">
-                <small *ngIf="(userProfileForm.get('isMailDeliveryAcceptable').errors?.required)" class="text-danger"> Feild is required</small>
+                <small *ngIf="(userProfileForm.get('isMailDeliveryAcceptable').errors?.required)" class="text-danger">* Field Required</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
 
-              <div formGroupName = "role">
-                <div class="input-group no-border">
-                  <label class="labels" for="signup as">Signup As</label>
-                  <select [class.is-invalid] = "userProfileForm.get('role.roleName').invalid && userProfileForm.get('role.roleName').touched" formControlName = "roleName" #mySelect (change)='SelectRole(mySelect.value)' class="form-control" name="" required>
-                    <option *ngFor="let d of roleName" [ngValue]="d">{{ d }}</option>
-                  </select>
-                </div>
-                <div *ngIf="(userProfileForm.get('role.roleName').invalid) && (userProfileForm.get('role.roleName').touched) || (userProfileForm.get('role.roleName').dirty)">
-                  <small *ngIf="(userProfileForm.get('role.roleName').errors?.required)" class="text-danger"> Feild is required</small>
-                  
-                  </div>
-              </div>
+             
               
-              <div class="input-group no-border">
-                <label class="labels"for="phoneNo.">Phone No. </label>
-                <input [class.is-invalid] = "userProfileForm.get('phoneNumber').invalid && userProfileForm.get('phoneNumber').touched" formControlName = "phoneNumber" type="text" class="form-control" placeholder="Type Here..."  maxlength= "10" minlength="10" required>
-              </div>
-
-              <div *ngIf="(userProfileForm.get('phoneNumber').invalid) && (userProfileForm.get('phoneNumber').touched) || (userProfileForm.get('phoneNumber').dirty)">
-                <small *ngIf="(userProfileForm.get('phoneNumber').errors?.required)" class="text-danger"> Phone number is required</small>
-                <!--question mark(?) is a safe navigation operator-->
-                <small *ngIf="(userProfileForm.get('phoneNumber').errors?.pattern)" class="text-danger">Please provide a valid phone number</small>
-                </div>
-
-              <div class="input-group no-border">
-                <label class="labels"for="fax no.">Fax No.</label>
-                <input [class.is-invalid] = "userProfileForm.get('faxNumber').invalid && userProfileForm.get('faxNumber').touched" formControlName= "faxNumber" type="text" class="form-control" maxlength="10" placeholder="Type Here..." required>
-
-              </div>
-              <div *ngIf="(userProfileForm.get('faxNumber').invalid) && (userProfileForm.get('faxNumber').touched) || (userProfileForm.get('faxNumber').dirty)">
-                <small *ngIf="(userProfileForm.get('faxNumber').errors?.required)" class="text-danger"> Feild is required</small>
-                <!-- question mark(?) is a safe navigation operator -->
-                <small *ngIf="(userProfileForm.get('faxNumber').errors?.minlength)" class="text-danger">minimum length must be 10 numbers</small>
-                <small *ngIf="(userProfileForm.get('faxNumber').errors?.pattern)" class="text-danger">Please provide a valid Fax number</small>
-                </div>
+              
               <div id="deliveryRadius" class="input-group no-border">
                 <label class="labels" for="delivery radius">Delivery Radius</label>
                 <select [class.is-invalid] = "userProfileForm.get('deliveryRadius').invalid && userProfileForm.get('deliveryRadius').touched" formControlName = "deliveryRadius" class="form-control" name="" required>
@@ -177,11 +179,11 @@
                 </select>
               </div>
               <div *ngIf="(userProfileForm.get('deliveryRadius').invalid) && (userProfileForm.get('deliveryRadius').touched) || (userProfileForm.get('deliveryRadius').dirty)">
-                <small *ngIf="(userProfileForm.get('deliveryRadius').errors?.required)" class="text-danger"> Feild is required</small>
+                <small *ngIf="(userProfileForm.get('deliveryRadius').errors?.required)" class="text-danger">* Field Required</small>
                 <!-- question mark(?) is a safe navigation operator -->
                 </div>
               <div class="text-center">
-                <button [disabled]= "!userProfileForm.valid" (click) ="post()" class="btn btn-neutral btn-round btn-lg" name="Get Started">Get Started</button>
+                <button [disabled]= "!userProfileForm.valid" (click) ="post()" class="btn btn-danger btn-lg" name="Get Started">Get Started</button>
               </div>
             </div>
           </form>

@@ -53,11 +53,11 @@
    <div class="form-group" formGroupName="partType">
         <label for="type">Type of Part</label><br>
         ​<input formControlName="used" class="checkbox" type="checkbox" >
-        <label class="check-labels" for="used">Used</label><br>
+        <label class="check-labels" for="used">used</label><br>
         <input formControlName="new" class="checkbox" type="checkbox" >
-        <label class="check-labels" for="new">New</label><br>
+        <label class="check-labels" for="new">new</label><br>
         <input formControlName="reManufactured" class="checkbox" type="checkbox" >
-        <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
+        <label class="check-labels" for="Remanufactured">remanufactured</label><br>
   </div>
         <button [disabled]= "!vehicleInfoForm.valid"  class="btn btn-primary" (click) = "post()" type="submit">SUBMIT</button>
         <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
