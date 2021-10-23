@@ -4,6 +4,7 @@
 <div class="table-responsive">
 <table>   
         <tr>
+            <th>Part request Id</th>
             <th>Make</th>
             <th>Year</th>
             <th>Model</th>
@@ -15,6 +16,7 @@
             <th>Edit</th>
         </tr>    
         <tr *ngFor="let offers of offerStatus">
+            <td>{{offers.partRequestId}}</td>
             <td>{{offers.make}}</td>
             <td>{{offers.year}}</td>
             <td>{{offers.model}}</td>
