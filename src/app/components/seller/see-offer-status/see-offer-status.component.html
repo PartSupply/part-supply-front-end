@@ -1,1 +1,30 @@
 <app-seller-header></app-seller-header>
+
+<h3 class="headline">My Offer(s) Status</h3>
+<div class="table-responsive">
+<table>   
+        <tr>
+            <th>Make</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Part</th>
+            <th>Amount</th>
+            <th>Warranty</th>
+            <th>Brand</th>
+            <th>Standing</th>
+            <th>Edit</th>
+        </tr>    
+        <tr *ngFor="let offers of offerStatus">
+            <td>{{offers.make}}</td>
+            <td>{{offers.year}}</td>
+            <td>{{offers.model}}</td>
+            <td>{{offers.part}}</td>
+            <td>${{offers.bid}}</td>
+            <td>{{offers.warranty}}</td>
+            <td>{{offers.brand}}</td>
+            <td>{{offers.bidStandingStatus}}</td> 
+            <td class="td-button1"><button class="ask-btn btn btn-danger">Edit Offer</button></td>
+        
+        </tr>
+    
+</table>

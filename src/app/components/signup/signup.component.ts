@@ -34,8 +34,8 @@ export class SignupComponent implements OnInit {
     deliveryRadius: new FormControl(''),
   });
   
-  deliveryRadius: string[] = ['5miles', '10miles', '20miles', '25miles', 'all'];
-  isMailDeliveryAcceptable: string[] = ['Yes' , 'No'];
+  deliveryRadius: string[] = ['5 miles', '10 miles', '20 miles', '25 miles', 'Anywhere In The USA'];
+  isMailDeliveryAcceptable: string[] = ['Local Only' , 'Local and Shipment']; 
   state: string[] = ['Michigan'];
   roleName: string[] = ['BUYER', 'SELLER'];
   country: string[] = ['usa'];

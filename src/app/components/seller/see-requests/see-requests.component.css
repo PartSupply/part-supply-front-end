@@ -1,17 +1,15 @@
 
   ::ng-deep.mat-dialog-container {
-    background-color: lightblue !important; 
+    background-color: red !important; 
       border-radius: 20px !important;
 }
 
 table{
-    /* width: 100%; */
     margin: 5% 2% 10%;
 }
 .headline{
   background-color: #444444;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  font-family: 'Dancing Script', cursive;
   text-align: center;
   margin-top: 2%;
   color: #FFF;
@@ -21,18 +19,18 @@ table{
   
   }
   td{
-    /* background-color: burlywood; */
   border: 1px solid #131212;
   text-align: center;
   padding: 8px;
 }
-.td-button{
+.td-button, .td-button1{
   width: 15%;
 }
+
 button{
   box-shadow: 2px 2px 2px 2px grey;
 }
-button:hover{
+.place-btn:hover{
   background-color: greenyellow;
   color: black;
 }

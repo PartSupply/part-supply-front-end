@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { AboutComponent } from './components/common/about/about.component';
-import { ServicesComponent } from './components/common/services/services.component';
+import { DetailsComponent } from './components/common/details/details.component';
 import { MakeRequestComponent } from './components/buyer/make-request/make-request.component';
 import { RequestInfoComponent } from './components/buyer/request-info/request-info.component';
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
@@ -27,8 +26,7 @@ const routes: Routes = [];
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
       { path: 'signup', component: SignupComponent},
-      { path: 'about', component: AboutComponent},
-      { path: 'services', component: ServicesComponent},
+      { path: 'details', component: DetailsComponent},
       { path: 'MakeRequest', component: MakeRequestComponent},
       { path: 'requestInfo', component: RequestInfoComponent, canActivate: [RoleGuard, AuthGuard], 
       data: { 

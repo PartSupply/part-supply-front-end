@@ -9,19 +9,19 @@
         <div class="top-part">
           <div>
             <label class="top5-label" for="year">Year:</label>
-           <span  class="span-class">{{name}}</span>
+           <span  class="span-class">{{partData.year}}</span>
            </div>
           <div class="form-group">
             <label class="top5-label" for="make">Make:</label>
-            <span  class="span-class" >{{name}}</span>
+            <span  class="span-class" >{{partData.make}}</span>
           </div>
           <div class="form-group">
             <label class="top5-label" for="model">Model:</label>
-            <span  class="span-class" >{{name}}</span>
+            <span  class="span-class" >{{partData.model}}</span>
           </div>
           <div class="form-group">
             <label class="top5-label" for="vin">VIN:</label>
-            <span  class="span-class" >{{name}}</span>
+            <span  class="span-class" >{{partData.vinNumber}}</span>
           </div>
         </div>
         <div class="form-group">
@@ -32,20 +32,20 @@
         </div>
 
         <div *ngIf="(vehicleInfoForm2.get('partName').invalid) && (vehicleInfoForm2.get('partName').touched) || (vehicleInfoForm2.get('partName').dirty)">
-          <small *ngIf="(vehicleInfoForm2.get('partName').errors?.required)" class="text-danger"> Feild is required</small>
+          <small *ngIf="(vehicleInfoForm2.get('partName').errors?.required)" class="text-dark"> * Field Required</small>
         </div>
         <div class="form-group" formGroupName="partType">
           <label for="type">Type of Part</label><br>
           ​<input formControlName="used" class="checkbox" type="checkbox" >
-          <label class="check-labels" for="used">Used</label><br>
+          <label class="check-labels" for="used">used</label><br>
           <input formControlName="new" class="checkbox" type="checkbox" >
-          <label class="check-labels" for="new">New</label><br>
+          <label class="check-labels" for="new">new</label><br>
           <input formControlName="reManufactured" class="checkbox" type="checkbox" >
-          <label class="check-labels" for="Remanufactured">Re-manufactured</label><br>
+          <label class="check-labels" for="Remanufactured">remanufactured</label><br>
     </div>
 
-        <button [disabled]="!vehicleInfoForm2.valid" class="btn btn-primary" type="submit">SUBMIT</button>
-        <button class="btn btn-primary btn-no-thanks" (click)="onNoClick()" type="submit">No,thanks</button>
+        <button [disabled]="!vehicleInfoForm2.valid" (click)="postPartRequest()" class="btn btn-primary" type="submit">SUBMIT</button>
+        <button class="btn btn-primary btn-no-thanks" (click)="onNoClick()" type="submit">No Thanks</button>
 
       </form>
 

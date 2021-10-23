@@ -1,13 +1,18 @@
+.navbar-toggler{
+  color: grey;
+}
 .navbar-div{
-  margin-left: 50%;
+  margin-left: 55%;
 } 
 img{
   cursor: pointer;
 }
+
 .nav-item{
   margin: 0 2px;
   font-weight: bold;
-   text-shadow: 2px 2px 4px #000000;
+  /* text-shadow: 2px 2px 4px #000000; */
+  font-size: 1.3rem;
 }
 .navbar{
   background-color: #BBBFCA;

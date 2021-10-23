@@ -50,4 +50,7 @@ export class HomeComponent implements OnInit {
       alert("Wrong Username or Password");
     }
   }
+  signup(){
+    this.router.navigate(['/signup']);
+  }
 }

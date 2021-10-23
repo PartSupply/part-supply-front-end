@@ -6,18 +6,18 @@
           <div class="row">
               <div class="col-sm-12 col-lg-12">
                   <h1 class="h1">
-                      Contact us <small>Feel free to contact us</small></h1>
+                      Contact <small>Part Supply</small></h1>
               </div>
           </div>
       </div>
   </div>
     <form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
         Name
-        <input [formControl]="name" required>
+        <input [formControl]="name" placeholder="Your Name" required>
         Email
         <input [formControl]="email" placeholder="email@example.com" required>
         Message
-        <textarea [formControl]="message" maxlength="800" rows="5" cols="30" placeholder="I'm interested in..." required></textarea>
+        <textarea [formControl]="message" maxlength="800" rows="5" cols="30" placeholder="Type your message here." required></textarea>
         <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
         <input [formControl]="honeypot" class="hidden" type="text" />
         <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
