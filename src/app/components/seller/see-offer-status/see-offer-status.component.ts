@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http.service';
-import { SellerPlaceOfferComponent } from '../seller-place-offer/seller-place-offer.component';
+import { SellerEditOfferComponent } from '../seller-edit-offer/seller-edit-offer.component';
 
 @Component({
   selector: 'app-see-offer-status',
@@ -40,7 +40,7 @@ export class SeeOfferStatusComponent implements OnInit {
   }
   openDialog(offers) {
     this.userSelectedPartRequest = offers;
-    const dialogRef = this.dialog.open(SellerPlaceOfferComponent, {
+    const dialogRef = this.dialog.open(SellerEditOfferComponent, {
       width: '500px',
       height: '665px',
       data: offers,

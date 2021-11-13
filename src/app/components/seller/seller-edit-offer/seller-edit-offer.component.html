@@ -1,0 +1,59 @@
+<!-- <app-seller-header></app-seller-header> -->
+
+<div class="container">
+    <div class="main">
+      <div class="main-center">
+        <h5>Enter Part Request</h5>
+        
+        <form action="post" [formGroup]= "PlaceOfferForm" novalidate>
+          <div class="bottom-div">
+            <div>
+              <label class="bottom-labels" for="offer-amount">Offer Amount(USD)</label>
+              <input style="padding-left: 4%; font-size: 1rem;" class="form-input" formControlName = "bidAmount" type="number" placeholder="Example: 200" value="{{partData.bid}}">
+            </div>
+  
+            <div>
+              <label class="bottom-labels" for="offer-warranty">Offer Warranty</label>
+              <!-- <input class="form-input" formControlName = "bidWarranty" type="" placeholder="In Days"> -->
+              <select formControlName = "bidWarranty" name="" id="" class='form-control'>
+                <option *ngFor="let d of bidWarranty" [ngValue]="d" >{{d}}</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="bottom-labels" for="part-brand">Part Brand</label>
+              <div>
+                <input style="padding-left: 4%; font-size: 1rem;"  class="form-input" formControlName = "partBrand" type="text" placeholder="Example: Ford" value="{{partData.brand}}">
+              </div>
+            </div>
+  
+            <div>
+              <label class="bottom-labels" for="Delivery-time">Estimated Delivery Time</label>
+              <div>
+  
+                <select formControlName = "estDeliveryTime" name="" id="" class='form-control'>
+                  <option *ngFor="let d of estimatedDeliveryTime" [ngValue]="d" >{{d}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div formGroupName = "typeOfPart">
+                <label class="part-type-label" for="type-of-part">Part Type</label>
+                <div>
+                    <input formControlName="partType" type="radio" name="partType" value="NEW" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'NEW'">
+                    <label class="radio-label" for="new">new</label><br>
+                    <input formControlName="partType"type="radio" name="partType" value="USED" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'USED'">
+                    <label class="radio-label"for="used">used</label><br>
+                    <input formControlName="partType" type="radio" name="partType" value="RE_MANUFACTURED" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'RE_MANUFACTURED'">
+                    <label class="radio-label" for="Re-manufactured">remanufactured</label>
+                </div>
+            </div>
+          <button class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
+        <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
+        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancel</button>
+        </div>
+      </form>
+        
+    </div>
+  </div>
+</div>

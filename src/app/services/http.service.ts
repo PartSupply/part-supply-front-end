@@ -32,6 +32,26 @@ export class HttpService {
         ).toPromise();
     }
 
+    public async put<T>(url: string, payload: any, shouldCheckToken: boolean = true): Promise<T> {
+        const user: any = JSON.parse(localStorage.getItem('user'));
+
+        let headerDict = null;
+        if (shouldCheckToken) {
+            headerDict = {
+                'Authorization': `Bearer ${user.access_token}`,
+            };
+        }
+        
+        const requestOptions = {
+            headers: new HttpHeaders(headerDict),
+        };
+        return await this.httpClient.put<T>(
+            `${environment.baseUrl}/${url}`,
+            payload,
+            requestOptions
+        ).toPromise();
+    }
+
     public async get<T>(url: string): Promise<T> {
         const user: any = JSON.parse(localStorage.getItem('user'));
         const headerDict = {

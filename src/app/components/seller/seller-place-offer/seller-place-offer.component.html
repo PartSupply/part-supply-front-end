@@ -60,16 +60,16 @@
               </div>
             </div>
 
-              <div formGroupName = "typeOfPart">
-                <label class="part-type-label" for="type-of-part">Part Type</label>
+            <div formGroupName = "typeOfPart">
+              <label class="part-type-label" for="type-of-part">Part Type</label>
               <div>
-              <input formControlName="NEW" type="radio" name="partType">
-              <label class="radio-label" for="new">new</label><br>
-              <input formControlName="USED"type="radio" name="partType">
-              <label class="radio-label"for="used">used</label><br>
-              <input formControlName="RE_MANUFACTURED" type="radio" name="partType">
-              <label class="radio-label" for="Re-manufactured">remanufactured</label>
-            </div>
+                <input formControlName="partType" type="radio" name="partType" value="NEW">
+                <label class="radio-label" for="new">new</label><br>
+                <input formControlName="partType"type="radio" name="partType" value="USED">
+                <label class="radio-label"for="used">used</label><br>
+                <input formControlName="partType" type="radio" name="partType" value="RE_MANUFACTURED">
+                <label class="radio-label" for="Re-manufactured">remanufactured</label>
+              </div>
           </div>
           <button [disabled]= "!PlaceOfferForm.valid"  class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
         <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>

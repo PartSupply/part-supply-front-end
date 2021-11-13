@@ -9,8 +9,10 @@
             <th>Year</th>
             <th>Model</th>
             <th>Part</th>
+            <th>Type</th>
             <th>Amount</th>
             <th>Warranty</th>
+            <th>Delivery Time</th>
             <th>Brand</th>
             <th>Standing</th>
             <th>Edit</th>
@@ -21,8 +23,10 @@
             <td>{{offers.year}}</td>
             <td>{{offers.model}}</td>
             <td>{{offers.part}}</td>
+            <td>{{offers.partType}}</td>
             <td>${{offers.bid}}</td>
             <td>{{offers.warranty}}</td>
+            <td>{{offers.estDeliveryTime}}</td>
             <td>{{offers.brand}}</td>
             <td style="width: 60%;">
                 <span *ngIf="offers.sellerId === userProfile.data.id && offers.bidStandingStatus==='OUTBID'" >

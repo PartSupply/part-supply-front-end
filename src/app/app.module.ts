@@ -28,6 +28,7 @@ import { SeeOfferStatusComponent } from './components/seller/see-offer-status/se
 import { AdminHeaderComponent } from './components/Admin/admin-header/admin-header.component';
 import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
 import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
+import { SellerEditOfferComponent } from './components/seller/seller-edit-offer/seller-edit-offer.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/b
     AdminHeaderComponent,
     SellerPlaceOfferComponent,
     BuyerViewOffersComponent,
+    SellerEditOfferComponent,
   ],
   imports: [
     SparkAngularModule,
@@ -63,7 +65,10 @@ import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/b
     MatDialogModule,
   ],
   providers: [RoleGuardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    SellerEditOfferComponent,
+  ]
 })
 export class AppModule {
  }
