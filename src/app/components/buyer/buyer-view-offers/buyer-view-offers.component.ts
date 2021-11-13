@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-buyer-view-offers',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyerViewOffersComponent implements OnInit {
 
-  constructor() { }
+  response: any;
+  constructor(public httpService: HttpService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const url = window.location.pathname;
+    const requestNumber = url.split('/')[url.split('/').length -1]
+    this.response = await this.httpService.get(`buyer/partOffers/${requestNumber}`);
   }
 
 }

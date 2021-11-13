@@ -65,7 +65,7 @@ const routes: Routes = [];
         expectedRole: 'SELLER'
       }
     },
-    { path: 'viewOffers', component: BuyerViewOffersComponent, canActivate: [RoleGuard, AuthGuard],
+    { path: 'viewOffers/:id', component: BuyerViewOffersComponent, canActivate: [RoleGuard, AuthGuard],
       data:{
         expectedRole: 'BUYER'
       }

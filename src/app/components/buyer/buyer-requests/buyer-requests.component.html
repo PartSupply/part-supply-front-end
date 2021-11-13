@@ -53,7 +53,7 @@
                 <td>{{partRequest.partType}}</td>
                 <td>{{partRequest.numberOfOffers}}</td>
                 <td>{{partRequest.offerStatus}}</td>
-                <td class="view_offer_td"><button (click)="viewOffers()" class="btn btn-danger">View Offers</button></td>
+                <td class="view_offer_td"><button (click)="viewOffers(partRequest.id)" class="btn btn-danger">View Offers</button></td>
             </tr>
           </table>
      </div>

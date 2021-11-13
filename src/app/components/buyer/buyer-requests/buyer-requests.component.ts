@@ -44,7 +44,8 @@ export class BuyerRequestsComponent implements OnInit {
   homeRoute(){
     this.router.navigate(['/home']);
     }
-    viewOffers(){
-      this.router.navigate(['/viewOffers']);
+    viewOffers(partRequestId: string){
+      console.log(partRequestId);
+      this.router.navigate([`/viewOffers/${partRequestId}`]);
     }
 }
