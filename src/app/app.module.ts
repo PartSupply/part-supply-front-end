@@ -27,6 +27,7 @@ import { SeeRequestsComponent } from './components/seller/see-requests/see-reque
 import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
 import { AdminHeaderComponent } from './components/Admin/admin-header/admin-header.component';
 import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
+import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SellerPlaceOfferComponent } from './components/seller/seller-place-offe
     SeeOfferStatusComponent,
     AdminHeaderComponent,
     SellerPlaceOfferComponent,
+    BuyerViewOffersComponent,
   ],
   imports: [
     SparkAngularModule,

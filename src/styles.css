@@ -10,10 +10,9 @@
                                                           min-width: 100%;
                                                           min-height: 100%;
                                                         } */
-html,body{
+body {
  background: url('/assets/partsupply-background.png') no-repeat center center fixed;  
  background-size: cover; 
-/* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
  background-repeat: no-repeat; 
 font-family: 'Helvetica', sans-serif;
 width: 100%;

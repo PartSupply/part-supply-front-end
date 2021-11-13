@@ -1,5 +1,5 @@
 table {
-    margin: 5% 15% 10%;
+    margin: 5% 10% 10%;
 }
 .headline {
   background-color: #444444;
@@ -17,11 +17,12 @@ td {
   padding: 8px;
 }
 
-.td-button{
-  width: 15%;
+.td-button1{
+width: 18%;
 }
 
 button {
+ 
   box-shadow: 2px 2px 2px 2px grey;
 }
 
@@ -39,6 +40,7 @@ th {
   font-size: 1rem;
   color: #FFFF;
 }
+
 table.odd tr td, th {
 	border:1px solid #ccc;
   	padding:5px;
@@ -66,20 +68,25 @@ a:hover{
 
 .thumbs_up_text {
   vertical-align: bottom;
-  padding-left: 5px;
+  padding-left: 20px;
 }
 
-  @media (max-width: 480px){
-  table{
+@media (max-width: 480px){
+.headline {
+        font-size: 2rem;
+  }
+
+ table {
     margin-top: 2%;
     width: 50%;
     font-size: 10px;
-}
-button{
-  font-size: 5px;
-}
-.td-button{
-  width: 10%
+  }
+
+button {
+  font-size: 15px;
 }
 
+.td-button1 {
+  width: 10%
+}
 }

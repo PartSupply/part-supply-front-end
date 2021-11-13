@@ -1,0 +1,77 @@
+
+body {
+    background: -webkit-linear-gradient(left, #2a2936, #7d7f80) !important;
+    background-size: cover;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    font-family: 'Helvetica', sans-serif;
+  
+}
+
+.top-div {
+    color: beige;
+    background-color: red;
+    text-align: center;
+    border-bottom: 3px solid red;
+    padding-top: 10px;
+}
+
+.main-container {
+    padding: 3% 10%;
+}
+
+.middle-div {
+    border-bottom: 15px solid red;
+    margin: 0px;
+}
+
+h1 {
+    opacity: 0.8;
+    font-size: 4rem;
+    color: black;
+}
+
+.seller-side {
+    border-right: 3px solid red;
+    background: url('/assets/waves.png') no-repeat center center fixed;  
+    background-size: cover; 
+    text-align: center;
+    color: beige;
+}
+
+.seller-span {
+    color: white;
+    padding-left: 5%;
+}
+
+.inside-container {
+    margin: 5%;
+    /* border: 3px solid white; */
+    text-align: left;
+    padding: 3%;
+    font-style: none;
+    font-size: 14px;
+    color: linen;
+    background: url('/assets/1.png') no-repeat center center fixed;  
+    background-size: cover; 
+}
+
+.buyer-side {
+    text-align: center;
+    color: beige;
+    background: url('/assets/waves.png') no-repeat center center fixed;  
+    background-size: cover; 
+}
+
+span {
+    color: black;
+    
+}
+
+strong {
+    font-size: 150%;
+    background-color: red;
+    border-radius: 6px;
+    padding: 2px;
+}

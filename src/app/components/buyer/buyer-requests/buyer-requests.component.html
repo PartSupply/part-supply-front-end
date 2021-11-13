@@ -41,6 +41,7 @@
                 <th>Part-Type</th>
                 <th># of Offers</th>
                 <th>Offer Status</th>
+                <th>View Offers</th>
             </tr>
             
             <tr *ngFor="let partRequest of partRequestList">
@@ -52,6 +53,7 @@
                 <td>{{partRequest.partType}}</td>
                 <td>{{partRequest.numberOfOffers}}</td>
                 <td>{{partRequest.offerStatus}}</td>
+                <td class="view_offer_td"><button (click)="viewOffers()" class="btn btn-danger">View Offers</button></td>
             </tr>
           </table>
      </div>
