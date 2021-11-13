@@ -16,6 +16,7 @@ import { SupplierMenuComponent } from './components/seller/supplier-menu/supplie
 import { SeeRequestsComponent } from './components/seller/see-requests/see-requests.component';
 import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
 import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
+import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
 
 const routes: Routes = [];
 
@@ -64,6 +65,12 @@ const routes: Routes = [];
         expectedRole: 'SELLER'
       }
     },
+    { path: 'viewOffers', component: BuyerViewOffersComponent, canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'BUYER'
+      }
+    },
+    
       //canActivate: [AuthGuard]
 
 

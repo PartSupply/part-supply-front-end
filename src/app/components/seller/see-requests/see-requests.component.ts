@@ -13,7 +13,7 @@ import { SellerPlaceOfferComponent } from '../seller-place-offer/seller-place-of
 export class SeeRequestsComponent implements OnInit {
 
   partRequestList: any;
-  userSelctedPartRequest: any;
+  userSelectedPartRequest: any;
 
   constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
   filterPartType(partType: any) {
@@ -25,8 +25,6 @@ export class SeeRequestsComponent implements OnInit {
   filterPartRequestData(data: any) {
     for(let i=0; i<data.length; i++) {
       data[i].partType = this.filterPartType(data[i].partType);
-      // const year= data[i].year;
-      // console.log(year);
     }
     return data;
  }
@@ -35,18 +33,14 @@ export class SeeRequestsComponent implements OnInit {
     this.partRequestList = this.filterPartRequestData(partRequestData.data);
     console.log(this.partRequestList);
   }
-   openDialog(partRequest){
-    this.userSelctedPartRequest = partRequest;
+   openDialog(partRequest) {
+    this.userSelectedPartRequest = partRequest;
     const dialogRef = this.dialog.open(SellerPlaceOfferComponent, {
       width: '500px',
       height: '665px',
       data: partRequest,
     });
-  //  for(let i=0; i<this.partRequestList.length; i++){
-  //    let year = this.partRequestList[i].year;
-  //    let make = this.partRequestList[i].make;
-  //    console.log(year);
-  //  }
+  
   
   }
   
