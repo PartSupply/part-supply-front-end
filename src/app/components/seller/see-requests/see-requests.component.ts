@@ -9,6 +9,7 @@ import { SellerPlaceOfferComponent } from '../seller-place-offer/seller-place-of
   selector: 'app-see-requests',
   templateUrl: './see-requests.component.html',
   styleUrls: ['./see-requests.component.css']
+  
 })
 export class SeeRequestsComponent implements OnInit {
 

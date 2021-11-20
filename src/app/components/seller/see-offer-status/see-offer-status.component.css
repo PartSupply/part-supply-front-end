@@ -1,5 +1,10 @@
+
+::ng-deep.mat-dialog-container {
+  background-color: red !important; 
+    border-radius: 20px !important;
+}
 table {
-    margin: 5% 10% 10%;
+    margin: 5%;
 }
 .headline {
   background-color: #444444;
@@ -29,6 +34,9 @@ button {
 button:hover {
   background-color: greenyellow;
   color: black;
+}
+.standing{
+  width: 50%;
 }
 
 th {
@@ -75,11 +83,18 @@ a:hover{
 .headline {
         font-size: 2rem;
   }
+  .thumbs_up_text {
+    vertical-align: bottom;
+    padding-left: 0px;
+}
 
  table {
-    margin-top: 2%;
+    margin: 5%;
+    width: 80%;
+    font-size: 1rem;
+  }
+  span{
     width: 50%;
-    font-size: 10px;
   }
 
 button {

@@ -21,7 +21,7 @@ const createNewFormControl = () => {
 })
 export class SellerEditOfferComponent implements OnInit {
   
-  PlaceOfferForm = createNewFormControl();
+  EditOfferForm = createNewFormControl();
   bidWarranty: string[] = ['None','30 days','45 days','90 days','6 months','1 year','2 years','3 years','5 years','Limited Life Time'];
   estimatedDeliveryTime: string[] = ['Within an hour','Within 6 hours','Next day','In a week'];
   partData: any;
@@ -29,11 +29,11 @@ export class SellerEditOfferComponent implements OnInit {
   constructor(public httpService: HttpService,public dialog: MatDialog, @Optional() @Inject(MAT_DIALOG_DATA) public data: any) { 
     console.log('Inside', data);
     this.partData = data;
-    this.PlaceOfferForm.controls['bidAmount'].setValue(this.partData.bid, {onlySelf: true});
-    this.PlaceOfferForm.controls['partBrand'].setValue(this.partData.brand, {onlySelf: true});
-    this.PlaceOfferForm.controls['bidWarranty'].setValue(this.partData.warranty, {onlySelf: true});
-    this.PlaceOfferForm.controls['estDeliveryTime'].setValue(this.partData.estDeliveryTime, {onlySelf: true});
-    this.PlaceOfferForm.get('typeOfPart.partType').setValue(this.partData.partType);
+    this.EditOfferForm.controls['bidAmount'].setValue(this.partData.bid, {onlySelf: true});
+    this.EditOfferForm.controls['partBrand'].setValue(this.partData.brand, {onlySelf: true});
+    this.EditOfferForm.controls['bidWarranty'].setValue(this.partData.warranty, {onlySelf: true});
+    this.EditOfferForm.controls['estDeliveryTime'].setValue(this.partData.estDeliveryTime, {onlySelf: true});
+    this.EditOfferForm.get('typeOfPart.partType').setValue(this.partData.partType);
   }
 
   ngOnInit() {
@@ -41,11 +41,11 @@ export class SellerEditOfferComponent implements OnInit {
   public async postofferRequest(): Promise<void> {
     const payload = {
       id: this.partData.bidId,
-      bidAmount: this.PlaceOfferForm.get('bidAmount').value,
-      bidWarranty: this.PlaceOfferForm.get('bidWarranty').value,
-      partBrand: this.PlaceOfferForm.get('partBrand').value,
-      estDeliveryTime: this.PlaceOfferForm.get('estDeliveryTime').value,
-      typeOfPart: this.PlaceOfferForm.get('typeOfPart.partType').value,
+      bidAmount: this.EditOfferForm.get('bidAmount').value,
+      bidWarranty: this.EditOfferForm.get('bidWarranty').value,
+      partBrand: this.EditOfferForm.get('partBrand').value,
+      estDeliveryTime: this.EditOfferForm.get('estDeliveryTime').value,
+      typeOfPart: this.EditOfferForm.get('typeOfPart.partType').value,
       bidStatus: "OPEN",
       partRequest: {
         id: this.partData.partRequestId,
@@ -61,7 +61,7 @@ export class SellerEditOfferComponent implements OnInit {
   }
  
   public formReset() {
-    this.PlaceOfferForm = createNewFormControl();
+    this.EditOfferForm = createNewFormControl();
   }
   public onNoClick(): void {
     const dialogRef = this.dialog.closeAll();

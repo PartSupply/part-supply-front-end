@@ -4,7 +4,7 @@
 <div class="table-responsive">
 <table>   
         <tr>
-            <th>Part request Id</th>
+            <th>Unique ID</th>
             <th>Make</th>
             <th>Year</th>
             <th>Model</th>
@@ -28,7 +28,7 @@
             <td>{{offers.warranty}}</td>
             <td>{{offers.estDeliveryTime}}</td>
             <td>{{offers.brand}}</td>
-            <td style="width: 60%;">
+            <td class="standing" style="width: 60%;">
                 <span *ngIf="offers.sellerId === userProfile.data.id && offers.bidStandingStatus==='OUTBID'" >
                     <img src="./../../../../assets/thumbs_down.png" class="thumbs_img"/>
                     <span class="thumbs_down_text">{{bidMap.get(offers.bidStandingStatus)}}</span>

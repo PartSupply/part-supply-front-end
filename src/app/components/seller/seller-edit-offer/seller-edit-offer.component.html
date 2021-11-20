@@ -3,9 +3,9 @@
 <div class="container">
     <div class="main">
       <div class="main-center">
-        <h5>Enter Part Request</h5>
+        <h5>Edit Offer</h5>
         
-        <form action="post" [formGroup]= "PlaceOfferForm" novalidate>
+        <form action="post" [formGroup]= "EditOfferForm" novalidate>
           <div class="bottom-div">
             <div>
               <label class="bottom-labels" for="offer-amount">Offer Amount(USD)</label>
@@ -14,7 +14,6 @@
   
             <div>
               <label class="bottom-labels" for="offer-warranty">Offer Warranty</label>
-              <!-- <input class="form-input" formControlName = "bidWarranty" type="" placeholder="In Days"> -->
               <select formControlName = "bidWarranty" name="" id="" class='form-control'>
                 <option *ngFor="let d of bidWarranty" [ngValue]="d" >{{d}}</option>
               </select>
@@ -40,11 +39,11 @@
             <div formGroupName = "typeOfPart">
                 <label class="part-type-label" for="type-of-part">Part Type</label>
                 <div>
-                    <input formControlName="partType" type="radio" name="partType" value="NEW" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'NEW'">
+                    <input formControlName="partType" type="radio" name="partType" value="NEW" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'NEW'">
                     <label class="radio-label" for="new">new</label><br>
-                    <input formControlName="partType"type="radio" name="partType" value="USED" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'USED'">
+                    <input formControlName="partType"type="radio" name="partType" value="USED" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'USED'">
                     <label class="radio-label"for="used">used</label><br>
-                    <input formControlName="partType" type="radio" name="partType" value="RE_MANUFACTURED" [checked]="PlaceOfferForm.get('typeOfPart.partType').value == 'RE_MANUFACTURED'">
+                    <input formControlName="partType" type="radio" name="partType" value="RE_MANUFACTURED" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'RE_MANUFACTURED'">
                     <label class="radio-label" for="Re-manufactured">remanufactured</label>
                 </div>
             </div>

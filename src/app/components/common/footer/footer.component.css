@@ -28,7 +28,7 @@ a:hover{
 }
 
 .bottom .copyright p, .bottom .copyright a:hover{
-    color: #FFFF;
+    color: black;
 }
 @media (max-width:992px){
   .bottom p {

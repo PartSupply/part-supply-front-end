@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ViewEncapsulation } from '@angular/compiler/src/core';
 
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  // encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   
@@ -17,15 +19,11 @@ export class HomeComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]),
     password: new FormControl('', Validators.required),
 });
-
-
   constructor(private httpService: HttpService, private router: Router) { 
-
   }
 
   ngOnInit() {
   }
-
   public async post(): Promise<void> {
     console.log(this.userLoginForm.value);
     let loginResponse = null;

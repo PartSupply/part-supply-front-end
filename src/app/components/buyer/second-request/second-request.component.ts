@@ -55,6 +55,9 @@ export class SecondRequestComponent implements OnInit {
   }
   public onNoClick(): void {
     const dialogRef = this.dialog.closeAll();
+    this.vehicleInfoForm2.clearValidators();
+    this.vehicleInfoForm2.updateValueAndValidity();
+    
   }
 }
   export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {

@@ -11,11 +11,9 @@
               <a class="nav-link" aria-current="page" href="home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="signup">Update Application</a>
-              </li>
-            <li class="nav-item">
                 <a class="nav-link" href="requestInfo">Part Request Menu</a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="contactUs">Contact</a>
               </li>
@@ -53,7 +51,7 @@
                 <td>{{partRequest.partType}}</td>
                 <td>{{partRequest.numberOfOffers}}</td>
                 <td>{{partRequest.offerStatus}}</td>
-                <td class="view_offer_td"><button (click)="viewOffers(partRequest.id)" class="btn btn-danger">View Offers</button></td>
+                <td class="view_offer_td"><button (click)="viewOffers(partRequest.id)" class="btn btn-danger" *ngIf="partRequest.numberOfOffers > 0">View Offers</button></td>
             </tr>
           </table>
      </div>

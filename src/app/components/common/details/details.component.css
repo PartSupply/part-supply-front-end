@@ -29,12 +29,12 @@ body {
 h1 {
     opacity: 0.8;
     font-size: 4rem;
-    color: black;
+    color: white;
 }
 
 .seller-side {
     border-right: 3px solid red;
-    background: url('/assets/waves.png') no-repeat center center fixed;  
+    background-color: black;
     background-size: cover; 
     text-align: center;
     color: beige;
@@ -60,7 +60,7 @@ h1 {
 .buyer-side {
     text-align: center;
     color: beige;
-    background: url('/assets/waves.png') no-repeat center center fixed;  
+    background-color: black;
     background-size: cover; 
 }
 
