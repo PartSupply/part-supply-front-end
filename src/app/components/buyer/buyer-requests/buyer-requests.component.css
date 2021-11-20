@@ -1,5 +1,7 @@
+
+
 .navbar-div {
-    margin-left: 30%;
+    margin-left: 50%;
   }
   .nav-item {
     margin: 0 2px;
@@ -42,6 +44,7 @@ table  {
     margin: 5% 5% 10%;
     box-shadow: -2px -2px 5px 5px rgb(247, 223, 223);
 }
+
 td {
     /* background-color: burlywood; */
   border: 1px solid #131212;
@@ -67,15 +70,15 @@ tr:nth-child(even) {
   tr:nth-child(odd) {
   background: #b1b0ae;
   }
-.view_offer_td{
+.view_offer_td {
   width: 13%;
 }
 
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     .logout{
       margin-left: 0px;
     }    
-    .navbar-div{
+    .navbar-div {
       margin-left: 40%;
     }
   }
@@ -88,9 +91,20 @@ tr:nth-child(even) {
   .navbar-div {
     margin-right: 10%;
   }
+  .headline{
+    margin: 5% 0% 5%;
+    font-size: 2rem;
+  }
+  th {
+    font-size: 1rem;
+  }
   table {
     margin-top: 2%;
     width: 50%;
+    font-size: 10px;
+}
+  button {
+  font-size: 10px;
 }
 
 }

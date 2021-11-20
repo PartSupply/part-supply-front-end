@@ -1,6 +1,6 @@
 <app-buyer-header></app-buyer-header>
 
-<h3 class="headline">Part Request(s) List</h3>
+<h3 class="headline">Total Offer(s)</h3>
 <div class="table-responsive"> 
     <div class="top-labels">
         <div>
@@ -36,7 +36,7 @@
            <td>{{res.bidWarranty}}</td>
            <td>${{res.bidAmount}}</td>
            <td>{{res.estDeliveryTime}}</td>
-           <td class="view_offer_td"><button class="btn btn-danger">Accept Offer</button></td>
+           <td class="view_offer_td"><button class="btn btn-danger" (click)="acceptOffer()">Accept Offer</button></td>
        </tr>
      </table>
 </div>

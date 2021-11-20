@@ -3,29 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-                  /* #myVideo {
-                                                          position: fixed;
-                                                          right: 0;
-                                                          bottom: 0;
-                                                          min-width: 100%;
-                                                          min-height: 100%;
-                                                        } */
-body {
- background: url('/assets/partsupply-background.png') no-repeat center center fixed;  
+/* body {
+ background: url('/assets/white.png') no-repeat center center fixed;  
  background-size: cover; 
  background-repeat: no-repeat; 
-font-family: 'Helvetica', sans-serif;
-width: 100%;
-height: 100%;
-}
+ font-family: 'Helvetica', sans-serif;
+ width: 100%;
+ height: 100%;
+} */
 
 .container{
 height: 100%;
 align-content: center;
 }
-.headline{
+
+.headline {
 background-color: #444444;
-/* background: -webkit-linear-gradient(right, #050507, #1a667e); */
 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 text-align: center;
 margin-top: 2%;
@@ -199,6 +192,4 @@ input {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {...} */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: "Helvetica Neue", sans-serif; }
 

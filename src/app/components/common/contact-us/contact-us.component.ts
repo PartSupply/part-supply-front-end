@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ViewEncapsulation } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -6,7 +7,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css']
+  styleUrls: ['./contact-us.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ContactUsComponent implements OnInit {
   form: FormGroup;

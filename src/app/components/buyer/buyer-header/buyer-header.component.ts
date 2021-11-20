@@ -9,7 +9,10 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BuyerHeaderComponent implements OnInit {
   navbarOpen = false;
-  constructor(private httpService: HttpService, private router: Router) { }
+  _router: string;
+  constructor(private httpService: HttpService, private router: Router) { 
+    this._router = router.url; 
+  }
 
   ngOnInit() {
   }

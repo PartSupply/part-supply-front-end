@@ -18,7 +18,7 @@
         <input [formControl]="email" placeholder="email@example.com" required>
         Message
         <textarea [formControl]="message" maxlength="800" rows="5" cols="30" placeholder="Type your message here." required></textarea>
-        <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+        <button [disabled]="isLoading" class="submit" type="submit">SUBMIT</button>
         <input [formControl]="honeypot" class="hidden" type="text" />
         <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
           <span>{{responseMessage}}</span>

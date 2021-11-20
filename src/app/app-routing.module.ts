@@ -17,6 +17,7 @@ import { SeeRequestsComponent } from './components/seller/see-requests/see-reque
 import { SeeOfferStatusComponent } from './components/seller/see-offer-status/see-offer-status.component';
 import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
 import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
+import { AcceptOfferComponent } from './components/buyer/accept-offer/accept-offer.component';
 
 const routes: Routes = [];
 
@@ -66,6 +67,11 @@ const routes: Routes = [];
       }
     },
     { path: 'viewOffers/:id', component: BuyerViewOffersComponent, canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'BUYER'
+      }
+    },
+    { path: 'acceptOffer', component: AcceptOfferComponent , canActivate: [RoleGuard, AuthGuard],
       data:{
         expectedRole: 'BUYER'
       }

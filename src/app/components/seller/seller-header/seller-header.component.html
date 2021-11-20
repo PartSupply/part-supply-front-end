@@ -10,6 +10,10 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="home">Home</a>
             </li>
+            <li *ngIf="_router != '/supplierMenu'" class="nav-item">
+              <a class="nav-link" aria-current="page" href="supplierMenu">Main menu</a>
+            </li>
+
               <li *ngIf="_router != '/seeAllRequests'" class="nav-item">
                 <a *ngIf="_router != '/supplierMenu'" class="nav-link" href="seeAllRequests">All requests</a>
               </li>
