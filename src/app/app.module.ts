@@ -30,6 +30,7 @@ import { SellerPlaceOfferComponent } from './components/seller/seller-place-offe
 import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
 import { SellerEditOfferComponent } from './components/seller/seller-edit-offer/seller-edit-offer.component';
 import { AcceptOfferComponent } from './components/buyer/accept-offer/accept-offer.component';
+import { SellerAskQuestionComponent } from './components/seller/seller-ask-question/seller-ask-question.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AcceptOfferComponent } from './components/buyer/accept-offer/accept-off
     BuyerViewOffersComponent,
     SellerEditOfferComponent,
     AcceptOfferComponent,
+    SellerAskQuestionComponent,
   ],
   imports: [
     SparkAngularModule,
