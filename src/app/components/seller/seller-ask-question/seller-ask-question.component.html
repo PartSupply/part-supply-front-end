@@ -1,42 +1,39 @@
 <div class="container">
-    <div class="main">
+  <div class="main">
       <div class="main-center">
-        <h5>Enter Part Request</h5>
+          <h5>Enter Part Request</h5>
           <div>
-            <label class="top5-label" for="year">Year:</label>
-           <span class="span-class">{{partData.year}}</span>
-           </div>
-          <div>
-            <label class="top5-label" for="make">Make:</label>
-            <span class="span-class" >{{partData.make}}</span>
+              <label class="top5-label" for="year">Year:</label>
+              <span class="span-class">{{partData.year}}</span>
           </div>
           <div>
-            <label class="top5-label" for="model">Model:</label>
-            <span class="span-class" >{{partData.model}}</span>
+              <label class="top5-label" for="make">Make:</label>
+              <span class="span-class">{{partData.make}}</span>
           </div>
           <div>
-            <label class="top5-label" for="vin">VIN:</label>
-            <span class="span-class" >{{partData.vinNumber}}</span>
+              <label class="top5-label" for="model">Model:</label>
+              <span class="span-class">{{partData.model}}</span>
           </div>
           <div>
-            <label class="top5-label" for="part-name">Part:</label>
-            <span class="span-class" >{{partData.partName}}</span>
+              <label class="top5-label" for="vin">VIN:</label>
+              <span class="span-class">{{partData.vinNumber}}</span>
           </div>
+          <div>
+              <label class="top5-label" for="part-name">Part:</label>
+              <span class="span-class">{{partData.partName}}</span>
+          </div>
+      </div>
+      <div class="chat-area">
+        <div *ngIf="questionAnswerResponseData.data.length > 0">
+          Seller:
+          {{questionAnswerResponseData.data[0].QUESTION}}
         </div>
-          <br>
-          <form action="post" [formGroup]= "PlaceOfferForm" novalidate>
-            <div class="bottom-div">
-                <div>
-                    <label class="bottom-labels" for="offer-warranty">Message:</label>
-                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-                </div>
-      
-               
-              <button [disabled]= "!PlaceOfferForm.valid"  class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
-            <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
-            <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancel</button>
-            </div>
-          </form>       
-
+      </div>
+      <div>
+        <input [attr.disabled]="canBuyerAskQuestion ? null : ''" type="text" [(ngModel)]="questionText"/>
+      </div>
+      <button [attr.disabled]="canBuyerAskQuestion ? null : ''" class="btn btn-primary" type="submit" (click)="submitQuestion()">SUBMIT</button>
+      <button class="btn clear-btn" type="submit">Clear</button>
+      <button class="btn cancle-btn" type="button">Cancel</button>
   </div>
 </div>

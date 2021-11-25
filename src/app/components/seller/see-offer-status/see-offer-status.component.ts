@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { SellerEditOfferComponent } from '../seller-edit-offer/seller-edit-offer.component';
 
@@ -18,7 +19,7 @@ export class SeeOfferStatusComponent implements OnInit {
   ]);
   userSelectedPartRequest: any;
   partRequestList: any;
-  constructor(public httpService: HttpService, public dialog: MatDialog) { }
+  constructor(public httpService: HttpService, public dialog: MatDialog, public router: Router) { }
   filterPartType(partType: any) {
     Object.keys(partType).forEach(key => {
       if (!partType[key]) delete partType[key];
@@ -47,6 +48,15 @@ export class SeeOfferStatusComponent implements OnInit {
     });
 
    }
+
+  displayBuyerInfo(offer: any) {
+    const queryParams = {
+      partRequestId: `${offer.partRequestId}`,
+      partBidRequestId:`${offer.bidId}`,
+      isBuyer: false,
+    }
+    this.router.navigate(['sellerAcceptOffer'], { queryParams });
+  }
 
   //  const partRequest: any = await this.httpService.get('seller/partsRequest');
   //   this.partRequestList = this.filterPartRequestData(partRequestData.data);

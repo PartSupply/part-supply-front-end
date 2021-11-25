@@ -18,8 +18,18 @@ export class BuyerViewOffersComponent implements OnInit {
     this.response = await this.httpService.get(`buyer/partOffers/${requestNumber}`);
     console.log(this.response);
   }
-  acceptOffer(){
-    this.router.navigate(['acceptOffer']);
+  async acceptOffer(offerId){
+    const payload = {
+      "id": this.response.data.partRequest.id+'',
+      "bidRequestId": offerId+'',
+    };
 
+    const response = await this.httpService.post('buyer/acceptPartOffer', payload);
+    const queryParams = {
+      partRequestId: `${this.response.data.partRequest.id}`,
+      partBidRequestId:`${offerId}`,
+      isBuyer: true,
+    }
+    this.router.navigate(['buyerAcceptOffer'], { queryParams });
   }
 }

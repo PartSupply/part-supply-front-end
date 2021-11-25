@@ -72,6 +72,7 @@ import { SellerAskQuestionComponent } from './components/seller/seller-ask-quest
   bootstrap: [AppComponent],
   entryComponents: [
     SellerEditOfferComponent,
+    SellerAskQuestionComponent,
   ]
 })
 export class AppModule {

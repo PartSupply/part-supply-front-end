@@ -30,13 +30,13 @@
            <th>Accept?</th>
        </tr>
        
-       <tr *ngFor="let res of response.data.partOffers">
+       <tr *ngFor="let res of response.data.partOffers; let i = index">
            <td>{{res.partBrand}}</td>
            <td>{{res.typeOfPart}}</td>
            <td>{{res.bidWarranty}}</td>
            <td>${{res.bidAmount}}</td>
            <td>{{res.estDeliveryTime}}</td>
-           <td class="view_offer_td"><button class="btn btn-danger" (click)="acceptOffer()">Accept Offer</button></td>
+           <td class="view_offer_td"><button class="btn btn-danger" (click)="acceptOffer(res.id)">Accept Offer</button></td>
        </tr>
      </table>
 </div>

@@ -16,6 +16,7 @@ export class SeeRequestsComponent implements OnInit {
 
   partRequestList: any;
   userSelectedPartRequest: any;
+  userProfile: any;
 
   constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
   filterPartType(partType: any) {
@@ -47,12 +48,22 @@ export class SeeRequestsComponent implements OnInit {
   
   }
   // SellerAskQuestionComponent
-  openDialog1(partRequest) {
+  async openDialog1(partRequest) {
     this.userSelectedPartRequest = partRequest;
+    this.userProfile = JSON.parse(localStorage.getItem('userProfile'));
+    const payload = {
+      "sellerId": this.userProfile.data.id,
+      "partRequestId": partRequest.id,
+    }
+    const questionAnswerResponse = await this.httpService.post('seller/questionAnswer', payload);
+    const dataToPass = {
+      partRequestData: partRequest,
+      questionAnswerResponseData: questionAnswerResponse,
+    }
     const dialogRef = this.dialog.open(SellerAskQuestionComponent, {
       width: '500px',
       height: '665px',
-      data: partRequest,
+      data: dataToPass,
     });
   }
 }

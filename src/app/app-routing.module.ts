@@ -71,9 +71,14 @@ const routes: Routes = [];
         expectedRole: 'BUYER'
       }
     },
-    { path: 'acceptOffer', component: AcceptOfferComponent , canActivate: [RoleGuard, AuthGuard],
+    { path: 'buyerAcceptOffer', component: AcceptOfferComponent , canActivate: [RoleGuard, AuthGuard],
       data:{
         expectedRole: 'BUYER'
+      }
+    },
+    { path: 'sellerAcceptOffer', component: AcceptOfferComponent , canActivate: [RoleGuard, AuthGuard],
+      data:{
+        expectedRole: 'SELLER'
       }
     },
     
