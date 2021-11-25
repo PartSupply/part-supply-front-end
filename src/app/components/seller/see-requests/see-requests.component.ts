@@ -4,6 +4,7 @@ import { promise } from 'selenium-webdriver';
 import { HttpService } from 'src/app/services/http.service';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { SellerPlaceOfferComponent } from '../seller-place-offer/seller-place-offer.component';
+import { SellerAskQuestionComponent } from '../seller-ask-question/seller-ask-question.component';
 
 @Component({
   selector: 'app-see-requests',
@@ -34,6 +35,7 @@ export class SeeRequestsComponent implements OnInit {
     this.partRequestList = this.filterPartRequestData(partRequestData.data);
     console.log(this.partRequestList);
   }
+  
    openDialog(partRequest) {
     this.userSelectedPartRequest = partRequest;
     const dialogRef = this.dialog.open(SellerPlaceOfferComponent, {
@@ -44,5 +46,17 @@ export class SeeRequestsComponent implements OnInit {
   
   
   }
-  
+  // SellerAskQuestionComponent
+  openDialog1(partRequest) {
+    this.userSelectedPartRequest = partRequest;
+    const dialogRef = this.dialog.open(SellerAskQuestionComponent, {
+      width: '500px',
+      height: '665px',
+      data: partRequest,
+    });
+  }
 }
+  
+  
+  
+
