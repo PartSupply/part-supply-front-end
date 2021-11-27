@@ -30,7 +30,19 @@ button {
  
   box-shadow: 2px 2px 2px 2px grey;
 }
-
+.accepted-btn {
+  margin: 5%;
+  
+}
+.hide {
+  display: none;
+  margin-left: 0px;
+}
+.accepted-btn:hover + .hide {
+  display: block;
+  color: red;
+  text-align: center;
+}
 button:hover {
   background-color: greenyellow;
   color: black;
