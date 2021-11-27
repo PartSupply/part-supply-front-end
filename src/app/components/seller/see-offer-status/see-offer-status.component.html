@@ -39,9 +39,12 @@
                 </span>
             </td> 
             <span *ngIf="offers.isOfferAccepted" class="td-button1">
-                <button *ngIf="offers.sellerId === userProfile.data.id" (click)="displayBuyerInfo(offers)" class="ask-btn btn btn-success">Accepted</button>
+                <button *ngIf="offers.sellerId === userProfile.data.id" (click)="displayBuyerInfo(offers)" class="accepted-btn btn btn-success">Accepted</button>
+                <div class="hide">Contact Info.</div>
             </span>
-            <td  *ngIf="!offers.isOfferAccepted" class="td-button1"><button *ngIf="offers.sellerId === userProfile.data.id" (click)="openDialog(offers)" class="ask-btn btn btn-danger">Edit Offer</button></td>
+            <td  *ngIf="!offers.isOfferAccepted" class="td-button1">
+                <button *ngIf="offers.sellerId === userProfile.data.id" (click)="openDialog(offers)" class="ask-btn btn btn-danger">Edit Offer</button>
+            </td>
         </tr>
     
 </table>

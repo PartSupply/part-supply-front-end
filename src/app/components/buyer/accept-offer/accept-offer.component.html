@@ -1,3 +1,44 @@
 <app-buyer-header></app-buyer-header>
 
-{{ response | json}}
+<!-- {{ response | json}} -->
+<div class="container">
+    <div class="main">
+        <div class="main-center">
+            <h3>Offer Summary</h3>
+            <div>
+                <label class="top5-label" for="year">Part name: </label>
+                <span class="span-class"> {{response.data.partRequest.PART_NAME}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Year: </label>
+                <span class="span-class"> {{response.data.partRequest.YEAR}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Model: </label>
+                <span class="span-class"> {{response.data.partRequest.MODEL}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Brand: </label>
+                <span class="span-class"> {{response.data.partBidRequest.PART_BRAND}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Part type: </label>
+                <span class="span-class"> {{response.data.partBidRequest.TYPE_OF_PARTS}}</span>
+            </div>
+            <h3> <span>{{response.data.user.role.roleName}}</span> Information</h3>
+            <div>
+                <label class="top5-label" for="year">Full name: </label>
+                <span class="span-class"> {{response.data.user.firstName}}</span><span> {{response.data.user.lastName}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Email: </label>
+                <span class="span-class"> {{response.data.user.email}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Phone number: </label>
+                <span class="span-class"> {{response.data.user.phoneNumber}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
