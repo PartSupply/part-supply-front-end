@@ -10,13 +10,33 @@ import { HttpService } from 'src/app/services/http.service';
 export class BuyerViewOffersComponent implements OnInit {
 
   response: any;
+  partOffers: any[];
+  partRequest: any;
+  isViewReady = false;
+  isOfferAccepted = false;
+  acceptedOffer: any[] = [];
   constructor(public httpService: HttpService, public router: Router) { }
 
   async ngOnInit() {
     const url = window.location.pathname;
     const requestNumber = url.split('/')[url.split('/').length -1]
     this.response = await this.httpService.get(`buyer/partOffers/${requestNumber}`);
+    this.partOffers = this.response.data.partOffers;
+    this.partRequest = this.response.data.partRequest;
+    this.isAnyOfferAccepted();
+    if (this.isOfferAccepted) {
+      this.partOffers = this.acceptedOffer;
+    }
+    this.isViewReady = true;
     console.log(this.response);
+  }
+  public isAnyOfferAccepted() {
+    this.partOffers.forEach((offer) => {
+      if (offer.isOfferAccepted && !this.isOfferAccepted) {
+        this.isOfferAccepted = true;
+        this.acceptedOffer.push(offer);
+      }
+    })
   }
   async acceptOffer(offerId){
     const payload = {
@@ -31,5 +51,19 @@ export class BuyerViewOffersComponent implements OnInit {
       isBuyer: true,
     }
     this.router.navigate(['buyerAcceptOffer'], { queryParams });
+  }
+
+  public getButtonClass() {
+    if (this.acceptedOffer) {
+      return 'btn-success';
+    }
+    return 'btn-danger';
+  }
+
+  public getBtnTextLabel() {
+    if (this.acceptedOffer) {
+      return 'Accepted';
+    }
+    return 'Accept Offer';
   }
 }
