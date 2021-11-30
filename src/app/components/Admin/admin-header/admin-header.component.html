@@ -1,27 +1,30 @@
+
 <div class="main">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <img src="/assets/company_log.jpeg" class="companylogo" alt="company logo" width="200px" height="50px">
+        <img src="/assets/company_log.png" class="companylogo" (click)='homeRoute()' alt="company logo" width="200px" height="50px">
         <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navbar-div" [ngClass]="{ 'show': navbarOpen }">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page">View Transactions</a>
+              <a class="nav-link" (click)="homeRoute()">Home</a>
             </li>
-            
-            <li class="nav-item">
-              <a class="nav-link">View All Request</a>
+            <li *ngIf="_router != '/adminViewApplications'" class="nav-item">
+              <a class="nav-link" (click)="viewApplications()">View Applications</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link">View Applications</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">View All Offers</a>
-              </li>
+            <!-- <li *ngIf="_router != '/adminViewTransactions'" class="nav-item">
+              <a class="nav-link" aria-current="page" (click)="viewTransactions()">View Transactions</a>
+            </li>  -->
+            <li *ngIf="_router != '/adminViewRequests'" class="nav-item">
+              <a class="nav-link" (click)="viewRequests()">View All Request</a>
+            </li>
+            <li *ngIf="_router != '/adminViewOffers'" class="nav-item">
+              <a class="nav-link" (click)="viewOffers()">View All Offers</a>
+            </li>
             <li class="">
-              <button class="btn-danger logout" type="" name="button">logout</button>
+              <button class="btn-danger logout" (click)="logout()" type="" name="button">logout</button>
             </li>
           </ul>
   

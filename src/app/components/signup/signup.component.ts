@@ -36,9 +36,9 @@ export class SignupComponent implements OnInit {
   
   deliveryRadius: string[] = ['5 miles', '10 miles', '20 miles', '25 miles', 'Anywhere In The USA'];
   isMailDeliveryAcceptable: string[] = ['Local Only' , 'Local and Shipment']; 
-  state: string[] = ['Michigan'];
+  state: string[] = ['MI'];
   roleName: string[] = ['BUYER', 'SELLER'];
-  country: string[] = ['usa'];
+  country: string[] = ['USA'];
   constructor(
     private httpService: HttpService, private router: Router
   ) { }

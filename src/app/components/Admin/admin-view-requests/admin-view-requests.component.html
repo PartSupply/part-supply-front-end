@@ -1,0 +1,35 @@
+<app-admin-header></app-admin-header>
+<h3 class="headline">Buyer(s) Request(s)</h3>
+<div class="table-responsive">
+    <table>
+        <tr>
+            <th>Unique Id</th>
+            <th>Vin number</th>
+            <th>Part name</th>
+            <th>Make</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Date</th>
+            <th># Offers</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let res of response.data; let i = index">
+            <td>{{res.id}}</td>
+            <td>{{res.vinNumber}}</td>
+            <td>{{res.partName}}</td>
+            <td>{{res.make}}</td>
+            <td>{{res.year}}</td>
+            <td>{{res.model}}</td>
+            <td>{{res.partRequestCreationDate}}</td>
+            <td>{{res.numberOfOffers}}</td>
+            <td>
+                <span *ngIf="res.offerStatus === 'ACCEPTED'">
+                    <img src="./../../../../assets/Accepted.png" class="status_img">
+                </span>
+                <span *ngIf="res.offerStatus === 'OPEN'" >
+                    <img src="./../../../../assets/open.png" class="status_img">
+                </span>
+            </td>
+        </tr>
+      </table>
+</div>

@@ -40,10 +40,12 @@ export class HomeComponent implements OnInit {
       if(getUserRole === 'BUYER'){
         this.router.navigate(['/requestInfo']);
         alert((userProfile.data.firstName).toUpperCase() + " " + "logged in Successfully.");
-      }else{
+      }else if(getUserRole === 'SELLER'){
         alert((userProfile.data.firstName).toUpperCase() + " " + "logged in Successfully.");
         this.router.navigate(['/supplierMenu']);
-      }    
+      }else{
+        alert("Account is not Approved.");
+      }
     } catch (error) {
       console.log(error);
       alert("Wrong Username or Password");

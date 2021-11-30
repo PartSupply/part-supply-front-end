@@ -1,0 +1,40 @@
+<app-admin-header></app-admin-header>
+<h3 class="headline">Seller(s) Offer(s)</h3>
+<div class="table-responsive">
+    <table>
+        <tr>
+            <th>Unique Id</th>
+            <th>Vin number</th>
+            <th>Part name</th>
+            <th>Part brand</th>
+            <th>Warranty</th>
+            <th>Delivery time</th>
+            <th>Amount(USD)</th>
+            <th>Offer accepted?</th>
+            <th>Report</th>
+           
+        </tr>
+        <tr *ngFor="let res of response.data; let i = index">
+            <td>{{res.partRequest.id}}</td>
+            <td>{{res.partRequest.vinNumber}}</td>
+            <td>{{res.partRequest.partName}}</td>
+            <td>{{res.partBrand}}</td>
+            <td>{{res.bidWarranty}}</td>
+            <td>{{res.estDeliveryTime}}</td>
+            <td style="color:red;">${{res.bidAmount}}</td>
+            
+            <td>
+                <span *ngIf="res.isOfferAccepted === true" >
+                    <img src="./../../../../assets/right.png" class="status_img">
+                </span>
+                <span *ngIf="res.isOfferAccepted === false" >
+                    <img src="./../../../../assets/cross.png" class="status_img">
+                </span>
+            </td>
+            <td *ngIf="res.isOfferAccepted === true">
+                <button (click)="viewTransactions()" class="btn btn-danger">Click here</button>
+            </td>
+            
+        </tr>
+      </table>
+</div>

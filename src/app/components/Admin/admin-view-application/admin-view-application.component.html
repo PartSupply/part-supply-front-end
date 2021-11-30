@@ -1,0 +1,29 @@
+<app-admin-header></app-admin-header>
+<h3 class="headline">All Applications</h3>
+<div class="table-responsive">
+    <table>
+        <tr>
+            <th>Full name</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Contact no.</th>
+            <th>Fax no.</th>
+            <th>Role</th>
+            <th>Address</th>
+            <th>Accept/Deny</th>
+        </tr>
+        <tr *ngFor="let res of response.data; let i = index">
+            <td>{{res.firstName}} {{res.lastName}}</td>
+            <td>{{res.email}}</td>
+            <td>{{res.companyName}}</td>
+            <td>{{res.phoneNumber}}</td>
+            <td>{{res.faxNumber}}</td>
+            <td>{{res.role.roleName}}</td>
+            <td>{{res.address.addressLineOne}}, {{res.address.city}}, {{res.address.state}} {{res.address.zipCode}}</td>
+            <td>
+                <button class="btn btn-success" (click)="acceptApplication()">Accept</button>
+                <button class="btn btn-danger">Deny</button>
+            </td>
+        </tr>
+      </table>
+</div>
