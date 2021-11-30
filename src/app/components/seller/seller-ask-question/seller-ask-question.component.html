@@ -1,7 +1,8 @@
 <div class="container">
   <div class="main">
+    <h5>Post An Question</h5>
       <div class="main-center">
-          <h5>Enter Part Request</h5>
+          
           <div>
               <label class="top5-label" for="year">Year:</label>
               <span class="span-class">{{partData.year}}</span>
@@ -34,6 +35,6 @@
       </div>
       <button [attr.disabled]="canBuyerAskQuestion ? null : ''" class="btn btn-primary" type="submit" (click)="submitQuestion()">SUBMIT</button>
       <button class="btn clear-btn" type="submit">Clear</button>
-      <button class="btn cancle-btn" type="button">Cancel</button>
+      <button class="btn cancle-btn" type="button" (click)="onNoClick()">Cancel</button>
   </div>
 </div>

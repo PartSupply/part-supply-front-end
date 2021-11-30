@@ -40,13 +40,12 @@
     }
 
 table  {
-    /* width: 100%; */
-    margin: 5% 5% 10%;
     box-shadow: -2px -2px 5px 5px rgb(247, 223, 223);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 td {
-    /* background-color: burlywood; */
   border: 1px solid #131212;
   text-align: center;
   padding: 8px;

@@ -36,7 +36,9 @@
            <td>{{res.bidWarranty}}</td>
            <td>${{res.bidAmount}}</td>
            <td>{{res.estDeliveryTime}}</td>
-           <td class="view_offer_td"><button class="btn" [ngClass]="getButtonClass()" (click)="acceptOffer(res.id)">{{getBtnTextLabel()}}</button></td>
+           <td class="view_offer_td"><button class="btn accepted-btn" [ngClass]="getButtonClass()" (click)="acceptOffer(res.id)">{{getBtnTextLabel()}}</button>
+            <div class="hide">See details</div>
+          </td>
        </tr>
      </table>
 </div>

@@ -1,12 +1,12 @@
 
-  
   ::ng-deep.mat-dialog-container {
     background-color: red !important; 
       border-radius: 20px !important;
 }
 
 table{
-    margin: 5% 2% 10%;
+    margin-right: auto;
+    margin-left: auto;
 }
 .headline{
   background-color: #444444;

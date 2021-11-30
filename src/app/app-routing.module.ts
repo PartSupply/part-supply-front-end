@@ -18,9 +18,13 @@ import { SeeOfferStatusComponent } from './components/seller/see-offer-status/se
 import { SellerPlaceOfferComponent } from './components/seller/seller-place-offer/seller-place-offer.component';
 import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/buyer-view-offers.component';
 import { AcceptOfferComponent } from './components/buyer/accept-offer/accept-offer.component';
+import { AdminViewApplicationComponent } from './components/Admin/admin-view-application/admin-view-application.component';
+import { AdminHomePageComponent } from './components/Admin/admin-home-page/admin-home-page.component';
+import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/admin-view-offers.component';
+import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
+import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
 
 const routes: Routes = [];
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -81,6 +85,32 @@ const routes: Routes = [];
         expectedRole: 'SELLER'
       }
     },
+    { path: 'adminViewApplications', component:  AdminViewApplicationComponent , canActivate: [RoleGuard, AuthGuard],
+    data:{
+      expectedRole: 'ADMIN'
+       }
+    },
+    { path: 'adminHomePage', component: AdminHomePageComponent, canActivate: [RoleGuard, AuthGuard],
+    data:{
+      expectedRole: 'ADMIN'
+    }
+  },
+  { path: 'adminViewRequests', component: AdminViewRequestsComponent, canActivate: [RoleGuard, AuthGuard],
+    data:{
+      expectedRole: 'ADMIN'
+    }
+  },
+  { path: 'adminViewOffers', component: AdminViewOffersComponent, canActivate: [RoleGuard, AuthGuard],
+    data:{
+      expectedRole: 'ADMIN'
+    }
+  },
+  { path: 'adminViewTransactions', component: AdminViewTransactionsComponent, canActivate: [RoleGuard, AuthGuard],
+    data:{
+      expectedRole: 'ADMIN'
+    }
+  },
+    
     
       //canActivate: [AuthGuard]
 

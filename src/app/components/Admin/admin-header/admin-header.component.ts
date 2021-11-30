@@ -10,13 +10,41 @@ import { HttpService } from 'src/app/services/http.service';
 export class AdminHeaderComponent implements OnInit {
 
   navbarOpen = false;
-  constructor(private httpService: HttpService, private router: Router) { }
+  _router: string;
+  constructor(private httpService: HttpService, private router: Router) {
+    this._router = router.url; 
+   }
 
   ngOnInit() {
+  }
+  homeRoute(){
+    this.router.navigate(['adminHomePage']);
   }
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
+  viewApplications(){
+    this.router.navigate(['adminViewApplications']);
+  }
+  viewRequests(){
+    this.router.navigate(['adminViewRequests']);
+
+  }
+  viewOffers(){
+    this.router.navigate(['adminViewOffers']);
+
+  }
+
+  viewTransactions(){
+    this.router.navigate(['adminViewTransactions'])
+  }
+  public async logout(): Promise<void> {
+    const response = await this.httpService.post('logout',null);
+    // Remove localstorage session info 
+    localStorage.removeItem('user');
+    this.router.navigate(['/adminLogin']);
+  }
+  
 
 }
 

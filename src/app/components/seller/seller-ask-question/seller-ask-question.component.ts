@@ -55,4 +55,5 @@ export class SellerAskQuestionComponent implements OnInit {
       console.log('Question Posted successfully');
     }
   }
+  
 }

@@ -1,10 +1,9 @@
-
 ::ng-deep.mat-dialog-container {
-  background-color: red !important; 
+    background-color: red !important; 
     border-radius: 20px !important;
 }
 table {
-    margin: 5%;
+  margin: 5%;
 }
 .headline {
   background-color: #444444;
@@ -21,22 +20,20 @@ td {
   text-align: center;
   padding: 8px;
 }
-
-.td-button1{
-width: 18%;
+.td-button1 {
+  width: 18%;
 }
 
 button {
- 
   box-shadow: 2px 2px 2px 2px grey;
 }
 .accepted-btn {
   margin: 5%;
-  
 }
 .hide {
   display: none;
   margin-left: 0px;
+  font-size: 0.8rem;
 }
 .accepted-btn:hover + .hide {
   display: block;
@@ -50,7 +47,6 @@ button:hover {
 .standing{
   width: 50%;
 }
-
 th {
   border: 1px solid #dddddd;
   text-align: center;
@@ -65,7 +61,6 @@ table.odd tr td, th {
 	border:1px solid #ccc;
   	padding:5px;
 }
-
 tr:nth-child(even) {
   background: #f1f1f1;
 }
@@ -75,22 +70,18 @@ tr:nth-child(odd){
 a:hover{
     color: black;
 }
-
 .thumbs_img {
   width: 40px;
   height: 40px;
   padding-top: 5px;
 }
-
 .thumbs_down_text { 
   padding-left: 5px;
 }
-
 .thumbs_up_text {
   vertical-align: bottom;
   padding-left: 20px;
 }
-
 @media (max-width: 480px){
 .headline {
         font-size: 2rem;
@@ -99,7 +90,6 @@ a:hover{
     vertical-align: bottom;
     padding-left: 0px;
 }
-
  table {
     margin: 5%;
     width: 80%;
@@ -112,8 +102,7 @@ a:hover{
 button {
   font-size: 15px;
 }
-
 .td-button1 {
   width: 10%
-}
+  }
 }

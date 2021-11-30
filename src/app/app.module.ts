@@ -31,6 +31,11 @@ import { BuyerViewOffersComponent } from './components/buyer/buyer-view-offers/b
 import { SellerEditOfferComponent } from './components/seller/seller-edit-offer/seller-edit-offer.component';
 import { AcceptOfferComponent } from './components/buyer/accept-offer/accept-offer.component';
 import { SellerAskQuestionComponent } from './components/seller/seller-ask-question/seller-ask-question.component';
+import { AdminViewApplicationComponent } from './components/Admin/admin-view-application/admin-view-application.component';
+import { AdminHomePageComponent } from './components/Admin/admin-home-page/admin-home-page.component';
+import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/admin-view-offers.component';
+import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
+import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { SellerAskQuestionComponent } from './components/seller/seller-ask-quest
     SellerEditOfferComponent,
     AcceptOfferComponent,
     SellerAskQuestionComponent,
+    AdminViewApplicationComponent,
+    AdminHomePageComponent,
+    AdminViewOffersComponent,
+    AdminViewTransactionsComponent,
+    AdminViewRequestsComponent,
   ],
   imports: [
     SparkAngularModule,
