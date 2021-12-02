@@ -1,6 +1,6 @@
 <div class="container">
   <div class="main">
-    <h5>Post An Question</h5>
+    <h5>Ask A Question</h5>
       <div class="main-center">
           
           <div>
@@ -25,7 +25,7 @@
           </div>
       </div>
       <div class="chat-area">
-        <div *ngIf="questionAnswerResponseData.data.length > 0">
+        <div *ngIf="questionAnswerResponseData.data.length > 0" style="padding: 2%;font-weight: bold;">
           Seller:
           {{questionAnswerResponseData.data[0].QUESTION}}
         </div>
@@ -34,7 +34,7 @@
         <input [attr.disabled]="canBuyerAskQuestion ? null : ''" type="text" [(ngModel)]="questionText"/>
       </div>
       <button [attr.disabled]="canBuyerAskQuestion ? null : ''" class="btn btn-primary" type="submit" (click)="submitQuestion()">SUBMIT</button>
-      <button class="btn clear-btn" type="submit">Clear</button>
-      <button class="btn cancle-btn" type="button" (click)="onNoClick()">Cancel</button>
+      <button class="btn clear-btn" type="submit" (click)="formReset()">Clear</button>
+      <button class="btn cancle-btn" type="button" (click)="onNoClick()">Close</button>
   </div>
 </div>

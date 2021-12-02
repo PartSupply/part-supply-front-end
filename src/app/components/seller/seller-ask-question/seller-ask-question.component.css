@@ -56,7 +56,9 @@ h5{
 }
 input{
     float: none;
-    margin-left: 4%;
+    width: 90%;
+    line-height: 30px;
+    margin-left: 5%;
 }
 .form-input{
   width: 100%;
@@ -66,7 +68,7 @@ input{
   margin-left: 5%;
 }
 button, .cancle-btn{
-  margin: 3% 3% 0% 4%;
+  margin: 3% 3% 0% 5%;
   background-color: #394867;
   color: white;
 

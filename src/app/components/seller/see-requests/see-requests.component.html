@@ -1,6 +1,6 @@
 <app-seller-header></app-seller-header>
 
-<h3 class="headline">Requests List</h3>
+<h3 class="headline">Part Inquiry List</h3>
 <div class="table-responsive">
 <table>   
         <tr>
@@ -11,12 +11,13 @@
             <th>Model</th>
             <th>Part-Name</th>
             <th>Part-Type</th>
-            <th># of Offers</th>
+            <th># Of Offers</th>
             <th>Offer Status</th>
-            <th>Place Offer</th>
-            <th>QA</th>
-        </tr>    
-        <tr *ngFor="let partRequest of partRequestList">
+            <th>Place An Offer</th>
+            <th>Ask A Question</th>
+        </tr>   
+         
+        <tr *ngFor="let partRequest of partRequestList; let first = first; let last = last">
             <td>{{partRequest.id}}</td>
             <td>{{partRequest.vinNumber}}</td>
             <td>{{partRequest.make}}</td>
@@ -27,6 +28,6 @@
             <td>{{partRequest.numberOfOffers}}</td>
             <td>{{partRequest.offerStatus}}</td> 
             <td class="td-button"><button class="place-btn btn btn-success" (click)="openDialog(partRequest)">Place An Offer</button></td>
-            <td class="td-button1"><button class="ask-btn btn btn-danger" (click)="openDialog1(partRequest)">Ask An Question</button></td>
+            <td class="td-button1"><button class="ask-btn btn btn-danger" (click)="openDialog1(partRequest)">Ask A Question</button></td>
         </tr>
 </table>

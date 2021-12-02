@@ -48,6 +48,7 @@ export class SellerPlaceOfferComponent implements OnInit {
     const response = await this.httpService.post('seller/partBidRequest', payload);
     this.formReset();
     this.onNoClick();
+    window.location.reload();
   }
  
   public formReset() {

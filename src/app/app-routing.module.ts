@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DetailsComponent } from './components/common/details/details.component';
-import { MakeRequestComponent } from './components/buyer/make-request/make-request.component';
 import { RequestInfoComponent } from './components/buyer/request-info/request-info.component';
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
 import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
@@ -33,7 +32,6 @@ const routes: Routes = [];
       { path: 'home', component: HomeComponent},
       { path: 'signup', component: SignupComponent},
       { path: 'details', component: DetailsComponent},
-      { path: 'MakeRequest', component: MakeRequestComponent},
       { path: 'requestInfo', component: RequestInfoComponent, canActivate: [RoleGuard, AuthGuard], 
       data: { 
         expectedRole: 'BUYER'

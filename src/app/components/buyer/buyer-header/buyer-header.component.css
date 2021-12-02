@@ -1,5 +1,5 @@
 .navbar-div{
-    margin-left: 50%;
+    margin-left: 40%;
   }
   .nav-item{
     margin: 0 2px;
@@ -30,7 +30,7 @@
       margin-left: 0px;
     }    
     .navbar-div{
-      margin-left: 40%;
+      margin-left: 35%;
     }
   }
                     
@@ -42,5 +42,10 @@
   .navbar-div{
     margin-right: 10%;
   }
+}
+@media (min-width:1281px){
+  .navbar-div{
+    margin-left: 57%;
+  } 
 }
   

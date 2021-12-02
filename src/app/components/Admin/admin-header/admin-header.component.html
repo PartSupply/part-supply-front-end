@@ -12,19 +12,19 @@
               <a class="nav-link" (click)="homeRoute()">Home</a>
             </li>
             <li *ngIf="_router != '/adminViewApplications'" class="nav-item">
-              <a class="nav-link" (click)="viewApplications()">View Applications</a>
+              <a class="nav-link" (click)="viewApplications()">All Applications</a>
             </li>
             <!-- <li *ngIf="_router != '/adminViewTransactions'" class="nav-item">
               <a class="nav-link" aria-current="page" (click)="viewTransactions()">View Transactions</a>
             </li>  -->
             <li *ngIf="_router != '/adminViewRequests'" class="nav-item">
-              <a class="nav-link" (click)="viewRequests()">View All Request</a>
+              <a class="nav-link" (click)="viewRequests()">All Requests</a>
             </li>
             <li *ngIf="_router != '/adminViewOffers'" class="nav-item">
-              <a class="nav-link" (click)="viewOffers()">View All Offers</a>
+              <a class="nav-link" (click)="viewOffers()">All Offers</a>
             </li>
             <li class="">
-              <button class="btn-danger logout" (click)="logout()" type="" name="button">logout</button>
+              <button class="btn-danger logout" (click)="logout()" type="" name="button">Logout</button>
             </li>
           </ul>
   

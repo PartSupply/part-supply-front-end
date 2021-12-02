@@ -10,7 +10,6 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { DetailsComponent } from './components/common/details/details.component';
-import { MakeRequestComponent } from './components/buyer/make-request/make-request.component';
 import { RequestInfoComponent } from './components/buyer/request-info/request-info.component';
 import { ContactUsComponent } from './components/common/contact-us/contact-us.component';
 import { SecondRequestComponent } from './components/buyer/second-request/second-request.component';
@@ -45,7 +44,6 @@ import { AdminViewRequestsComponent } from './components/Admin/admin-view-reques
     HeaderComponent,
     FooterComponent,
     DetailsComponent,
-    MakeRequestComponent,
     RequestInfoComponent,
     ContactUsComponent,
     SecondRequestComponent,

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="main">
       <div class="main-center">
-        <h5>Enter Part Request</h5>
+        <h5>Place An Offers</h5>
         
         <form action="post" [formGroup]= "PlaceOfferForm" novalidate>
           <div>
@@ -73,7 +73,7 @@
           </div>
           <button [disabled]= "!PlaceOfferForm.valid"  class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
         <button class="btn clear-btn"  (click)="formReset()" type="submit">Clear</button>
-        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Cancel</button>
+        <button class="btn cancle-btn" (click)="onNoClick()" type="button">Close</button>
         </div>
       </form>
         

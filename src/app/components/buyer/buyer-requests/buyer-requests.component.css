@@ -1,7 +1,7 @@
 
 
 .navbar-div {
-    margin-left: 50%;
+    margin-left: 40%;
   }
   .nav-item {
     margin: 0 2px;
@@ -30,7 +30,7 @@
   }
   .headline {
     background-color: #444444;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
     text-align: center;
     margin-top: 2%;
     color: #FFF;
@@ -78,7 +78,7 @@ tr:nth-child(even) {
       margin-left: 0px;
     }    
     .navbar-div {
-      margin-left: 40%;
+      margin-left: 35%;
     }
   }
                     
@@ -105,7 +105,13 @@ tr:nth-child(even) {
   button {
   font-size: 10px;
 }
-
 }
+
+@media (min-width:1281px){
+  .navbar-div{
+    margin-left: 57%;
+  } 
+}
+
 
   

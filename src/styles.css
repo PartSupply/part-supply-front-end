@@ -19,7 +19,7 @@ align-content: center;
 
 .headline {
 background-color: #444444;
-text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
 text-align: center;
 margin-top: 2%;
 color: #FFF;
@@ -32,7 +32,7 @@ border-radius: 20px;
 .h3-headline{
   background-color: #444444;
   /* background: -webkit-linear-gradient(right, #3931af, #00c6ff); */
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
   font-family: 'Helvetica';
   text-align: center;
   border-radius: 20px;

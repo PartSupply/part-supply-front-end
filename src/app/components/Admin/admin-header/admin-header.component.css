@@ -51,9 +51,12 @@ a, img {
   .navbar-div{
     margin-left: 10%;
   }
-  /* .navbar-nav{
-    margin-left: auto;
-  } */
   
+  
+}
+@media (min-width:1281px){
+  .navbar-nav{
+    margin-left: 57%;
+  } 
 }
   
