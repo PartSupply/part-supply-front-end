@@ -3,14 +3,14 @@
 <div class="table-responsive">
     <table>
         <tr>
-            <th>Full name</th>
+            <th>Full Name</th>
             <th>Email</th>
             <th>Company</th>
-            <th>Contact no.</th>
-            <th>Fax no.</th>
+            <th>Phone</th>
+            <th>Fax</th>
             <th>Role</th>
             <th>Address</th>
-            <th>Accept/Deny</th>
+            <th>Accept/Decline</th>
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
             <td>{{res.firstName}} {{res.lastName}}</td>
@@ -22,7 +22,7 @@
             <td>{{res.address.addressLineOne}}, {{res.address.city}}, {{res.address.state}} {{res.address.zipCode}}</td>
             <td>
                 <button class="btn btn-success" (click)="acceptApplication()">Accept</button>
-                <button class="btn btn-danger">Deny</button>
+                <button class="btn btn-danger">Decline</button>
             </td>
         </tr>
       </table>

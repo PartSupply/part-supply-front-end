@@ -37,6 +37,10 @@ export class SellerAskQuestionComponent implements OnInit {
 
   ngOnInit() {
   }
+  public formReset() {
+    this.questionText = "";
+  }
+
   public onNoClick(): void {
     const dialogRef = this.dialog.closeAll();
   }
@@ -54,6 +58,7 @@ export class SellerAskQuestionComponent implements OnInit {
     if (saveQuestionAnswerResponse) {
       console.log('Question Posted successfully');
     }
+    
   }
   
 }

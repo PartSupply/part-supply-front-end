@@ -26,8 +26,9 @@
            <th>Type</th>
            <th>Warranty</th>
            <th>Offer Amount</th>
-           <th>Delivery time</th>
-           <th>Accept?</th>
+           <th>Delivery Time</th>
+           <th>Status</th>
+
        </tr>
        
        <tr *ngFor="let res of partOffers; let i = index">
@@ -37,8 +38,9 @@
            <td>${{res.bidAmount}}</td>
            <td>{{res.estDeliveryTime}}</td>
            <td class="view_offer_td"><button class="btn accepted-btn" [ngClass]="getButtonClass()" (click)="acceptOffer(res.id)">{{getBtnTextLabel()}}</button>
-            <div class="hide">See details</div>
+            <div class="hide">See Details</div>
           </td>
+          
        </tr>
      </table>
 </div>

@@ -1,16 +1,16 @@
 <app-admin-header></app-admin-header>
-<h3 class="headline">Buyer(s) Request(s)</h3>
+<h3 class="headline">All Requests</h3>
 <div class="table-responsive">
     <table>
         <tr>
-            <th>Unique Id</th>
-            <th>Vin number</th>
-            <th>Part name</th>
+            <th>Unique ID</th>
+            <th>Vin Number</th>
+            <th>Part Name</th>
             <th>Make</th>
             <th>Year</th>
             <th>Model</th>
             <th>Date</th>
-            <th># Offers</th>
+            <th># Of Offers</th>
             <th>Status</th>
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
@@ -24,10 +24,12 @@
             <td>{{res.numberOfOffers}}</td>
             <td>
                 <span *ngIf="res.offerStatus === 'ACCEPTED'">
-                    <img src="./../../../../assets/Accepted.png" class="status_img">
+                    <!-- <img src="./../../../../assets/Accepted.png" class="status_img"> -->
+                    <h6 style="color: green;">ACCEPTED</h6>
                 </span>
                 <span *ngIf="res.offerStatus === 'OPEN'" >
-                    <img src="./../../../../assets/open.png" class="status_img">
+                    <!-- <img src="./../../../../assets/open.png" class="status_img"> -->
+                    <h6 style="color: red;">OPEN</h6>
                 </span>
             </td>
         </tr>

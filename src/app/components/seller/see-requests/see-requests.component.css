@@ -7,10 +7,12 @@
 table{
     margin-right: auto;
     margin-left: auto;
+     
 }
+
 .headline{
   background-color: #444444;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
   text-align: center;
   margin-top: 2%;
   color: #FFF;
@@ -44,6 +46,9 @@ th{
   font-size: 1rem;
   color: #FFFF;
 }
+.btn-danger {
+  margin-top: 0px !important;
+}
 table.odd tr td, th{
 	border:1px solid #ccc;
   	padding:5px;
@@ -69,6 +74,9 @@ button{
 }
 .td-button{
   width: 10%
+}
+.headline {
+  font-size: 2rem;
 }
 
 }

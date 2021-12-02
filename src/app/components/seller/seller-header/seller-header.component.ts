@@ -33,6 +33,9 @@ export class SellerHeaderComponent implements OnInit {
     // JUST do redirect from here...
     this.router.navigate(['/buyerRequestList']);
 }
+homeRoute(){
+  this.router.navigate(['/home']);
+  }
 
 }
 

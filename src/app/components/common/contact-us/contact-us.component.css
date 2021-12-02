@@ -1,8 +1,5 @@
 
 .contact-us-body {
-  /* background: url('/assets/makerequest-background.png') no-repeat center center fixed; */
-  /* background-color:black; */
-  /* background: -webkit-linear-gradient(left, #2a2936, #7d7f80); */
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -12,10 +9,7 @@
   color: black;
 
 }
-
-
 .jumbotron {
-/* background: -webkit-linear-gradient(left, #2a2936, #7d7f80); */
 color: black;
 padding-top: 24px;
 padding-bottom: 24px;
@@ -103,6 +97,9 @@ button:hover:enabled{
     width: 100%;
   }
 }
-/* my laptop size 1400px */
+@media (max-width:1280px) {
+
+  
+}
 
 

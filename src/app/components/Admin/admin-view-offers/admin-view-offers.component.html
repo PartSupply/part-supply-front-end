@@ -1,17 +1,18 @@
 <app-admin-header></app-admin-header>
-<h3 class="headline">Seller(s) Offer(s)</h3>
+<h3 class="headline">All Offers</h3>
 <div class="table-responsive">
     <table>
         <tr>
-            <th>Unique Id</th>
-            <th>Vin number</th>
-            <th>Part name</th>
-            <th>Part brand</th>
+            <th>Unique ID</th>
+            <th>Vin Number</th>
+            <th>Part Name</th>
+            <th>Part Brand</th>
             <th>Warranty</th>
-            <th>Delivery time</th>
+            <th>Delivery Time</th>
             <th>Amount(USD)</th>
-            <th>Offer accepted?</th>
-            <th>Report</th>
+            <th>Status</th>
+            <th>Seller Name</th>
+            <!-- <th>Report</th> -->
            
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
@@ -31,9 +32,10 @@
                     <img src="./../../../../assets/cross.png" class="status_img">
                 </span>
             </td>
-            <td *ngIf="res.isOfferAccepted === true">
+            <td>{{res.user.firstName}} {{res.user.lastName}}</td>
+            <!-- <td *ngIf="res.isOfferAccepted === true">
                 <button (click)="viewTransactions()" class="btn btn-danger">Click here</button>
-            </td>
+            </td> -->
             
         </tr>
       </table>

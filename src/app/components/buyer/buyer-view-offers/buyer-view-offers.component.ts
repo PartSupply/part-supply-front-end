@@ -64,6 +64,6 @@ export class BuyerViewOffersComponent implements OnInit {
     if (this.acceptedOffer) {
       return 'Accepted';
     }
-    return 'Accept Offer';
+    return 'Accepted';
   }
 }
