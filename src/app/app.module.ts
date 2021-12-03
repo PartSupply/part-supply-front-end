@@ -35,6 +35,7 @@ import { AdminHomePageComponent } from './components/Admin/admin-home-page/admin
 import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/admin-view-offers.component';
 import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
 import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
+import { CommonModalComponent } from './components/Admin/common-modal/common-modal.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AdminViewRequestsComponent } from './components/Admin/admin-view-reques
     AdminViewOffersComponent,
     AdminViewTransactionsComponent,
     AdminViewRequestsComponent,
+    CommonModalComponent,
   ],
   imports: [
     SparkAngularModule,

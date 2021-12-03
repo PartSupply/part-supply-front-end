@@ -1,5 +1,8 @@
 <app-admin-header></app-admin-header>
 <h3 class="headline">All Applications</h3>
+<div class="alert alert-success" role="alert" *ngIf="shouldDisplayBanner">
+    {{displayContent}}
+</div>
 <div class="table-responsive">
     <table>
         <tr>
@@ -10,7 +13,7 @@
             <th>Fax</th>
             <th>Role</th>
             <th>Address</th>
-            <th>Accept/Decline</th>
+            <th>Accept/Close</th>
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
             <td>{{res.firstName}} {{res.lastName}}</td>
@@ -20,9 +23,11 @@
             <td>{{res.faxNumber}}</td>
             <td>{{res.role.roleName}}</td>
             <td>{{res.address.addressLineOne}}, {{res.address.city}}, {{res.address.state}} {{res.address.zipCode}}</td>
-            <td>
-                <button class="btn btn-success" (click)="acceptApplication()">Accept</button>
-                <button class="btn btn-danger">Decline</button>
+            <td *ngIf="!res.isAccountApproved || (!res.isAccountActive && res.isAccountApproved)">
+                <button class="btn btn-success" (click)="acceptApplication(res)">Accept</button>
+            </td>
+            <td *ngIf="res.isAccountApproved">
+                <button class="btn btn-danger" (click)="closeAccount(res)">Close</button>
             </td>
         </tr>
       </table>

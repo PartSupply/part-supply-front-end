@@ -54,16 +54,16 @@ export class BuyerViewOffersComponent implements OnInit {
   }
 
   public getButtonClass() {
-    if (this.acceptedOffer) {
+    if (this.acceptedOffer.length > 0) {
       return 'btn-success';
     }
     return 'btn-danger';
   }
 
   public getBtnTextLabel() {
-    if (this.acceptedOffer) {
+    if (this.acceptedOffer.length > 0) {
       return 'Accepted';
     }
-    return 'Accepted';
+    return 'Accept';
   }
 }

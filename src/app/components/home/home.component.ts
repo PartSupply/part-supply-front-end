@@ -48,7 +48,11 @@ export class HomeComponent implements OnInit {
       }
     } catch (error) {
       console.log(error);
-      alert("Wrong Username or Password");
+      let message = error.error.message;
+      if (message === 'Internal server error') {
+        message = 'Wrong Username or Password';
+      }
+      alert(message);
     }
   }
   signup(){
