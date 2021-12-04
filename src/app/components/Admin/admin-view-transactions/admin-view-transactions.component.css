@@ -1,7 +1,7 @@
-.main-div {
+.main {
     margin: 2%;
+    margin-left: 16%;
 }
-
 
 label {
     float: left !important;
@@ -9,17 +9,43 @@ label {
 }
 input {
     float: left!important;
-    background-color: red;
-    color: blanchedalmond;
-    font-weight: bold;
     border-radius: 3px;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: blanchedalmond;
-    opacity: 1; /* Firefox */
-  }
+
   button {
       margin-left: 2%;
     font-weight: bold;
     padding-bottom: 0;
+  }
+  /* table  {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: -2px -2px 5px 5px rgb(247, 223, 223);
+}
+td {
+  border: 1px solid #131212;
+  text-align: center;
+  padding: 8px;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  background-color: rgb(68, 64, 60);
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFFF;
+}
+table.odd tr td, th {
+	border: 1px solid #ccc;
+  	padding:5px;
+} */
+  @media (max-width:480px) {
+      .main {
+          margin: auto;
+      }
+      li{
+          width: 130%;
+      }
+      
   }

@@ -16,7 +16,6 @@ export class AdminViewOffersComponent implements OnInit {
 
   async ngOnInit() {
     this.response = await this.httpService.get('admin/allSellerOfferRequest');
-    // this.buyerInfoResponse = await this.httpService.get(`seller/buyerInformation?partRequestId=${this.partRequestId}&partBidRequestId=${this.partBidRequestId}`);
   }
   viewTransactions(){
     this.router.navigate(['adminViewTransactions'])
