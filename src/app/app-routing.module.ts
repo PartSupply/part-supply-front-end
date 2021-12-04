@@ -22,7 +22,7 @@ import { AdminHomePageComponent } from './components/Admin/admin-home-page/admin
 import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/admin-view-offers.component';
 import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
 import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
-
+import { UpdateUserProfileComponentComponent } from './components/common/update-user-profile-component/update-user-profile-component.component'
 const routes: Routes = [];
 @NgModule({
   imports: [
@@ -108,7 +108,9 @@ const routes: Routes = [];
       expectedRole: 'ADMIN'
     }
   },
-    
+  {
+    path: 'updateProfile', component: UpdateUserProfileComponentComponent,
+  }
     
       //canActivate: [AuthGuard]
 

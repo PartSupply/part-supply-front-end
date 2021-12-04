@@ -53,7 +53,6 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['/home']);
   }
   private transformPayLoad(payload: any) {
-    payload.isMailDeliveryAcceptable = payload.isMailDeliveryAcceptable === 'No' ? false : true;
     payload.deliveryRadius = payload.role.roleName === 'BUYER' ? null : payload.deliveryRadius;
     return payload;
   }

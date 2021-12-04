@@ -11,12 +11,15 @@
               <a class="nav-link" aria-current="page" href="home">Home</a>
             </li>
             
-            <li class="nav-item">
+            <li *ngIf="_router != '/updateProfile'" class="nav-item">
               <a class="nav-link" (click)= 'getData()' >All Requests</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="contactUs">Contact</a>
+            </li>
+            <li *ngIf="_router != '/updateProfile'" class="nav-item">
+              <a *ngIf="_router != '/updateProfile'" class="nav-link" href="updateProfile">Update Profile</a>
             </li>
             <li class="">
               <button (click)="logout()" class="btn-danger logout" type="" name="button">Logout</button>

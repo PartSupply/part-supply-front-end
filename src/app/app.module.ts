@@ -37,6 +37,7 @@ import { AdminViewTransactionsComponent } from './components/Admin/admin-view-tr
 import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
 import { CommonModalComponent } from './components/Admin/common-modal/common-modal.component';
 import { ShowChatComponent } from './components/buyer/show-chat/show-chat.component';
+import { UpdateUserProfileComponentComponent } from './components/common/update-user-profile-component/update-user-profile-component.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ShowChatComponent } from './components/buyer/show-chat/show-chat.compon
     AdminViewRequestsComponent,
     CommonModalComponent,
     ShowChatComponent,
+    UpdateUserProfileComponentComponent,
   ],
   imports: [
     SparkAngularModule,
