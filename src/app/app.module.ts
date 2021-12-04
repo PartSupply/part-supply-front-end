@@ -36,6 +36,7 @@ import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/a
 import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
 import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
 import { CommonModalComponent } from './components/Admin/common-modal/common-modal.component';
+import { ShowChatComponent } from './components/buyer/show-chat/show-chat.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { CommonModalComponent } from './components/Admin/common-modal/common-mod
     AdminViewTransactionsComponent,
     AdminViewRequestsComponent,
     CommonModalComponent,
+    ShowChatComponent,
   ],
   imports: [
     SparkAngularModule,
@@ -83,6 +85,7 @@ import { CommonModalComponent } from './components/Admin/common-modal/common-mod
   entryComponents: [
     SellerEditOfferComponent,
     SellerAskQuestionComponent,
+    ShowChatComponent,
   ]
 })
 export class AppModule {

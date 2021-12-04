@@ -73,6 +73,11 @@ tr:nth-child(even) {
   width: 13%;
 }
 
+::ng-deep.mat-dialog-container {
+  background-color: red !important; 
+    border-radius: 20px !important;
+}
+
   @media (max-width: 992px) {
     .logout{
       margin-left: 0px;

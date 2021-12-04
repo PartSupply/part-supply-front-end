@@ -26,8 +26,13 @@
       </div>
       <div class="chat-area">
         <div *ngIf="questionAnswerResponseData.data.length > 0" style="padding: 2%;font-weight: bold;">
-          Seller:
-          {{questionAnswerResponseData.data[0].QUESTION}}
+          <div *ngFor="let res of this.questionAnswerResponseData.data; let i = index">
+            <div *ngIf="res.IS_ANSWER===1">
+               <div>Seller: {{res.QUESTION}}</div>
+               <div>Buyer: {{res.ANSWER}}</div>
+            </div>
+            <div *ngIf="res.IS_ANSWER===0"> Seller: {{res.QUESTION}}</div>
+          </div>
         </div>
       </div>
       <div>

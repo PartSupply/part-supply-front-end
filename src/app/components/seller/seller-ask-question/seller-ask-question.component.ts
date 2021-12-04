@@ -46,9 +46,12 @@ export class SellerAskQuestionComponent implements OnInit {
   }
 
   public async submitQuestion() {
+    if (this.questionText.trim() === '') {
+      return;
+    }
     this.userProfile = JSON.parse(localStorage.getItem('userProfile'));
     const payload = {
-      "question": this.questionText,
+      "question": this.questionText.trim(),
       "sellerId": this.userProfile.data.id,
       "partRequestId": this.partData.id,
       "isAnswered": false
@@ -58,7 +61,7 @@ export class SellerAskQuestionComponent implements OnInit {
     if (saveQuestionAnswerResponse) {
       console.log('Question Posted successfully');
     }
-    
+    const dialogRef = this.dialog.closeAll();
   }
   
 }
