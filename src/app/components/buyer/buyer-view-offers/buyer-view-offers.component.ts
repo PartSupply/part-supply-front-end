@@ -43,7 +43,6 @@ export class BuyerViewOffersComponent implements OnInit {
       "id": this.response.data.partRequest.id+'',
       "bidRequestId": offerId+'',
     };
-
     const response = await this.httpService.post('buyer/acceptPartOffer', payload);
     const queryParams = {
       partRequestId: `${this.response.data.partRequest.id}`,

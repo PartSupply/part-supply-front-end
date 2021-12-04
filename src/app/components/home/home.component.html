@@ -27,7 +27,6 @@
 						</div>
 						<div *ngIf="(userLoginForm.get('password').invalid) && (userLoginForm.get('password').touched) || (userLoginForm.get('password').dirty)">
 							<small *ngIf="(userLoginForm.get('password').errors?.required)" class="text-danger"> password is required</small>
-							<!--question mark(?) is a safe navigation operator-->
 							</div>
 						<div class="row align-items-center remember">
 							<input type="checkbox" checked>Remember Me
@@ -41,7 +40,7 @@
 					</form>
 					
 				</div>
-				<!-- <a class="forgot-link" href="">Forgot your password?</a> -->
+				
 				<app-footer class="homefooter"></app-footer>
 			</div>
 		</div>

@@ -1,0 +1,25 @@
+.main-div {
+    margin: 2%;
+}
+
+
+label {
+    float: left !important;
+    font-size: 1.2rem;
+}
+input {
+    float: left!important;
+    background-color: red;
+    color: blanchedalmond;
+    font-weight: bold;
+    border-radius: 3px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: blanchedalmond;
+    opacity: 1; /* Firefox */
+  }
+  button {
+      margin-left: 2%;
+    font-weight: bold;
+    padding-bottom: 0;
+  }

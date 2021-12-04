@@ -1,1 +1,15 @@
 <app-admin-header></app-admin-header>
+<div class="main-div">
+    <form action="" [formGroup]= "generateReport" novalidate>
+        <label for="start">To.</label>
+        <input formControlName = "startDate" type="date" id="to" name="">
+        <label style="margin-left: 2%;" for="start">From.</label>
+        <input formControlName = "endDate" type="date" id="from" name="">
+        <label style="margin-left: 2%" for="">Email:</label>
+        <input formControlName = "sellerEmail" type="email" placeholder="Ex.John@test.com">
+        <label style="margin-left: 2%" for="">Percentage</label>
+        <input style="width: 50px;" type="text" formControlName = "commissionPercentage">
+        <button class="btn btn-success" (click)="post()" type="submit">Generate Report</button>
+    </form>
+   
+</div>
