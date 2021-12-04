@@ -35,12 +35,12 @@
                 </span>
             </td>
             <td>
-                <input class="checkbox" type="checkbox" >
+                <input (click)="selectDeleteItem(res.id)" class="checkbox" type="checkbox" >
             </td>
         </tr>
         <tr>
             <td colspan="9" style="background-color: white; border: none; box-shadow: none;">&nbsp;</td>
-            <td style="background-color: rgb(68, 64, 60);"> <button style="margin-top: 0%;" class="btn btn-danger" (click)="deleteRecord(res.id)">DELETE</button></td>
+            <td style="background-color: rgb(68, 64, 60);"> <button style="margin-top: 0%;" (click)="deleteItems()" class="btn btn-danger">DELETE</button></td>
         </tr>
         
             

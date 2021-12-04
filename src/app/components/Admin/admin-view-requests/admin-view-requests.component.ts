@@ -8,7 +8,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class AdminViewRequestsComponent implements OnInit {
   response: any;
-
+  idList = new Set();
   constructor(public httpService:HttpService) { }
 
   async ngOnInit() {
@@ -16,4 +16,23 @@ export class AdminViewRequestsComponent implements OnInit {
 
   }
 
+  public selectDeleteItem(id) {
+    if (this.idList.has(id)) {
+      this.idList.delete(id);
+    } else {
+      this.idList.add(id);
+    }
+  }
+
+  public async deleteItems() {
+    const array = [];
+    for (let item of this.idList) {
+      array.push(item);
+    }
+
+    await this.httpService.post('admin/deletePartRequest', { partRequestIds: array });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  }
 }
