@@ -12,6 +12,7 @@
             <th>Date</th>
             <th># Of Offers</th>
             <th>Status</th>
+            <th>Delete</th>
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
             <td>{{res.id}}</td>
@@ -22,6 +23,7 @@
             <td>{{res.model}}</td>
             <td>{{res.partRequestCreationDate}}</td>
             <td>{{res.numberOfOffers}}</td>
+            
             <td>
                 <span *ngIf="res.offerStatus === 'ACCEPTED'">
                     <!-- <img src="./../../../../assets/Accepted.png" class="status_img"> -->
@@ -32,6 +34,16 @@
                     <h6 style="color: red;">OPEN</h6>
                 </span>
             </td>
+            <td>
+                <input class="checkbox" type="checkbox" >
+            </td>
         </tr>
+        <tr>
+            <td colspan="9" style="background-color: white; border: none; box-shadow: none;">&nbsp;</td>
+            <td style="background-color: rgb(68, 64, 60);"> <button style="margin-top: 0%;" class="btn btn-danger" (click)="deleteRecord(res.id)">DELETE</button></td>
+        </tr>
+        
+            
+        
       </table>
 </div>

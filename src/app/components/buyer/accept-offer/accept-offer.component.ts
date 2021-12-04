@@ -25,7 +25,7 @@ export class AcceptOfferComponent implements OnInit {
 
   async ngOnInit() {
     await this.getSellerInfo();
-    await this.getFees();
+    // await this.getFees();
   }
 
   async getSellerInfo() {
@@ -38,8 +38,8 @@ export class AcceptOfferComponent implements OnInit {
       this.response = await this.httpService.get(`seller/buyerInformation?partRequestId=${this.partRequestId}&partBidRequestId=${this.partBidRequestId}`);
     }
   }
-  getFees(){
-   var amount = (this.response.data.partBidRequest.BID_AMOUNT);
-   this.fees = (amount * 5)/100;
-  }
+  // getFees(){
+  //  var amount = (this.response.data.partBidRequest.BID_AMOUNT);
+  //  this.fees = (amount * 5)/100;
+  // }
 }

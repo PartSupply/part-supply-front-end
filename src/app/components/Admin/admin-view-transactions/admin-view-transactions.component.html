@@ -1,5 +1,5 @@
 <app-admin-header></app-admin-header>
-<div class="main-div">
+<div class="main">
     <form action="" [formGroup]= "generateReport" novalidate>
         <label for="start">To.</label>
         <input formControlName = "startDate" type="date" id="to" name="">
@@ -7,9 +7,61 @@
         <input formControlName = "endDate" type="date" id="from" name="">
         <label style="margin-left: 2%" for="">Email:</label>
         <input formControlName = "sellerEmail" type="email" placeholder="Ex.John@test.com">
-        <label style="margin-left: 2%" for="">Percentage</label>
-        <input style="width: 50px;" type="text" formControlName = "commissionPercentage">
+        <label style="margin-left: 2%" for="">Fees(%)</label>
+        <input style="width: 50px" type="number" formControlName = "commissionPercentage">
         <button class="btn btn-success" (click)="post()" type="submit">Generate Report</button>
     </form>
-   
+</div>
+
+<div class="container" *ngIf="shouldDisplayReport">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        Accounts and Transactions Report
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <h3>
+                     {{response.acceptedOffers[0].SELLER_FIRST_NAME}}  {{response.acceptedOffers[0].SELLER_LAST_NAME}} (Total Amount: ${{amount}})
+                    </h3>
+                </div>
+                <div class="table-responsive">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Part ID</th>
+                                    <th>Date</th>
+                                    <th>Part-Name</th>
+                                    <th>Make</th>
+                                    <th>Year</th>
+                                    <th>Model</th>
+                                    <th>Buyer Name</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor = "let res of response.acceptedOffers; let i = index">
+                                    <td>{{res.PART_ID}}</td>
+                                    <td>{{res.PART_REQUEST_CREATED_DATE.split('T')[0]}}</td>
+                                    <td>{{res.PART_NAME}}</td>
+                                    <td>{{res.MAKE}}</td>
+                                    <td>{{res.YEAR}}</td>
+                                    <td>{{res.MODEL}}</td>
+                                    <td>{{res.BUYER_FIRST_NAME}} {{res.BUYER_LAST_NAME}}</td>
+                                    <td>${{res.BID_AMOUNT}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </li>
+                    </ul>
+                </div>
+                   
+            </div>
+        </div>
+    </div>
 </div>

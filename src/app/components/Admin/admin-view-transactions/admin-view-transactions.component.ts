@@ -11,26 +11,42 @@ import { HttpService } from 'src/app/services/http.service';
 export class AdminViewTransactionsComponent implements OnInit {
 
   response: any;
+  amount: any;
+  date: any;
+  shouldDisplayReport: boolean;
   generateReport = new FormGroup({
     startDate: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
     sellerEmail: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]),
-    commissionPercentage: new FormControl('', Validators.required),
+    commissionPercentage: new FormControl(''),
 });
  
   constructor(public httpService: HttpService) { }
 
-  async ngOnInit() {
+   ngOnInit() {
    
     
   }
   public async post(): Promise<void> {
+    let percentage = 5; 
+    if (this.generateReport.get('commissionPercentage').value) {
+      percentage = this.generateReport.get('commissionPercentage').value;
+    }
     const payload = {
       startDate: this.generateReport.get('startDate').value,
       endDate: this.generateReport.get('endDate').value,
       sellerEmail: this.generateReport.get('sellerEmail').value,
-      commissionPercentage: this.generateReport.get('commissionPercentage').value,
+      commissionPercentage: percentage,
     };
-    const response = await this.httpService.post('admin/getReport',payload);
+    const response: any = await this.httpService.post('admin/getReport',payload);
+    this.response = response.data;
+    this.shouldDisplayReport = true;
+    this.amount = (response.data.amount).toFixed(2);
+    console.log(this.amount);
+   
+
   }
+  
+
+
 }

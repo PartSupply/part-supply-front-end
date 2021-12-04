@@ -25,10 +25,10 @@
                 <label class="top5-label" for="year">Cost: </label>
                 <span class="span-class" style="color:greenyellow; font-weight: bold; "> ${{response.data.partBidRequest.BID_AMOUNT}}</span>
             </div>
-            <div *ngIf="response.data.user.role.roleName === 'BUYER'">
+            <!-- <div *ngIf="response.data.user.role.roleName === 'BUYER'">
                 <label class="top5-label" for="year">Fees: </label>
                 <span class="span-class" style="color:greenyellow; font-weight: bold; "> ${{fees}}</span>
-            </div>
+            </div> -->
 
             <h3 style="margin-top: 4%;"> <span>{{response.data.user.role.roleName}}</span> Information</h3>
             <div>

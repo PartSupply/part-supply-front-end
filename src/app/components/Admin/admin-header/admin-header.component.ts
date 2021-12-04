@@ -13,6 +13,7 @@ export class AdminHeaderComponent implements OnInit {
   _router: string;
   constructor(private httpService: HttpService, private router: Router) {
     this._router = router.url; 
+    console.log(this._router)
    }
 
   ngOnInit() {
@@ -28,16 +29,15 @@ export class AdminHeaderComponent implements OnInit {
   }
   viewRequests(){
     this.router.navigate(['adminViewRequests']);
-
   }
   viewOffers(){
     this.router.navigate(['adminViewOffers']);
 
   }
-
   viewTransactions(){
     this.router.navigate(['adminViewTransactions'])
   }
+
   public async logout(): Promise<void> {
     const response = await this.httpService.post('logout',null);
     // Remove localstorage session info 
