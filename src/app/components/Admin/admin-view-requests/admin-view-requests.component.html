@@ -3,7 +3,7 @@
 <div class="table-responsive">
     <table>
         <tr>
-            <th>Unique ID</th>
+            <th>Part ID</th>
             <th>Vin Number</th>
             <th>Part Name</th>
             <th>Make</th>
@@ -21,7 +21,7 @@
             <td>{{res.make}}</td>
             <td>{{res.year}}</td>
             <td>{{res.model}}</td>
-            <td>{{res.partRequestCreationDate}}</td>
+            <td>{{res.partRequestCreationDate.split('T')[0]}}</td>
             <td>{{res.numberOfOffers}}</td>
             
             <td>

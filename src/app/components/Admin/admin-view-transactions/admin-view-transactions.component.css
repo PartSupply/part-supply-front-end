@@ -17,29 +17,26 @@ input {
     font-weight: bold;
     padding-bottom: 0;
   }
-  /* table  {
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: -2px -2px 5px 5px rgb(247, 223, 223);
-}
-td {
-  border: 1px solid #131212;
-  text-align: center;
-  padding: 8px;
-}
-th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 8px;
-  background-color: rgb(68, 64, 60);
-  font-weight: bold;
-  font-size: 1rem;
-  color: #FFFF;
-}
-table.odd tr td, th {
-	border: 1px solid #ccc;
-  	padding:5px;
-} */
+  @media (max-width: 1000px) {
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label {
+        margin-top: 1%;
+        margin-left: 1%;
+    }
+    
+    button {
+      margin: 1%;
+      width: 40%;
+    }
+    input {
+        width: 40%;
+        margin-left: 1%;
+    }
+  }
   @media (max-width:480px) {
       .main {
           margin: auto;
@@ -47,5 +44,35 @@ table.odd tr td, th {
       li{
           width: 130%;
       }
+      h3{
+          font-size: 10px;
+      }
+      form {
+          display: flex;
+          flex-direction: column;
+      }
+      .first-label {
+          padding-left: 1%;
+      }
+      label {
+          margin-top: 1%;
+      }
       
+      button {
+        margin: 2%;
+        width: 50%;
+      }
+      input {
+          width: 80%;
+          margin-left: 1%;
+      }
+      
+  }
+  @media (min-width: 1000px) and (max-width: 1192px){
+    label {
+        font-size: 1rem;
+    }
+    button {
+        margin-top: 2% ;
+    }
   }
