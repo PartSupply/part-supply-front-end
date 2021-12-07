@@ -6,8 +6,16 @@
         <div class="main-center">
             <h3>Offer Summary</h3>
             <div>
+                <label class="top5-label" for="year">Part ID: </label>
+                <span class="span-class"> {{response.data.partRequest.ID}}</span>
+            </div>
+            <div>
                 <label class="top5-label" for="year">Part Name: </label>
                 <span class="span-class"> {{response.data.partRequest.PART_NAME}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Make: </label>
+                <span class="span-class"> {{response.data.partRequest.MAKE}}</span>
             </div>
             <div>
                 <label class="top5-label" for="year">Year: </label>
@@ -20,6 +28,14 @@
             <div>
                 <label class="top5-label" for="year">Brand: </label>
                 <span class="span-class"> {{response.data.partBidRequest.PART_BRAND}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Warranty: </label>
+                <span class="span-class"> {{response.data.partBidRequest.BID_WARRANTY}}</span>
+            </div>
+            <div>
+                <label class="top5-label" for="year">Delivery Time: </label>
+                <span class="span-class"> {{response.data.partBidRequest.EST_DELIVERY_TIME}}</span>
             </div>
             <div>
                 <label class="top5-label" for="year">Cost: </label>
