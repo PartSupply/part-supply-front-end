@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
 export class BuyerHeaderComponent implements OnInit {
   navbarOpen = false;
   _router: string;
+  userProfile: unknown;
   constructor(private httpService: HttpService, private router: Router) { 
     this._router = router.url; 
   }
@@ -21,12 +22,7 @@ export class BuyerHeaderComponent implements OnInit {
   }
 
   public async logout(): Promise<void> {
-    try {
-      await this.httpService.post('logout',null);
-    } catch (error) {
-      localStorage.removeItem('user');
-      this.router.navigate(['/home']);
-    }
+    const response = await this.httpService.post('logout',null);
     // Remove localstorage session info 
     localStorage.removeItem('user');
     this.router.navigate(['/home']);
@@ -39,4 +35,10 @@ export class BuyerHeaderComponent implements OnInit {
 homeRoute(){
   this.router.navigate(['/home']);
   }
+  async signup(){
+    this.userProfile = await this.httpService.get('userProfile');
+    console.log(this.userProfile);
+    this.router.navigate(['/signup']);
+  }
 }
+

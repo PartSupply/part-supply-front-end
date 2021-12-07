@@ -4,7 +4,7 @@
 <div class="table-responsive">
 <table>   
         <tr>
-            <th>Unique ID</th>
+            <th>Part ID</th>
             <th>Vin</th>
             <th>Make</th>
             <th>Year</th>
@@ -14,7 +14,7 @@
             <th># Of Offers</th>
             <th>Offer Status</th>
             <th>Place An Offer</th>
-            <th>Ask A Question</th>
+            <th>Send/Get Messages</th>
         </tr>   
          
         <tr *ngFor="let partRequest of partRequestList; let first = first; let last = last">
@@ -28,6 +28,6 @@
             <td>{{partRequest.numberOfOffers}}</td>
             <td>{{partRequest.offerStatus}}</td> 
             <td class="td-button"><button class="place-btn btn btn-success" (click)="openDialog(partRequest)">Place An Offer</button></td>
-            <td class="td-button1"><button class="ask-btn btn btn-danger" (click)="openDialog1(partRequest)">Ask A Question</button></td>
+            <td class="td-button1"><button class="ask-btn btn btn-danger" (click)="openDialog1(partRequest)">Send/Get Messages</button></td>
         </tr>
 </table>

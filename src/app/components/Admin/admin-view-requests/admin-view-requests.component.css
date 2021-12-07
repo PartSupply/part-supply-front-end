@@ -40,7 +40,7 @@ table.odd tr td, th {
   float: none;
 }
 button {
-  float: rightFs;
+  float: right;
 }
 tr:nth-child(even) {
    background: #f1f1f1;

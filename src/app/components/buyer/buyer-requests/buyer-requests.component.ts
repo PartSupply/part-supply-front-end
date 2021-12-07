@@ -10,12 +10,15 @@ import { ShowChatComponent } from '../show-chat/show-chat.component';
   styleUrls: ['./buyer-requests.component.css']
 })
 export class BuyerRequestsComponent implements OnInit {
+  _router: string;
   navbarOpen = false;
   partRequestList: any;
   chatData: any;
   chatMap = new Map();
   
-  constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
+  constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) {
+    this._router = router.url; 
+   }
   filterPartType(partType: any) {
     Object.keys(partType).forEach(key => {
       if (!partType[key]) delete partType[key];

@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./admin-view-transactions.component.css']
 })
 export class AdminViewTransactionsComponent implements OnInit {
-
+  
   response: any;
   amount: any;
   date: any;
@@ -42,9 +42,7 @@ export class AdminViewTransactionsComponent implements OnInit {
     this.response = response.data;
     this.shouldDisplayReport = true;
     this.amount = (response.data.amount).toFixed(2);
-    console.log(this.amount);
-   
-
+  
   }
   
 

@@ -1,9 +1,9 @@
 <app-admin-header></app-admin-header>
 <div class="main">
     <form action="" [formGroup]= "generateReport" novalidate>
-        <label for="start">To.</label>
+        <label class="first-label" for="start">From.</label>
         <input formControlName = "startDate" type="date" id="to" name="">
-        <label style="margin-left: 2%;" for="start">From.</label>
+        <label style="margin-left: 2%;" for="start">To.</label>
         <input formControlName = "endDate" type="date" id="from" name="">
         <label style="margin-left: 2%" for="">Email:</label>
         <input formControlName = "sellerEmail" type="email" placeholder="Ex.John@test.com">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="panel-body">
                     <h3>
-                     {{response.acceptedOffers[0].SELLER_FIRST_NAME}}  {{response.acceptedOffers[0].SELLER_LAST_NAME}} (Total Amount: ${{amount}})
+                     {{response.acceptedOffers[0].SELLER_FIRST_NAME}}  {{response.acceptedOffers[0].SELLER_LAST_NAME}} (Payment Amount: ${{amount}})
                     </h3>
                 </div>
                 <div class="table-responsive">
@@ -54,7 +54,12 @@
                                     <td>{{res.MODEL}}</td>
                                     <td>{{res.BUYER_FIRST_NAME}} {{res.BUYER_LAST_NAME}}</td>
                                     <td>${{res.BID_AMOUNT}}</td>
+
                                 </tr>
+                                <!-- <tr>
+                                    <td colspan="7" style="background-color: white; border: none; box-shadow: none;">&nbsp;</td>
+                                    <td style="background-color: rgb(68, 64, 60);color: white; font-weight: bold;"> {{total}}</td>
+                                </tr> -->
                             </tbody>
                         </table>
                         </li>

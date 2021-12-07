@@ -6,6 +6,7 @@
 <div class="table-responsive">
     <table>
         <tr>
+            <th>Account ID</th>
             <th>Full Name</th>
             <th>Email</th>
             <th>Company</th>
@@ -16,6 +17,7 @@
             <th>Accept/Close</th>
         </tr>
         <tr *ngFor="let res of response.data; let i = index">
+            <td>{{res.id}}</td>
             <td>{{res.firstName}} {{res.lastName}}</td>
             <td>{{res.email}}</td>
             <td>{{res.companyName}}</td>
