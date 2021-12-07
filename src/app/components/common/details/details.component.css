@@ -20,6 +20,18 @@ body {
 .main-container {
     padding: 3% 10%;
 }
+.agreement-div, .privacy-policy-div {
+    margin: 3% 10%;
+    padding: 2%;
+    border: 1px solid red;
+    color: white;
+    font-size: 0.8rem;
+    background-color: black;
+}
+h5{
+    text-align: center;
+    color: white;
+}
 
 .middle-div {
     border-bottom: 15px solid red;

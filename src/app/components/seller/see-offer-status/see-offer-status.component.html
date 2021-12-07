@@ -40,7 +40,7 @@
             </td> 
             <td *ngIf="offers.isOfferAccepted" class="td-button1">
                 <button *ngIf="offers.sellerId === userProfile.data.id" (click)="displayBuyerInfo(offers)" class="accepted-btn btn btn-success">Accepted</button>
-                <div class="hide">See details.</div>
+                <div class="hide">See Details</div>
              </td>
             
             <td  *ngIf="!offers.isOfferAccepted" class="td-button1">
