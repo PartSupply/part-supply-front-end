@@ -11,6 +11,7 @@ export class BuyerHeaderComponent implements OnInit {
   navbarOpen = false;
   _router: string;
   userProfile: unknown;
+  user: any;
   constructor(private httpService: HttpService, private router: Router) { 
     this._router = router.url; 
   }
@@ -39,6 +40,24 @@ homeRoute(){
     this.userProfile = await this.httpService.get('userProfile');
     console.log(this.userProfile);
     this.router.navigate(['/signup']);
+  }
+
+  routeByUrl(url: string) {
+    this.router.navigate([url]);
+  }
+
+  loggedInUserRole() {
+    this.user = JSON.parse(localStorage.getItem('userProfile'));
+    const userRole = this.user.data.role.roleName;
+    let routeToUrl = ';'
+    if (userRole === 'BUYER') {
+      routeToUrl = '/requestInfo';
+    } else if (userRole === 'SELLER') {
+      routeToUrl = '/supplierMenu';
+    } else {
+      routeToUrl = '/adminHomePage';
+    }
+    this.router.navigateByUrl(routeToUrl);
   }
 }
 

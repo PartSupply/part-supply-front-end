@@ -24,7 +24,7 @@
               <a class="nav-link" (click)="viewTransactions()">View Transactions</a>
             </li> 
             <li *ngIf="_router != '/updateProfile'" class="nav-item">
-              <a *ngIf="_router != '/updateProfile'" class="nav-link" href="updateProfile">Update Profile</a>
+              <a *ngIf="_router != '/updateProfile'" class="nav-link" (click)="routeByUrl('/updateProfile')">Update Profile</a>
             </li>
             <li class="">
               <button class="btn-danger logout" (click)="logout()" type="" name="button">Logout</button>

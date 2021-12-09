@@ -21,9 +21,9 @@ export class SignupComponent implements OnInit {
     address: new FormGroup({
             addressLineOne: new FormControl('', Validators.required),
             city: new FormControl('', Validators.required),
-            state: new FormControl(null, Validators.required),
+            state: new FormControl('MI', Validators.required),
             zipCode: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern('^[0-9]{1,6}$')]),
-            country: new FormControl(null, Validators.required),
+            country: new FormControl('USA', Validators.required),
           }),
     isMailDeliveryAcceptable: new FormControl(null, Validators.required),
     role: new FormGroup({

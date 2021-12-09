@@ -49,7 +49,9 @@ export class AdminHeaderComponent implements OnInit {
     localStorage.removeItem('user');
     this.router.navigate(['/adminLogin']);
   }
-  
+  routeByUrl(url: string) {
+    this.router.navigate([url]);
+  }
 
 }
 

@@ -88,4 +88,8 @@ export class BuyerRequestsComponent implements OnInit {
       data: sendResponse,
     });
   }
+
+  routeByUrl(url: string) {
+    this.router.navigate([url]);
+  }
 }

@@ -42,6 +42,10 @@ homeRoute(){
   this.router.navigate(['/home']);
   }
 
+routeByUrl(url: string) {
+  this.router.navigate([url]);
+}
+
 }
 
 

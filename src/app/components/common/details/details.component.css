@@ -1,6 +1,5 @@
 
 body {
-    background: -webkit-linear-gradient(left, #2a2936, #7d7f80) !important;
     background-size: cover;
     background-repeat: repeat;
     width: 100%;
@@ -8,7 +7,9 @@ body {
     font-family: 'Helvetica', sans-serif;
   
 }
-
+.details-css {
+    background: -webkit-linear-gradient(left, #2a2936, #7d7f80) !important;
+}
 .top-div {
     color: beige;
     background-color: red;
@@ -21,7 +22,9 @@ body {
     padding: 3% 10%;
 }
 .agreement-div, .privacy-policy-div {
-    margin: 3% 10%;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 2%;
     border: 1px solid red;
     color: white;
@@ -29,6 +32,7 @@ body {
     background-color: black;
 }
 h5{
+    margin-top: 2%;
     text-align: center;
     color: white;
 }
