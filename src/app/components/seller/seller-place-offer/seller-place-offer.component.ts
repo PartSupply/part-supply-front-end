@@ -35,7 +35,7 @@ export class SellerPlaceOfferComponent implements OnInit {
   }
   public async postofferRequest(): Promise<void> {
     const payload = {
-      bidAmount: this.PlaceOfferForm.get('bidAmount').value,
+      bidAmount: +this.PlaceOfferForm.get('bidAmount').value,
       bidWarranty: this.PlaceOfferForm.get('bidWarranty').value,
       partBrand: this.PlaceOfferForm.get('partBrand').value,
       estDeliveryTime: this.PlaceOfferForm.get('estDeliveryTime').value,

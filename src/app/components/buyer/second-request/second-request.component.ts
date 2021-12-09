@@ -48,7 +48,14 @@ export class SecondRequestComponent implements OnInit {
       offerStatus: 'OPEN'
     }
     const response = await this.httpService.post('buyer/submitPartRequest',payload);
-    this.onNoClick();
+    this.clearTheForm();
+  }
+
+  clearTheForm() {
+    this.vehicleInfoForm2.get('partName').setValue('');
+    this.vehicleInfoForm2.get('partType.new').setValue(false)
+    this.vehicleInfoForm2.get('partType.used').setValue(false)
+    this.vehicleInfoForm2.get('partType.reManufactured').setValue(false)
   }
 
   ngOnInit() {
@@ -57,7 +64,6 @@ export class SecondRequestComponent implements OnInit {
     const dialogRef = this.dialog.closeAll();
     this.vehicleInfoForm2.clearValidators();
     this.vehicleInfoForm2.updateValueAndValidity();
-    
   }
 }
   export function requireCheckboxesToBeCheckedValidator(minRequired = 1): ValidatorFn {

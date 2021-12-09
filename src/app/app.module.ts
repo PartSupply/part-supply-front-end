@@ -38,6 +38,7 @@ import { AdminViewRequestsComponent } from './components/Admin/admin-view-reques
 import { CommonModalComponent } from './components/Admin/common-modal/common-modal.component';
 import { ShowChatComponent } from './components/buyer/show-chat/show-chat.component';
 import { UpdateUserProfileComponentComponent } from './components/common/update-user-profile-component/update-user-profile-component.component';
+import { TwoDigitDecimaNumberDirective } from './services/two-digit-decima-number.directive';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { UpdateUserProfileComponentComponent } from './components/common/update-
     CommonModalComponent,
     ShowChatComponent,
     UpdateUserProfileComponentComponent,
+    TwoDigitDecimaNumberDirective,
   ],
   imports: [
     SparkAngularModule,

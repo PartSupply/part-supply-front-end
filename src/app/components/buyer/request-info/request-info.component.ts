@@ -71,7 +71,12 @@ export class RequestInfoComponent implements OnInit {
     this.vehicleInfoForm = createNewFormControl();
   }
   public async logout(): Promise<void> {
-    const response = await this.httpService.post('logout',null);
+    try {
+      await this.httpService.post('logout',null);
+    } catch (error) {
+      localStorage.removeItem('user');
+      this.router.navigate(['/home']);
+    }
     // Remove localstorage session info 
     localStorage.removeItem('user');
     this.router.navigate(['/home']);

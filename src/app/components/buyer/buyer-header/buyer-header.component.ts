@@ -23,10 +23,21 @@ export class BuyerHeaderComponent implements OnInit {
   }
 
   public async logout(): Promise<void> {
-    const response = await this.httpService.post('logout',null);
+    this.user = JSON.parse(localStorage.getItem('userProfile'));
+    const userRole = this.user.data.role.roleName;
+    let logoutUrl = '/home';
+    if (userRole === 'ADMIN') {
+      logoutUrl = '/adminLogin'
+    }
+    try {
+      await this.httpService.post('logout',null);
+    } catch (error) {
+      localStorage.removeItem('user');
+      this.router.navigate([logoutUrl]);
+    }
     // Remove localstorage session info 
     localStorage.removeItem('user');
-    this.router.navigate(['/home']);
+    this.router.navigate([logoutUrl]);
   }
   
   public async getData(): Promise<void>{

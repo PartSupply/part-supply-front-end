@@ -15,12 +15,9 @@
             </li> -->
 
               <li *ngIf="_router != '/seeAllRequests'" class="nav-item">
-                <a *ngIf="_router != '/supplierMenu'" class="nav-link" (click)="routeByUrl('seeAllRequests')">Part Inquiry List</a>
+                <a *ngIf="_router != '/seeAllRequests'" class="nav-link" (click)="routeByUrl('seeAllRequests')">Part Inquiry List</a>
               </li>
-              <li *ngIf="_router != '/seeAllRequests'" class="nav-item">
-                <a *ngIf="_router != '/seeOfferStatus'" class="nav-link" (click)="routeByUrl('details')">Details</a>
-              </li>
-              <li *ngIf="_router != '/supplierMenu'" class="nav-item">
+              <li *ngIf="_router != '/seeOfferStatus'" class="nav-item">
                 <a *ngIf="_router != '/seeOfferStatus'" class="nav-link" (click)="routeByUrl('seeOfferStatus')">My Offer Status</a>
               </li>
               <li *ngIf="_router != '/updateProfile'" class="nav-item">
