@@ -27,16 +27,17 @@
 						</div>
 						<div *ngIf="(userLoginForm.get('password').invalid) && (userLoginForm.get('password').touched) || (userLoginForm.get('password').dirty)">
 							<small *ngIf="(userLoginForm.get('password').errors?.required)" class="text-danger"> password is required</small>
-							</div>
+						</div>
 						<div class="row align-items-center remember">
 							<input type="checkbox" checked>Remember Me
 						</div>
 						<div class="form-group">
 							<input [disabled]= "!userLoginForm.valid" type="submit" value="Login" (click) ="post()" class="btn btn-danger" >
-							<input style="width: 29%; margin-right: 5%;" value="Sign Up" (click)="signup()" class="btn btn-danger" >
-							
+							<input style="width: 29%; margin-right: 5%;" value="Sign Up" (click)="signup()" class="btn btn-danger">
 						</div>
-					
+						<div class="reset-password">
+							<a class="labels" (click)="resetPassword()">Forgot/Reset password</a>
+						</div>
 					</form>
 					
 				</div>

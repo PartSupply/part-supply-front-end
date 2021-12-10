@@ -58,4 +58,8 @@ export class HomeComponent implements OnInit {
   signup(){
     this.router.navigate(['/signup']);
   }
+
+  resetPassword() {
+    this.router.navigate(['/resetPassword']);
+  }
 }

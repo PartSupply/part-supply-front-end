@@ -4,8 +4,7 @@
   .nav-item{
     margin: 0 2px;
     font-weight: bold;
-     font-size: 1.3rem;
-    
+    font-size: 1rem;
   }
   img, a{
     cursor: pointer;
@@ -14,9 +13,6 @@
   .navbar{
     background-color: #BBBFCA;
     /* background: -webkit-linear-gradient(left, #3931af, #00c6ff);     */
-  }
-  .nav-item:hover{
-   font-size: 1.1rem;
   }
   .companylogo{
     filter: drop-shadow(7px 7px 7px #666666);
@@ -37,6 +33,29 @@
     }
     
   }
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { 
+  .nav-item{
+    margin: 0 2px !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+  }
+  .navbar-div{
+    margin-left: 25% !important;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) { 
+  .nav-item{
+    margin: 0 2px !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+  }
+  .navbar-div{
+    margin-left: 35% !important;
+  }
+}
+
                     
   @media only screen and(min-width: 480px) and (max-width: 767px) {
     .logout {

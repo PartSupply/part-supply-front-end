@@ -39,6 +39,7 @@ import { CommonModalComponent } from './components/Admin/common-modal/common-mod
 import { ShowChatComponent } from './components/buyer/show-chat/show-chat.component';
 import { UpdateUserProfileComponentComponent } from './components/common/update-user-profile-component/update-user-profile-component.component';
 import { TwoDigitDecimaNumberDirective } from './services/two-digit-decima-number.directive';
+import { ResetPasswordComponent } from './components/common/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { TwoDigitDecimaNumberDirective } from './services/two-digit-decima-numbe
     ShowChatComponent,
     UpdateUserProfileComponentComponent,
     TwoDigitDecimaNumberDirective,
+    ResetPasswordComponent,
   ],
   imports: [
     SparkAngularModule,

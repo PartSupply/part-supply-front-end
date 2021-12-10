@@ -23,6 +23,7 @@ import { AdminViewOffersComponent } from './components/Admin/admin-view-offers/a
 import { AdminViewTransactionsComponent } from './components/Admin/admin-view-transactions/admin-view-transactions.component';
 import { AdminViewRequestsComponent } from './components/Admin/admin-view-requests/admin-view-requests.component';
 import { UpdateUserProfileComponentComponent } from './components/common/update-user-profile-component/update-user-profile-component.component'
+import { ResetPasswordComponent } from './components/common/reset-password/reset-password.component';
 const routes: Routes = [];
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ const routes: Routes = [];
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
+      { path: 'resetPassword', component: ResetPasswordComponent},
       { path: 'signup', component: SignupComponent},
       { path: 'details', component: DetailsComponent},
       { path: 'requestInfo', component: RequestInfoComponent, canActivate: [RoleGuard, AuthGuard], 
