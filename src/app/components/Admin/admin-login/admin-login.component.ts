@@ -41,4 +41,7 @@ export class AdminLoginComponent implements OnInit {
     }
   }
 
+  resetPassword() {
+    this.router.navigate(['/adminResetPassword']);
+  }
 }

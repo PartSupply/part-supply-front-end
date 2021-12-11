@@ -22,6 +22,9 @@
           </div>
           <button [disabled]= "!adminLoginForm.valid" type="submit" (click)="post()" class="btn btn-primary">Login</button>
         </form>
+        <div class="reset-password">
+          <a class="labels reset-password-admin" (click)="resetPassword()" style="color: #444444;">Forgot/Reset password</a>
+        </div>
       </div>
     </div>
   </div>

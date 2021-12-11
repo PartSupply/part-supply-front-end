@@ -111,6 +111,11 @@ color: white;
        -webkit-filter: drop-shadow(7px 7px 7px #666666);
        margin-bottom: 5%;
 }
+.reset-password-admin {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
 @media screen and (max-width: 700px) {
 .sidebar {
   width: 100%;
