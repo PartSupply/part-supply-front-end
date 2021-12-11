@@ -27,7 +27,7 @@
                 </div>
                 <div class="panel-body">
                     <h3>
-                     {{userProfile.data.companyName}} (Payment Amount: ${{amount}})
+                     {{response.acceptedOffers[0].SELLER_COMPNAY_NAME}} (Payment Amount: ${{amount}})
                     </h3>
                 </div>
                 <div class="table-responsive">
@@ -42,7 +42,7 @@
                                     <th>Make</th>
                                     <th>Year</th>
                                     <th>Model</th>
-                                    <th>Buyer Name</th>
+                                    <th>Buyer Company Name</th>
                                     <th>Amount</th>
                                 </tr>
                             </thead>
@@ -55,7 +55,7 @@
                                     <td>{{res.MAKE}}</td>
                                     <td>{{res.YEAR}}</td>
                                     <td>{{res.MODEL}}</td>
-                                    <td>{{res.BUYER_FIRST_NAME}} {{res.BUYER_LAST_NAME}}</td>
+                                    <td>{{res.BUYER_COMPNAY_NAME}}</td>
                                     <td>${{res.BID_AMOUNT}}</td>
 
                                 </tr>

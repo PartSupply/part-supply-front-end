@@ -5,13 +5,16 @@
         <tr>
             <th>Part ID</th>
             <th>Vin Number</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
             <th>Part Name</th>
             <th>Part Brand</th>
             <th>Warranty</th>
             <th>Delivery Time</th>
             <th>Amount(USD)</th>
             <th>Status</th>
-            <th>Seller Name</th>
+            <th>Company Name</th>
             <th>Email</th>
             <!-- <th>Report</th> -->
            
@@ -19,21 +22,24 @@
         <tr *ngFor="let res of response.data; let i = index">
             <td>{{res.partRequest.id}}</td>
             <td>{{res.partRequest.vinNumber}}</td>
+            <td>{{res.partRequest.make}}</td>
+            <td>{{res.partRequest.model}}</td>
+            <td>{{res.partRequest.year}}</td>
             <td>{{res.partRequest.partName}}</td>
             <td>{{res.partBrand}}</td>
             <td>{{res.bidWarranty}}</td>
             <td>{{res.estDeliveryTime}}</td>
-            <td style="color:red;">${{res.bidAmount}}</td>
+            <td>${{res.bidAmount}}</td>
             
             <td>
-                <span *ngIf="res.isOfferAccepted === true" >
-                    <img src="./../../../../assets/right.png" class="status_img">
+                <span *ngIf="res.isOfferAccepted === true" style="color: red;">
+                    Open
                 </span>
-                <span *ngIf="res.isOfferAccepted === false" >
-                    <img src="./../../../../assets/cross.png" class="status_img">
+                <span *ngIf="res.isOfferAccepted === false" style="color: green;">
+                    Accepted
                 </span>
             </td>
-            <td>{{res.user.firstName}} {{res.user.lastName}}</td>
+            <td>{{res.user.companyName}}</td>
             <!-- <td *ngIf="res.isOfferAccepted === true">
                 <button (click)="viewTransactions()" class="btn btn-danger">Click here</button>
             </td> -->
