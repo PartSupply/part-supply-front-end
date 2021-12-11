@@ -41,7 +41,7 @@ export class SellerEditOfferComponent implements OnInit {
   public async postofferRequest(): Promise<void> {
     const payload = {
       id: this.partData.bidId,
-      bidAmount: this.EditOfferForm.get('bidAmount').value,
+      bidAmount: +this.EditOfferForm.get('bidAmount').value,
       bidWarranty: this.EditOfferForm.get('bidWarranty').value,
       partBrand: this.EditOfferForm.get('partBrand').value,
       estDeliveryTime: this.EditOfferForm.get('estDeliveryTime').value,

@@ -13,6 +13,9 @@
     </form>
 </div>
 
+<div *ngIf="isError" style="text-align: center; color: red;">
+    **There is no report found for provided user email address.
+</div>
 <div class="container" *ngIf="shouldDisplayReport">
     <div class="row">
         <div class="col-xs-10">
@@ -24,7 +27,7 @@
                 </div>
                 <div class="panel-body">
                     <h3>
-                     {{response.acceptedOffers[0].SELLER_FIRST_NAME}}  {{response.acceptedOffers[0].SELLER_LAST_NAME}} (Payment Amount: ${{amount}})
+                     {{userProfile.data.companyName}} (Payment Amount: ${{amount}})
                     </h3>
                 </div>
                 <div class="table-responsive">

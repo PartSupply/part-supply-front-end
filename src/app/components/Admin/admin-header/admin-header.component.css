@@ -18,9 +18,6 @@ a, img {
     background-color: #BBBFCA;
     
   }
-  .nav-item:hover {
-   font-size: 1.1rem;
-  }
   .companylogo{
     filter: drop-shadow(7px 7px 7px #666666);
          -webkit-filter: drop-shadow(7px 7px 7px #666666);

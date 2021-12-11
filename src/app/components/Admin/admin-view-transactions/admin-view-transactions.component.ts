@@ -14,6 +14,8 @@ export class AdminViewTransactionsComponent implements OnInit {
   amount: any;
   date: any;
   shouldDisplayReport: boolean;
+  userProfile: any;
+  isError: boolean;
   generateReport = new FormGroup({
     startDate: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
@@ -38,11 +40,16 @@ export class AdminViewTransactionsComponent implements OnInit {
       sellerEmail: this.generateReport.get('sellerEmail').value,
       commissionPercentage: percentage,
     };
-    const response: any = await this.httpService.post('admin/getReport',payload);
-    this.response = response.data;
+    this.isError = false;
+    try {
+      this.response = await this.httpService.post('admin/getReport',payload);
+      this.userProfile = await this.httpService.get('userProfile');
+    } catch (error) {
+      this.isError = true;
+    }
+    this.response = this.response.data;
     this.shouldDisplayReport = true;
-    this.amount = (response.data.amount).toFixed(2);
-  
+    this.amount = (this.response.amount).toFixed(2);
   }
   
 

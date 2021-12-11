@@ -40,11 +40,11 @@
                 <label class="part-type-label" for="type-of-part">Part Type</label>
                 <div>
                     <input formControlName="partType" type="radio" name="partType" value="NEW" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'NEW'">
-                    <label class="radio-label" for="new">new</label><br>
+                    <label class="radio-label" for="new">New</label><br>
                     <input formControlName="partType"type="radio" name="partType" value="USED" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'USED'">
-                    <label class="radio-label"for="used">used</label><br>
+                    <label class="radio-label"for="used">Used</label><br>
                     <input formControlName="partType" type="radio" name="partType" value="RE_MANUFACTURED" [checked]="EditOfferForm.get('typeOfPart.partType').value == 'RE_MANUFACTURED'">
-                    <label class="radio-label" for="Re-manufactured">remanufactured</label>
+                    <label class="radio-label" for="Re-manufactured">Remanufactured</label>
                 </div>
             </div>
           <button class="btn btn-primary" (click)='postofferRequest()' type="submit">SUBMIT</button>
