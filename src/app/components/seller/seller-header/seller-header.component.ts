@@ -11,8 +11,14 @@ import { HttpService } from 'src/app/services/http.service';
 export class SellerHeaderComponent implements OnInit {
   _router: string;
   navbarOpen = false;
+  whiteListHeader: string[] = ['/sellerAcceptOffer', '/seeOfferStatus'];
+  shouldDisplayMyOfferStatus: boolean = true;
   constructor(private httpService: HttpService, private router: Router) {
     this._router = router.url; 
+    console.log(this._router)
+    if (this.whiteListHeader.includes(window.location.pathname)) {
+      this.shouldDisplayMyOfferStatus = false;
+    }
   }
 
    ngOnInit() {

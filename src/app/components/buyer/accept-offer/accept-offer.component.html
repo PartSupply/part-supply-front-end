@@ -1,4 +1,11 @@
-<app-buyer-header></app-buyer-header>
+<div *ngIf="isBuyerLoggedIn">
+    <app-buyer-header></app-buyer-header>
+</div>
+
+<div *ngIf="!isBuyerLoggedIn">
+    <app-seller-header></app-seller-header>
+</div>
+
 
 <!-- {{ response | json}} -->
 <div class="container">
@@ -38,7 +45,7 @@
                 <span class="span-class"> {{response.data.partBidRequest.EST_DELIVERY_TIME}}</span>
             </div>
             <div>
-                <label class="top5-label" for="year">Cost: </label>
+                <label class="top5-label" for="year">Price: </label>
                 <span class="span-class" style="color:greenyellow; font-weight: bold; "> ${{response.data.partBidRequest.BID_AMOUNT}}</span>
             </div>
             <!-- <div *ngIf="response.data.user.role.roleName === 'BUYER'">

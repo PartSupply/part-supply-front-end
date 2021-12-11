@@ -1,7 +1,7 @@
 
 
 .navbar-div {
-    margin-left: 40%;
+    margin-left: 38%;
   }
   .nav-item {
     margin: 0 2px;
@@ -14,9 +14,6 @@
   }
   .navbar {
     background-color: #BBBFCA;
-  }
-  .nav-item:hover {
-   font-size: 1.1rem;
   }
   .companylogo{
     filter: drop-shadow(7px 7px 7px #666666);
@@ -120,6 +117,11 @@ tr:nth-child(even) {
 @media (min-width:1281px){
   .navbar-div{
     margin-left: 57%;
+  } 
+}
+@media only screen and (min-width: 1280px) and (max-width: 1388px) {
+  .navbar-div{
+    margin-left: 45%;
   } 
 }
 

@@ -42,10 +42,10 @@ button {
   color: red;
   text-align: center;
 }
-button:hover {
+/* button:hover {
   background-color: greenyellow;
   color: black;
-}
+} */
 .standing{
   width: 50%;
 }

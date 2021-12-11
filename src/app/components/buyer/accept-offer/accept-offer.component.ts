@@ -13,14 +13,19 @@ export class AcceptOfferComponent implements OnInit {
   response: any;
   isBuyer: any;
   fees: any;
+  isBuyerLoggedIn: boolean;
   
   constructor(private route: ActivatedRoute, private httpService: HttpService) {
     this.route.queryParams.subscribe(params => {
       this.partRequestId = params['partRequestId'];
       this.partBidRequestId = params['partBidRequestId'];
       this.isBuyer = params['isBuyer'] === 'true';
-  }); 
-
+    }); 
+    const user = JSON.parse(localStorage.getItem('userProfile'));
+    const userRole = user.data.role.roleName;
+    if (userRole === 'BUYER') {
+      this.isBuyerLoggedIn = true;
+    }
   }
 
   async ngOnInit() {
